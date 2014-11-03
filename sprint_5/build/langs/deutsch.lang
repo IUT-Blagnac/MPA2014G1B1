@@ -1,0 +1,147 @@
+# Deutsche language file
+
+# Begin of data types definition #
+wish:Wünsche
+student:Student
+advisor:Berater
+project:Projekte
+subject:Thema
+group:Gruppe
+
+wishes:Wünsche
+students:Student
+advisors:Berater
+projects:Projekte
+subjects:Themen
+groups:Gruppe
+roles:Rollen
+groupname:Gruppenname 
+subjectname:Themen Name
+
+# End of data types definition #
+
+
+# Begin of data field definition #
+
+id:Id
+firstname:Vorname
+lastname:Nachname
+subject:Thema
+name:Name
+title:Bezeichnung 
+
+# End of data field definition #
+
+
+# Begin of usefull words definition #
+
+all:Alle
+
+# End of usefull words definition #
+
+
+# Begin of gui words #
+
+details:Details
+save:Speichern
+load:Laden
+quit:Verlassen
+
+nbetu:Zahl der Studierenden
+
+moptions:Optionen
+mlanguages:Sprachen
+
+# End of gui words #
+
+
+# Begin of data manipulation words #
+
+data:Angaben
+order:Order
+
+add:Addieren
+editmode:Bearbeitungsmodus
+associate:Verbinden
+affect:Beeinflussen
+
+# End of data manipulation words #
+
+
+
+# Begin of information words #
+
+about:Über das Projekt
+abgrouptitle:Gruppe 1B1
+
+abgroup:<html>CORDEAU Julien <br>GARIBAL Florian <br>EL YASSEM Bilal <br>JEANJEAN Pierre <br>MOLINA Serge <br>ZARIOH Abdellah</html>
+abiuttitle:Universität Toulouse 2
+abiut:<html>IUT Blagnac<br>DUT INFO S3/Module MPA<br>Projet OPTI
+abdatatitle:Dateninformationen
+absprint:Sprint 3
+
+abnbstudents:<html>Zahl der Studierenden : 
+abnbadvisors:<br>Anzahl der Berater : 
+abnbprojects:<br>Anzahl der Projekte : 
+abnbsubjects:<br>Anzahl der Themen :
+abnbgroups:Anzahl der Gruppen 
+
+
+# End of information words #
+
+
+# Begin of right click words #
+
+rcdelete:Entfernen
+rcclone:Klon
+rcaccept:Bestätigen
+rcedit:Veränderung
+
+# End of right click words #
+
+
+# Begin of dialog words #
+
+dialconfirm:Bestätigung
+dialyes:Ja
+dialno:Nicht
+dialexit:Möchten Sie verlassen ? 
+dialrestartnotice:Die Änderungen werden nach dem Neustart der Anwendung sichtbar sein
+error:Fehler
+congrat:Glückwunsch
+
+
+dialinfoassociate:Bitte wählen Sie ein Element in Gruppen und Projekte, die in der Lage zu verbinden und schaffen ein Projekt sein.
+validassociatep1:Das Projekt wurde mit der Gruppe erstellt
+validassociatep2:und der Gegenstand
+errorselectassociate:Sie müssen eine Gruppe auswählen und nach beitreten können, und erstellen Sie ein Projekt
+erroralreadyexist:Das Projekt ist bereits vorhanden
+errorgroupalreadyhave:Die Gruppe hat bereits ein Projekt ausgezeichnet
+errorsubjectalreadyhave:Das Thema hat bereits ein Projekt zugeordnet
+
+
+dialinfowishes:Bitte geben Sie die Reihenfolge, in der die Probanden, durch Komma getrennt. Die Reihenfolge der Gelübde müssen die Anzahl der Patienten in der Liste auf der linken entsprechen.
+dialexample:Beispiel
+dialvalidvoeux:Die Gelübde haben zu der Gruppe hinzugefügt
+dialerrororderfieldnull:Sie müssen einen Auftrag für jedes Fach in der Liste auf der linken Seite ein.
+dialtitleerrororderfieldnull:Um Fehlerfeld leer
+dialerror0selectgroup:Sie haben kein Gruppe aus der Liste in der rechten oberen ausgewählt.
+dialtitleerror0select:Kein Fehler ausgewählten Gruppe
+dialerrornbwishes:Sie müssen nicht so viele Wünsche wie Themen haben, versuchen Sie es erneut
+dialtitlenbwishes:Fehlernummer Gruß
+
+
+
+dialinfoaction:Bitte wählen Sie ein Element im Lautsprecher, Projekte und Rollen, um zu verbinden.
+validAffectp1:Die Rolle
+validAffectp2:wurde dem Sprecher zugeordnet
+validAffectp3:über das Projekt
+erroralreadyset1:Diese Rolle ist bereits mit einem Berater zugeordnet
+erroralreadyset2:Der Client kann sowohl Client und Supervisor an einem Projekt
+erroralreadyset3:Der Supervisor kann nicht beide Supervisor und Client auf dem selben Projekt
+INTerrornotselected:Fehler müssen Sie einen Lautsprecher, ein Projekt und eine Rolle auswählen
+
+erroralreadyset4p1:Der Lautsprecher hat bereits die Rolle
+erroralreadyset4p2:an diesem Projekt
+
+# End of dialog words #

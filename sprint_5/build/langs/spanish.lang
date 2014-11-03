@@ -1,0 +1,147 @@
+# Spanish language file
+
+# Begin of data types definition #
+wishe:Deseo
+student:Estudiante
+advisor:Tutor
+project:Proyecto
+subject:Tema
+group:Grupo
+
+wishes:Deseos
+students:Estudiantes
+advisors:Tutores
+projects:Proyectos
+subjects:Temas
+groups:Grupos
+roles:Papel
+groupname:Nombre del grupo
+subjectname:Nombre del tema
+
+# End of data types definition #
+
+
+# Begin of data field definition #
+
+id:Id
+firstname:Nombre 
+lastname:Apellido
+subject:Tema
+name:Nombre
+title:Título
+
+# End of data field definition #
+
+
+# Begin of usefull words definition #
+
+all:Todo
+
+# End of usefull words definition #
+
+
+# Begin of gui words #
+
+details:Detalles
+load:Cargar
+save:Guardar
+quit:Cerrar
+
+nbetu:Número de estudiantes
+
+moptions:Opciones
+mlanguages:Idiomas
+
+# End of gui words #
+
+
+# Begin of data manipulation words #
+
+data:Datos
+order:Orden
+
+editmode:Mode edición
+add:Añadir
+associate:Asociar
+affect:Afectar
+
+# End of data manipulation words #
+
+
+
+# Begin of information words #
+
+about:Acerca de
+abgrouptitle:Grupo 1B1
+
+abgroup:CORDEAU Julien <br>GARIBAL Florian <br>EL YASSEM Bilal <br>JEANJEAN Pierre <br>MOLINA Serge <br>ZARIOH Abdellah
+abiuttitle:Universidad Toulouse 2
+abiut:IUT Blagnac<br>DUT INFO S3/Module MPA<br>Projet OPTI
+abdatatitle:Informaciones dadas
+absprint:Sprint 3
+
+abnbstudents:Número de estudiantes
+abnbadvisors:Número de tutores
+abnbprojects:Número de proyectos
+abnbsubjects:Número de temas
+abnbgroups:Número de grupos
+
+
+# End of information words #
+
+
+# Begin of right click words #
+
+rcdelete:Suprimir
+rcclone:Clonar
+rcaccept:Aceptar
+rcedit:Modificar
+
+# End of right click words #
+
+
+# Begin of dialog words #
+
+dialconfirm:Confirmación
+dialyes:Sí
+dialno:No
+dialexit:¿Quiere cerrar la aplicación?
+dialrestartnotice:Las modificaciones serán visibles cuando reinicie la aplicación
+error:Error
+congrat:Felicidades
+
+
+dialinfoassociate:Por favor, seleccione un elemento en Grupos y Proyectos para poder asociarlos y así poder crear un proyecto.
+validassociatep1:El proyecto ha sido creado con el grupo
+validassociatep2:y el tema
+errorselectassociate:Tiene que seleccionar un grupo y un tema para poder asociarlos y crear un proyecto
+erroralreadyexist:El proyecto ya existe
+errorgroupalreadyhave:El grupo ya tiene un proyecto asociado
+errorsubjectalreadyhave:El tema ya tiene un proyecto asociado
+
+
+dialinfowishes:Por favor seleccione el orden de preferencia de los temas separándolos por comas. El orden debe corresponder con el número de temas que hay arriba a la izquierda. 
+dialexample:Ejemplo
+dialvalidvoeux:El orden de preferencia ha sido añadido al grupo
+dialerrororderfieldnull:Tiene que elegir un orden para cada tema en la lista de la izquierda.
+dialtitleerrororderfieldnull:Error campo orden vacío
+dialerror0selectgroup:No ha seleccionado ningún grupo de la liste que hay arriba a la derecha.
+dialtitleerror0select:Error ningún grupo seleccionado
+dialerrornbwishes:El orden de preferencia no corresponde con el número de temas, por favor vuelva a elegir el orden.
+dialtitlenbwishes:Error número de preferencias
+
+
+
+dialinfoaction:Seleccione un elemento en Tutores, Proyectos y en Papeles para poder asociarlos.
+validAffectp1:El papel
+validAffectp2:ha sido asociado al tutor
+validAffectp3:sobre el proyecto
+erroralreadyset1:Este papel ya ha sido atribuido a un tutor
+erroralreadyset2:El cliente no puede ser a la vez cliente y supervisor de un mismo proyecto
+erroralreadyset3:El supervisor no puede ser a la vez supervior y cliente de un mismo proyecto.
+INTerrornotselected:Error tiene que seleccionar un tutor, un proyecto y un papel
+
+erroralreadyset4p1:El tutor ya tiene el papel
+erroralreadyset4p2:sobre este proyecto
+
+# End of dialog words #

@@ -1,0 +1,147 @@
+# English language file
+
+# Begin of data types definition #
+wish:Wish
+student:Student
+advisor:Advisor
+project:Project
+subject:Subject
+group:Group
+
+wishes:Wishes
+students:Students
+advisors:Advisors
+projects:Projects
+subjects:Subjects
+groups:Groups
+roles:Roles
+groupname:Group name
+subjectname:Subject name
+
+# End of data types definition #
+
+
+# Begin of data field definition #
+
+id:Id
+firstname:First name
+lastname:Last name
+subject:Subject
+name:Name
+title:Title
+
+# End of data field definition #
+
+
+# Begin of usefull words definition #
+
+all:All
+
+# End of usefull words definition #
+
+
+# Begin of gui words #
+
+details:Details
+save:Save
+load:Load
+quit:Quit
+
+nbetu:Students Amount
+
+moptions:Options
+mlanguages:Languages
+
+# End of gui words #
+
+
+# Begin of data manipulation words #
+
+data:Data
+order:Order
+
+add:Add
+editmode:Edit mode
+associate:Associate
+affect:Affect
+
+# End of data manipulation words #
+
+
+
+# Begin of information words #
+
+about:About
+abgrouptitle:Group 1B1
+
+abgroup:CORDEAU Julien <br>GARIBAL Florian <br>EL YASSEM Bilal <br>JEANJEAN Pierre <br>MOLINA Serge <br>ZARIOH Abdellah
+abiuttitle:Université Toulouse 2
+abiut:IUT Blagnac<br>DUT INFO S3/MPA Module<br>OPTI Project
+abdatatitle:Data informations
+absprint:Sprint 3
+
+abnbstudents:Number of students
+abnbadvisors:Number of advisors
+abnbprojects:Number of projects
+abnbsubjects:Number of subjects
+abnbgroups:Number of groups
+
+
+# End of information words #
+
+
+# Begin of right click words #
+
+rcdelete:Delete
+rcclone:Clone
+rcaccept:Accept
+rcedit:Edit
+
+# End of right click words #
+
+
+# Begin of dialog words #
+
+dialconfirm:Confirm
+dialyes:Yes
+dialno:No
+dialexit:Do you really want to exit the application?
+dialrestartnotice:Modifications will be displayed after you restart the application
+error:Error
+congrat:Congratulations
+
+
+dialinfoassociate:Please select an element from Groups and Project in way to associate them and create a project.
+validassociatep1:The project has been created with the group
+validassociatep2:and the subject
+errorselectassociate:You hace to select a group and a project for associate them and create a project.
+erroralreadyexist:The project already exists
+errorgroupalreadyhave:The group has already an assigned project
+errorsubjectalreadyhave:The subject has already an assigned project
+
+
+dialinfowishes:Put the order of preference of the sujects separating each number by a comma. The order of wishes should correspond with the number of subjects from the left list. 
+dialexample:Example
+dialvalidvoeux:The wishes have been added to the group
+dialerrororderfieldnull:You have to put an order for each subject from the left list.
+dialtitleerrororderfieldnull:Error order field empty
+dialerror0selectgroup:You haven't selected any group from the top right list.
+dialtitleerror0select:Error any group selected
+dialerrornbwishes:You haven't the same number of wishes and subjects, please start again.
+dialtitlenbwishes:Error wrong number of wishes
+
+
+
+dialinfoaction:Please, select an element from Advisor, Project and Role to associate them.  
+validAffectp1:The role
+validAffectp2:has been afected to the advisor
+validAffectp3:on the project
+erroralreadyset1:This role has been assigned to an advisor
+erroralreadyset2:The client can't be the client and the supervisor at the same time.
+erroralreadyset3:The supervisor can't be supervisor and client on a project at the same time.
+INTerrornotselected:Error, you have to select an advisor, a project and a role.
+
+erroralreadyset4p1:The advisor has already the role
+erroralreadyset4p2:on this project
+
+# End of dialog words #

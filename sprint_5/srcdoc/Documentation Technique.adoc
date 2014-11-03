@@ -1,0 +1,186 @@
+﻿= Documentation Technique SPRINT 3
+
+:Author:  Groupe projet 1B1 
+
+:doctitle: Documentation Technique du Projet OPTI MPA-M3301-G1B12
+
+:slideshowlocation: Your computer
+
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
+:revnumber: 0
+
+*Bienvenue dans ce manuel d'utilisation d'OPTI !*
+Ce guide présente de façon détaillée le fonctionnement de votre application.
+
+include::docConf.txt[]
+
+== Projet OPTI
+
+- Université Toulouse II
+
+- IUT de Blagnac
+
+- DUT INFO S3/Module MPA
+
+
+== Liste des membres de l'équipe
+
+include::listMember.txt[]
+
+
+
+== Introduction
+
+OPTI es un logiciel permettant de gérer les projets tutorés. +
+Cette documentation vous fournira toutes les informations nécessaires pour bien comprendre le fonctionnement de l'application. Vous pouvez toutefois consulter la *documentation utilisateur* concernant d'autres informations sur le sujet. 
+
+include::backLog.txt[]
+
+=== Sprint 3
+
+La sujet est abordé en réalisant:
+
+	- L'intégration des fonctions d'affichage et gestion des rôles, voeux et associations. 
+	
+	- Le test des fonctions d'affichage et de gestion des données.
+
+== Fonctionnalités 
+
+- *Make.bat*:
+
+* Pour pouvoir générer la documentation et lancer les tests automatiques il suffit d'éxécuter le fichier make.bat qui se trouve dans la racine du sprint. +
+La documentation sera générée dans le répertoire nommé *"doc"*. +
+
+
+image::make.png[link="../make.bat", ,width="50%"] 
+
+- *Gérer les différents acteurs des PTUTs:*
+* Ajouter un acteur
+
+* Modifier un acteur
+* Supprimer un acteur
+* Cloner un projet
+* Assigner un rôle à un intervenant
+
+- *Assigner et gérer les différents projets:*
+* Créer un projet
+* Assigner un(des) étudiant(s) à un projet
+* Supprimer un projet
+* Assigner un projet à un groupe
+
+
+
+- *Gérer les informations destinées aux intervenants:*
+* Afficher les informations liées à un projet, étudiant ou sujet
+* Sauvegarder ou Charger des données
+* Noter et évaluer les projets*
+
+
+
+- *Onglet "A propos"*:
+
+* Onglet de l'application qui contient les informations concernant les auteurs. +
+
+- *Quitter*:
+
+* Permet de quitter l'application. +
+
+== Modèles d'analyse
+
+Modèles permettant la bonne compréhension  de l'interface. 
+
+=== Package 
+
+image::packagediagram.png[link="package diagram.png"]
+
+* Contenu du package *Data*:
+
+image::packageDATAdiagram.PNG[link="packageDATAdiagram.PNG"]
+
+* Contenu du package *GUI*:
+
+image::packageGUIdiagram.PNG[link="packageGUIdiagram.PNG"]
+
+image::packageDials.PNG[link="packageDials.PNG"]
+
+=== Diagramme de Classe
+
+image::ClassDiagSprint3.png[link="ClassDiagSprint3.png"]
+
+Diagramme de hiérarchie des classes :
+
+image::HierachyClassSprint3.png[link="HierachyClassSprint3.png"]
+
+Vous pouvez avoir accès aux classes ici:
+
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Intervenant.java[Intervenant.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Etudiant.java[Etudiant.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Project.java[Project.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Subject.java[Subject.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\OptiElement.java[OptiElement.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\DataManager.java[DataManager.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\DataChangeListener.java[DataChangeListener.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\DataFilter.java[DataFilter.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Encadrer.java[Encadrer.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Roles.java[Roles.java]
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Voeux.java[Voeux.java] 
+	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Groupe.java[Groupe.java] 
+	
+	
+=== Use Case
+
+image::usecasediag.png[height=300,width=60%,link="usecasediag.png"]
+
+=== View 
+
+image::ViewDiag.png[link="View Diag.png"]
+
+Vous pouvez avoir accès aux classes ici:
+
+	- link:..\OPTI\src\fr\iut_blagnac\gui\Application.java[Application.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\ElementRecorder.java[ElementRecorder.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\RecordListener.java[RecordListener.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\ElementDisplayer.java[ElementDisplayer.java] 
+
+=== Controller
+
+image::controlerdiag.png[link="controler diag.png"]
+
+Code source: 
+
+- link:..\OPTI\src\fr\iut_blagnac\io\CSVManager.java[CSVManager.java] 
+- link:..\OPTI\src\fr\iut_blagnac\io\OptiElementManager.java[OptiElementManager.java] 
+
+Tests:
+
+- link:..\OPTI\src\fr\iut_blagnac\io\CSVManagerTest.java[CSVManagerTes.java] 
+- link:..\OPTI\src\fr\iut_blagnac\io\OptiElementManagerTest.java[OptiElementManagerTest.java] 
+
+=== Choix techniques
+
+Utilisation d'une classe abstraite *OptiElement* dont héritent les sous-classes *Intervenant*, *Etudiant*, *Projet* et *Sujets*. Cette strucuture permet de gérer plus facilement les différents éléments en les traitant comme une même donnée. +
+
+----
+include::..\OPTI\src\fr\iut_blagnac\data\model\OptiElement.java[OptiElement.java] 
+----
+
+De plus des contrôles de saisie de texte sont implémentés dans le code source des différentes classes. Comme on peut bien voir avec la méthode isValid() dans l'exemple suivant de la classe *Intervenants*:
+----
+include::..\OPTI\src\fr\iut_blagnac\data\model\Intervenant.java[Intervenant.java] 
+----
+La mise en page est gérée par le package *.gui*, dont plusieurs classes sont décrites pour mettre en place une intérface logique et érgonomique. 
+
+Enfin, les données seront traités dans le .csv, pour cela on utilise la classe CSVManager: 
+----
+include::..\OPTI\src\fr\iut_blagnac\io\CSVManager.java[CSVManager.java] 
+----
+
+=== Javadoc	
+
+Ce lien vous donne accès a la Javadoc du projet:
+
+link:..\V2\OPTI\doc\allclasses-frame.html[Doc.html] 
+
+====
+
+====

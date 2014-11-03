@@ -1,0 +1,26 @@
+﻿//-------- directories -----------
+:icons:
+:iconsdir: ../srcdoc/icons
+:imagesdir: ../srcdoc/images
+:src: ../src/
+:srcdoc: ../srcdoc/
+//--------------------------------
+:coderay-css: style
+:data-uri!:
+:numbered:
+:source-highlighter: coderay
+:pygments:
+:pygments_style: native
+:scrollable:
+:linkcss:
+// ///////////////////////////
+// raccourcis sites
+:asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]indexterm:[AsciiDoc]
+:asciidoctorlink: http://asciidoctor.org/[Asciidoctor]indexterm:[Asciidoctor]
+:eclipse: http://www.eclipse.org[eclipse]indexterm:[eclipse]
+:moodle: http://webetud2.iut-blagnac.fr[Moodle]
+:papyrus: http://www.eclipse.org/papyrus/[Papyrus]
+:plantuml: http://plantuml.sourceforge.net/[plantUML]
+:ruby: https://www.ruby-lang.org[Ruby]
+:slidy2: http://www.w3.org/Talks/Tools/Slidy2/[W3C HTML Slidy]
+:uml: http://www.uml.org/[UML(TM)]indexterm:[UML(TM)]

@@ -1,0 +1,147 @@
+# French language file
+
+# Begin of data types definition #
+wishe:Vœu
+student:Étudiant
+advisor:Intervenant
+project:Projet
+subject:Sujet
+group:Groupe
+
+wishes:Vœux
+students:Étudiants
+advisors:Intervenants
+projects:Projets
+subjects:Sujets
+groups:Groupes
+roles:Roles
+groupname:Nom du groupe 
+subjectname:Nom du sujet
+
+# End of data types definition #
+
+
+# Begin of data field definition #
+
+id:Id
+firstname:Prénom 
+lastname:Nom
+subject:Sujet
+name:Nom
+title:Titre
+
+# End of data field definition #
+
+
+# Begin of usefull words definition #
+
+all:Tout
+
+# End of usefull words definition #
+
+
+# Begin of gui words #
+
+details:Détails
+load:Charger
+save:Sauvegarder
+quit:Quitter
+
+nbetu:Nombre d'étudiants
+
+moptions:Options
+mlanguages:Langues
+
+# End of gui words #
+
+
+# Begin of data manipulation words #
+
+data:Données
+order:Ordre
+
+editmode:Mode édition
+add:Ajouter
+associate:Associer
+affect:Affecter
+
+# End of data manipulation words #
+
+
+
+# Begin of information words #
+
+about:À propos
+abgrouptitle:Groupe 1B1
+
+abgroup:CORDEAU Julien <br>GARIBAL Florian <br>EL YASSEM Bilal <br>JEANJEAN Pierre <br>MOLINA Serge <br>ZARIOH Abdellah
+abiuttitle:Université Toulouse 2
+abiut:IUT Blagnac<br>DUT INFO S3/Module MPA<br>Projet OPTI
+abdatatitle:Informations données
+absprint:Sprint 3
+
+abnbstudents:Nombre d'étudiants
+abnbadvisors:Nombre d'intervenants
+abnbprojects:Nombre de projets
+abnbsubjects:Nombre de sujets 
+abnbgroups:Nombre de groupes
+
+
+# End of information words #
+
+
+# Begin of right click words #
+
+rcdelete:Supprimer
+rcclone:Cloner
+rcaccept:Valider
+rcedit:Modifier
+
+# End of right click words #
+
+
+# Begin of dialog words #
+
+dialconfirm:Confirmation
+dialyes:Oui
+dialno:Non
+dialexit:Voulez-vous quitter l'application ?
+dialrestartnotice:Les modifications seront visibles après redémarrage de l'application
+error:Erreur
+congrat:Félicitation
+
+
+dialinfoassociate:Veuillez sélectionner un élement dans Groupes et Projets pour pouvoir les associer et créer un projet.
+validassociatep1:Le projet a bien été crée avec le groupe
+validassociatep2:et le sujet
+errorselectassociate:Vous devez sélectionner un groupe et un sujet pour pouvoir les associer et créer un projet
+erroralreadyexist:Le projet existe déjà
+errorgroupalreadyhave:Le groupe a déjà un projet attribué
+errorsubjectalreadyhave:Le sujet a dejà un projet atribué
+
+
+dialinfowishes:Veuillez saisir l'ordre de préférence des sujets en les séparant par des virgules. L'ordre des voeux doit correspondre avec le nombre de sujets dans la liste à gauche.
+dialexample:Exemple
+dialvalidvoeux:Les voeux ont bien été ajoutés au groupe
+dialerrororderfieldnull:Vous devez saisir un ordre pour chacun des sujets dans la liste à gauche.
+dialtitleerrororderfieldnull:Erreur champ ordre vide
+dialerror0selectgroup:Vous n'avez sélectionné aucun groupe dans la liste en haut à droite.
+dialtitleerror0select:Erreur aucun groupe sélectionné
+dialerrornbwishes:Vous n'avez pas autant de voeux que de sujets, veuillez recommencer
+dialtitlenbwishes:Erreur nombre de voeux
+
+
+
+dialinfoaction:Veuillez sélectionner un élement dans Intervenant, Projets et dans roles pour pouvoir les associer.
+validAffectp1:Le role
+validAffectp2:a bien été affecter à l'intervenant
+validAffectp3:sur le projet
+erroralreadyset1:Ce rôle a déjà été attribué à un intervenant
+erroralreadyset2:Le client ne peut pas être à la fois client et superviseur sur un même projet
+erroralreadyset3:Le superviseur ne peut pas être à la fois superviseur et client sur un même projet
+INTerrornotselected:Erreur vous devez sélectionner un intervenant, un projet et un role
+
+erroralreadyset4p1:L'intervenant a déjà le rôle 
+erroralreadyset4p2:sur ce projet
+
+# End of dialog words #

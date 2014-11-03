@@ -1,0 +1,103 @@
+= Documentation Utilisateur : Projet OPTI
+
+:Author:  Groupe projet 1B1 
+
+:doctitle: Documentation Utilisateur du Projet OPTI MPA-M3301-G1B12
+
+:slideshowlocation: Your computer
+
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
+:revnumber: 0
+
+include::docConf.txt[]
+
+*_Bienvenue dans ce manuel d'utilisation d'OPTI !_*
+*_Ce guide présente de façon détaillée le fonctionnement de votre application._*
+
+== Projet OPTI
+
+- Université Toulouse II
+
+- IUT de Blagnac
+
+- DUT INFO S3/Module MPA
+
+
+== Liste des membres de l'équipe
+
+include::listMember.txt[]
+
+include::backLog.txt[]
+
+== Dans les grandes lignes OPTI c'est un outil pour :
+
+- Gérer les différents acteurs des PTUTs
+- Assigner et gérer les différents projets
+- Gérer les informations destinées aux intervenants
+- Noter et évaluer les projets
+- Gérer les erreurs de saisie 
+
+== Comment ça marche ?
+
+[NOTE]
+_cliquez sur les images pour agrandir_
+
+*Pour lancer l'application, exécuter "OPTI.jar"*
+
+- Gérer les différents acteurs des PTUTs
+* Ajouter un acteur
+
+image::ScreensSP3\Ajouter.png[height=200, link="..\srcdoc\images\ScreensSP3\Ajouter.png"]
+
+* Modifier un acteur / Supprimer un acteur
+
+image::ScreensSP3\Modifier.png[height=200, link="..\srcdoc\images\ScreensSP3\Modifier.png"]
+
+- Assigner et gérer les différents projets
+* Créer un projet
+* Assigner un groupe à un projet
+* Supprimer un projet
+
+Associer un sujet à un groupe.
+
+image::ScreensSP3\Associer.png[height=200, link="..\srcdoc\images\ScreensSP3\Associer.png"]
+
+Associer un rôle/projet à un intervenant.
+
+image::ScreensSP3\Roles.png[height=200, link="..\srcdoc\images\ScreensSP3\Roles.png"]
+
+- Gérer les informations destinées aux intervenants
+* Afficher les informations liées à un projet, étudiant ou sujet
+
+image::ScreensSP3\Detail.png[height=200, link="..\srcdoc\images\ScreensSP3\Detail.png"]
+
+Clic droit pour cloner un projet.
+
+image::ScreensSP3\Cloner.png[height=200, link="..\srcdoc\images\ScreensSP3\Cloner.png"]
+
+- Noter et évaluer les projets
+* Noter un projet
+
+- Gérer les voeux des groupes
+
+image::ScreensSP3\Voeux.png[height=200, link="..\srcdoc\images\ScreensSP3\Voeux.png"]
+
+- Gérer les erreurs de saisie 
+
+image::ScreensSP3\Erreur.png[height=200, link="..\srcdoc\images\ScreensSP3\Erreur.png"]
+
+
+=== En savoir plus
+Si vous voulez vous renseigner sur l'équipe et l'établissement de production d'OPTI, ou la version que vous utilisez vous pourrez trouver ces informations dans l'onglet "A propos" de l'application.
+
+image::ScreensSP3\APropos.png[height=200, link="..\srcdoc\images\ScreensSP3\APropos.png"]
+
+
+=== Changer de langue
+
+Vous avez aussi le choix entre 4 langues pour utiliser votre application!
+
+image::ScreensSP3\Langues.png[height=200, link="..\srcdoc\images\ScreensSP3\Langues.png"]
+
+== Quitter ?
+Pour quitter l'application cliquez simplement sur l'onglet "Quitter" de la barre de menus.

@@ -1,0 +1,2156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.6" />
+<title>OPTIweb : Documentation Technique</title>
+<style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+/*
+  pygmentize filter
+*/
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f4f4f4; }
+.highlight .c { color: #008800; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #AA22FF; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .cm { color: #008800; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #008800 } /* Comment.Preproc */
+.highlight .c1 { color: #008800; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #008800; font-weight: bold } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #808080 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0040D0 } /* Generic.Traceback */
+.highlight .kc { color: #AA22FF; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #AA22FF; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #AA22FF; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #AA22FF } /* Keyword.Pseudo */
+.highlight .kr { color: #AA22FF; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #00BB00; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BB4444 } /* Literal.String */
+.highlight .na { color: #BB4444 } /* Name.Attribute */
+.highlight .nb { color: #AA22FF } /* Name.Builtin */
+.highlight .nc { color: #0000FF } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #00A000 } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #B8860B } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sb { color: #BB4444 } /* Literal.String.Backtick */
+.highlight .sc { color: #BB4444 } /* Literal.String.Char */
+.highlight .sd { color: #BB4444; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BB4444 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BB4444 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BB4444 } /* Literal.String.Single */
+.highlight .ss { color: #B8860B } /* Literal.String.Symbol */
+.highlight .bp { color: #AA22FF } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #B8860B } /* Name.Variable.Class */
+.highlight .vg { color: #B8860B } /* Name.Variable.Global */
+.highlight .vi { color: #B8860B } /* Name.Variable.Instance */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+.keycap {
+	padding-left: .2em;
+	padding-right: .2em;
+	border-style: solid;
+	border-top-width: 2px;
+	border-left-width: 3px;
+	border-right-width: 3px;
+	border-bottom-width: 4px;
+	border-top-color: #ddddbb;
+	border-left-color: #ddddbb;
+	border-right-color: #888866;
+	border-bottom-color: #888866;
+	background-color: #ccccaa;
+	font-family: sans-serif;
+	font-size: smaller;
+}
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  if (!toc) {
+    return;
+  }
+
+  // Delete existing TOC entries in case we're reloading the TOC.
+  var tocEntriesToRemove = [];
+  var i;
+  for (i = 0; i < toc.childNodes.length; i++) {
+    var entry = toc.childNodes[i];
+    if (entry.nodeName == 'div'
+     && entry.getAttribute("class")
+     && entry.getAttribute("class").match(/^toclevel/))
+      tocEntriesToRemove.push(entry);
+  }
+  for (i = 0; i < tocEntriesToRemove.length; i++) {
+    toc.removeChild(tocEntriesToRemove[i]);
+  }
+
+  // Rebuild TOC entries.
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  // Delete existing footnote entries in case we're reloading the footnodes.
+  var i;
+  var noteholder = document.getElementById("footnotes");
+  if (!noteholder) {
+    return;
+  }
+  var entriesToRemove = [];
+  for (i = 0; i < noteholder.childNodes.length; i++) {
+    var entry = noteholder.childNodes[i];
+    if (entry.nodeName == 'div' && entry.getAttribute("class") == "footnote")
+      entriesToRemove.push(entry);
+  }
+  for (i = 0; i < entriesToRemove.length; i++) {
+    noteholder.removeChild(entriesToRemove[i]);
+  }
+
+  // Rebuild footnote entries.
+  var cont = document.getElementById("content");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      var note = spans[i].getAttribute("data-note");
+      if (!note) {
+        // Use [\s\S] in place of . so multi-line matches work.
+        // Because JavaScript has no s (dotall) regex flag.
+        note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+        spans[i].innerHTML =
+          "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+        spans[i].setAttribute("data-note", note);
+      }
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+},
+
+install: function(toclevels) {
+  var timerId;
+
+  function reinstall() {
+    asciidoc.footnotes();
+    if (toclevels) {
+      asciidoc.toc(toclevels);
+    }
+  }
+
+  function reinstallAndRemoveTimer() {
+    clearInterval(timerId);
+    reinstall();
+  }
+
+  timerId = setInterval(reinstall, 500);
+  if (document.addEventListener)
+    document.addEventListener("DOMContentLoaded", reinstallAndRemoveTimer, false);
+  else
+    window.onload = reinstallAndRemoveTimer;
+}
+
+}
+asciidoc.install(2);
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>OPTIweb : Documentation Technique</h1>
+<span id="author">DUT/INFO/M3301</span><br />
+<span id="revnumber">version 0.1</span>
+<div id="toc">
+  <div id="toctitle">Table des matières</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph"><p><em>OPTIweb.html</em> est une application HTML de <strong>consultation</strong>
+des projets tutorés gérés par OPTI.</p></div>
+<div class="paragraph"><p><em>OPTIweb.html</em> est compatible avec l&#8217;ensemble des
+navigateurs et supports du moment (PC, tablettes, smartphones).</p></div>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fiche_projet_sprint_4">1. Fiche projet - SPRINT 4</h2>
+<div class="sectionbody">
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Astuce" src="data:image/png;base64,
+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
+9b++GPE5cc9Z5QAAAABJRU5ErkJggg==" />
+</td>
+<td class="content">
+<div class="dlist"><dl>
+<dt class="hdlist1">
+Membres de l'équipe enseignante
+</dt>
+<dd>
+<p>
+Jean-Michel BRUEL, Jean-Michel INGLEBERT, André PÉNINOU et Olivier ROQUES
+</p>
+</dd>
+</dl></div>
+<div class="paragraph"><p><strong>Université Toulouse 2 - IUT de Blagnac</strong></p></div>
+<div class="dlist"><dl>
+<dt class="hdlist1">
+Formation
+</dt>
+<dd>
+<p>
+DUT INFO S3/Module MPA
+</p>
+</dd>
+<dt class="hdlist1">
+Projet
+</dt>
+<dd>
+<p>
+OPTI/OPTIweb
+</p>
+</dd>
+</dl></div>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fonctionnalités_disponibles_sprint_4">2. Fonctionnalités disponibles - SPRINT 4</h2>
+<div class="sectionbody">
+<div class="openblock">
+<div class="title">Application</div>
+<div class="content">
+<div class="ulist"><ul>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux accéder à l&#8217;application OPTIweb depuis tout support fixe ou mobile
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir consulter les projets, les sujets, les étudiants et les intervenants dans des pages séparées
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir consulter le nom des développeurs de l&#8217;application, le nom du Product Owner ainsi que les technologies utilisées
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="openblock">
+<div class="title">Page Projets</div>
+<div class="content">
+<div class="ulist"><ul>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pour chaque projet en voir le nom, le titre, le client, le superviseur, le groupe et les étudiants réalisant le projet
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir rechercher un projet dans la liste des projets en fournissant une chaine de caractère quelconque
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="openblock">
+<div class="title">Page Sujets</div>
+<div class="content">
+<div class="ulist"><ul>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pour chaque sujet en voir le nom, le titre et le ou les noms des groupes d'étudiants réalisant le sujet
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir rechercher un sujet dans la liste des sujets en fournissant une chaine de caractère quelconque
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir sélectionner un sujet et voir les projets réalisant le sujet
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="openblock">
+<div class="title">Page Etudiants</div>
+<div class="content">
+<div class="ulist"><ul>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pour chaque étudiant en voir le nom, le prénom ainsi que son groupe
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir rechercher un étudiant dans la liste des étudiants en fournissant une chaine de caractère quelconque
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir sélectionner un étudiant et voir le projet qu&#8217;il réalise
+</p>
+</li>
+</ul></div>
+</div></div>
+<div class="openblock">
+<div class="title">Page Intervenants</div>
+<div class="content">
+<div class="ulist"><ul>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pour chaque intervenant en voir le nom, le prénom ainsi que le nombre de ses interventions en tant que Client ou Superviseur
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir rechercher un intervenant dans la liste des intervenants en fournissant une chaine de caractère quelconque
+</p>
+</li>
+<li>
+<p>
+En tant qu&#8217;internaute, je veux pouvoir sélectionner un intervenant et voir le(s) projet(s) où il intervient
+</p>
+</li>
+</ul></div>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment_lancer_l_8217_application_optiweb">3. Comment lancer l&#8217;application OPTIweb</h2>
+<div class="sectionbody">
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Sur tout support, charger l&#8217;url suivante dans un navigateur
+<a href="http://algec.iut-blagnac.fr/~jmi/MPA/OPTIweb.html">http://algec.iut-blagnac.fr/~jmi/MPA/OPTIweb.html</a>
+</p>
+</li>
+</ol></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="paragraph"><p>L&#8217;application <em>OPTIweb.html</em> nécessite une connexion Internet
+lors de son lancement.</p></div>
+<div class="paragraph"><p>Une fois chargée dans un navigateur, aucune communication réseau
+n&#8217;est éffectuée : vous pouvez alors travailler hors connexion.</p></div>
+</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment_sauvegarder_l_8217_application_optiweb">4. Comment sauvegarder  l&#8217;application OPTIweb</h2>
+<div class="sectionbody">
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Enregistrer le fichier <em>OPTIweb.html</em> sur votre support (environ 30Ko)
+</p>
+</li>
+<li>
+<p>
+Charger le fichier <em>OPTIweb.html</em> local dans un navigateur pour lancer l&#8217;application (une connexion réseau n&#8217;est requise qu&#8217;au chargement).
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_génération_du_fichier_em_optiweb_html_em">5. Génération du fichier <em>OPTIweb.html</em></h2>
+<div class="sectionbody">
+<div class="paragraph"><p>L&#8217;application de consultation <em>OPTIweb.html</em> est intégralement générée
+par le programme <em>MakeOPTIweb.java</em> qui à partir des fichiers csv (Sujets, Etudiants, Intervenants, Projets &#8230;) fabrique le fichier <em>OPTIweb.html</em>.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Note" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">Le programme <em>MakeOPTIweb.java</em> utilise la librairie de gestion des fichiers csv disponible dans le projet <em>OPTI</em>.</td>
+</tr></table>
+</div>
+<div class="sect2">
+<h3 id="_organisation_du_fichier_em_optiweb_html_em">5.1. Organisation du fichier <em>OPTIweb.html</em></h3>
+<div class="paragraph"><p>Le fichier <em>OPTIweb.html</em> produit par le programme <em>MakeOPTIweb.java</em>
+possède la structure <tt>html/jquery/mobile</tt> suivante :</p></div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;Content-Type&quot;</span> <span class="na">content=</span><span class="s">&quot;text/html; charset=utf-8&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;generator&quot;</span> <span class="na">content=</span><span class="s">&quot;OPTIweb VOPTIweb&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;title&gt;</span>0.1 - V0.1<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css&quot;</span> <span class="nt">/&gt;</span>    <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css&quot;</span> <span class="nt">/&gt;</span>    <span class="c">&lt;!-- <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-1.9.1.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>    <span class="c">&lt;!-- <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>    <span class="c">&lt;!-- <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABzSURBVHja
+HY0hEoUwEEMjkZVYZGVlr1CJxCKRXKPyy28reyVsZeXKsCFi573ZzAQk+x5jaQ6gFQAxIA8XceEN
+ZEN3DkOCH/TobUoSVuAYwSSLyzbvaHWVFJxUmmp+PF+twrLkuXzLwPmZ8+OjtH8KS6pGvuoGNo5b
+6rzDAAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5
+QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADlmODJmY2FjOWUwMzlj
+YmRiNzIzODBhNDU5MTMyNGY1gLv4dgAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSu
+QmCC" /> --&gt;</span>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">&#39;text/css&#39;</span><span class="nt">&gt;</span>    <span class="c">/* <img alt="5" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB2SURBVHja
+FY6hEcQwDAQPChqGGhoaqgWX8PUYBhqGBn4rX0JooKDh/UlsZ3b2BJKXH8XPTYLh1lpt1h+BwxkR
+A23jhsCQd2IkfH9T3HEkzPFegCXUKSUSpJUPsN7UFOgc9VkZUBoz9l0yrVHZarUcJZeb9XznDyNb
+Ny9CX3/7AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jp
+c3R5QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5
+ZWIyNWU1NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElF
+TkSuQmCC" /> */</span>
+<span class="k">@media</span> <span class="nt">all</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="nd">:portrait</span><span class="o">)</span> <span class="p">{</span> <span class="nc">.landscape</span> <span class="p">{</span><span class="k">display</span><span class="o">:</span> <span class="k">none</span><span class="p">;}</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="nt">all</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">orientation</span><span class="nd">:landscape</span><span class="o">)</span> <span class="p">{</span> <span class="nc">.landscape</span> <span class="p">{</span><span class="k">display</span><span class="o">:</span> <span class="k">inline</span><span class="p">;}</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;&lt;body&gt;</span>
+
+    <span class="c">&lt;!-- <img alt="6" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB9SURBVHja
+FY0hEsMwDAQXChaaBgoG+guB/UZhvlAYWFhqmCeUBvoJoYaCgqrMbudu9oiI86m6tQyEb1AU6kjI
+3GxcQnVO2K0Uq/Ahi6tpFWClwLDe+wNkwt0R2yfk7Negv+csw8uWZR4c+NS4Z6FOTKmkTO88Df9W
+kfXwiD+zczjqCrgbWQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4
+LzAxIGNyaXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVk
+NzE3NmQ2N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27
+fQAAAABJRU5ErkJggg==" /> --&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>    <span class="c1">// <img alt="7" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABySURBVHja
+JY6tAYUwDIRPViJZIbKyFoms7EyVT74VkJWswQpIZOSRK4lIvuTyA5Kjmu2Hk6DXZQ1fyh3QcESX
+F7LjhGy9G/BDmzBUK8jKqyukD66BCZIVVkGGat2ToIN7jE+VOfhscx9MR8l/Scl6vPMCPjYxv0cQ
+VlMAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlA
+bXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAMjk4MzY4MTQyYWM0M2Nl
+YmQyNTg2ZDhkMTEzN2M4ZGYmOemZAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5C
+YII=" /></span>
+ <span class="c1">// li click handler which fills the projects search bar</span>
+ <span class="c1">// with the value of the current data-find attribute</span>
+ <span class="nx">$</span><span class="p">(</span> <span class="s1">&#39;li[data-find]&#39;</span> <span class="p">).</span><span class="nx">on</span><span class="p">(</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#autocomplete-input-projet&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-find&#39;</span><span class="p">)).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">);</span>
+ <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div></div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+css font-awesome
+</td></tr>
+<tr><td><img alt="2" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /></td><td>
+css jquery-mobile
+</td></tr>
+<tr><td><img alt="3" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /></td><td>
+javascript jquery
+</td></tr>
+<tr><td><img alt="4" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABzSURBVHja
+HY0hEoUwEEMjkZVYZGVlr1CJxCKRXKPyy28reyVsZeXKsCFi573ZzAQk+x5jaQ6gFQAxIA8XceEN
+ZEN3DkOCH/TobUoSVuAYwSSLyzbvaHWVFJxUmmp+PF+twrLkuXzLwPmZ8+OjtH8KS6pGvuoGNo5b
+6rzDAAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5
+QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADlmODJmY2FjOWUwMzlj
+YmRiNzIzODBhNDU5MTMyNGY1gLv4dgAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSu
+QmCC" /></td><td>
+javascript jquery mobile
+</td></tr>
+<tr><td><img alt="5" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB2SURBVHja
+FY6hEcQwDAQPChqGGhoaqgWX8PUYBhqGBn4rX0JooKDh/UlsZ3b2BJKXH8XPTYLh1lpt1h+BwxkR
+A23jhsCQd2IkfH9T3HEkzPFegCXUKSUSpJUPsN7UFOgc9VkZUBoz9l0yrVHZarUcJZeb9XznDyNb
+Ny9CX3/7AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jp
+c3R5QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5
+ZWIyNWU1NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElF
+TkSuQmCC" /></td><td>
+css de gestion des classes d&#8217;orientation du support
+</td></tr>
+<tr><td><img alt="6" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB9SURBVHja
+FY0hEsMwDAQXChaaBgoG+guB/UZhvlAYWFhqmCeUBvoJoYaCgqrMbudu9oiI86m6tQyEb1AU6kjI
+3GxcQnVO2K0Uq/Ahi6tpFWClwLDe+wNkwt0R2yfk7Negv+csw8uWZR4c+NS4Z6FOTKmkTO88Df9W
+kfXwiD+zczjqCrgbWQAAAEN0RVh0U29mdHdhcmUAQCgjKUltYWdlTWFnaWNrIDQuMi44IDk5LzA4
+LzAxIGNyaXN0eUBteXN0aWMuZXMuZHVwb250LmNvbZG6IbgAAAAqdEVYdFNpZ25hdHVyZQBkMjVk
+NzE3NmQ2N2EwMzhhZmMxYzU2NTU4ZTNkZmIxYf0Q9bUAAAAOdEVYdFBhZ2UAMTJ4MTIrMCswhG27
+fQAAAABJRU5ErkJggg==" /></td><td>
+Les pages #accueil, #credits, #projets, #sujets, #etudiants et #intervenants sont placées ici
+</td></tr>
+<tr><td><img alt="7" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABySURBVHja
+JY6tAYUwDIRPViJZIbKyFoms7EyVT74VkJWswQpIZOSRK4lIvuTyA5Kjmu2Hk6DXZQ1fyh3QcESX
+F7LjhGy9G/BDmzBUK8jKqyukD66BCZIVVkGGat2ToIN7jE+VOfhscx9MR8l/Scl6vPMCPjYxv0cQ
+VlMAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlA
+bXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAMjk4MzY4MTQyYWM0M2Nl
+YmQyNTg2ZDhkMTEzN2M4ZGYmOemZAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5C
+YII=" /></td><td>
+handler jquery de sélection des projets depuis les pages #sujets, #etudiants ou #intervenants
+</td></tr>
+</table></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optiweb_page_d_8217_accueil">6. OPTIweb : Page d&#8217;Accueil</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>La Page d&#8217;Accueil permet d&#8217;accéder :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+à la page <em>Projets</em> : <tt>OPTIweb.html#projets</tt>
+</p>
+</li>
+<li>
+<p>
+à la page <em>Sujets</em> : <tt>OPTIweb.html#sujets</tt>
+</p>
+</li>
+<li>
+<p>
+à la page <em>Etudiants</em> : <tt>OPTIweb.html#etudiants</tt>
+</p>
+</li>
+<li>
+<p>
+à la page <em>Intervenants</em> : <tt>OPTIweb.html#intervenants</tt>
+</p>
+</li>
+<li>
+<p>
+à la page <em>Crédits</em> : <tt>OPTIweb.html#credits</tt>
+</p>
+</li>
+</ol></div>
+<div class="sect2">
+<h3 id="_contenu_de_la_page_d_8217_accueil">6.1. Contenu de la page d&#8217;accueil</h3>
+<div class="paragraph"><p>Le programme <em>MakeOPTIweb.java</em> produit pour la page d&#8217;accueil le code <tt>html/jquery/mobile</tt> suivant :</p></div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="c">&lt;!-- DEBUT page accueil --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">id=</span><span class="s">&quot;accueil&quot;</span> <span class="na">data-title=</span><span class="s">&quot;OPTIweb - V0.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span> <span class="na">data-add-back-btn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h1&gt;</span>P<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>rojets <span class="nt">&lt;/span&gt;</span>tut<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>orés<span class="nt">&lt;/span&gt;</span> 2014-2015<span class="nt">&lt;br/&gt;</span>Département INFO<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>RMATIQUE<span class="nt">&lt;/span&gt;&lt;br/&gt;</span>IUT de Blagnac<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#credits&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;b&quot;</span> <span class="na">class=</span><span class="s">&quot;ui-btn-right&quot;</span><span class="nt">&gt;</span>Crédits<span class="nt">&lt;/a&gt;</span>   <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;listeSources&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#projets&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-tasks&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> Projets<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>   <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#sujets&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-copy&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> Sujets<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>   <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#etudiants&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-group&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> Etudiants<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>   <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#intervenants&quot;</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-group&quot;</span><span class="nt">&gt;&lt;/i&gt;</span> Intervenants<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>   <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;footer&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;h4&gt;</span>OPTIweb V<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>ersion <span class="nt">&lt;/span&gt;</span>0.1 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa- fa-2x&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- FIN page accueil --&gt;</span>
+</pre></div></div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+lien de navigation vers la page cible
+</td></tr>
+</table></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optiweb_page_projets">7. OPTIweb : Page Projets</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>La Page Projets présente par défaut dans <strong>une liste numérotée</strong> l&#8217;ensemble des projets tutorés
+de l&#8217;année en indiquant leur nom, leur titre, leur client, leur superviseur et leur groupe d'étudiants.</p></div>
+<div class="sect2">
+<h3 id="_contenu_de_la_page_projets">7.1. Contenu de la page Projets</h3>
+<div class="paragraph"><p>Le programme <em>MakeOPTIweb.java</em> produit pour la page <tt>#projets</tt> le code <tt>html/jquery/mobile</tt> suivant :</p></div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="c">&lt;!-- DEBUT page projets --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">id=</span><span class="s">&quot;projets&quot;</span> <span class="na">data-title=</span><span class="s">&quot;OPTIweb - V0.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span> <span class="na">data-add-back-btn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Projets 2014-2015<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;ui-filterable&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;autocomplete-input-projet&quot;</span> <span class="na">name=</span><span class="s">&quot;projet&quot;</span> <span class="na">data-type=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Vous cherchez ?...&quot;</span><span class="nt">&gt;</span>   <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;ol</span> <span class="na">id=</span><span class="s">&quot;listeprojets&quot;</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span> <span class="na">data-filter=</span><span class="s">&quot;true&quot;</span> <span class="na">data-filter-reveal=</span><span class="s">&quot;false&quot;</span> <span class="na">data-input=</span><span class="s">&quot;#autocomplete-input-projet&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;</span>   <span class="c">&lt;!-- <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+<span class="nt">&lt;b&gt;</span>[Archeologie]<span class="nt">&lt;/b&gt;</span> Groupe de recherche Chasséen Méridional
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+<span class="nt">&lt;b&gt;</span>Client :<span class="nt">&lt;/b&gt;</span> TISSIER Evelyne
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+<span class="nt">&lt;b&gt;</span>Superviseur :<span class="nt">&lt;/b&gt;</span> CANUT Marie-Françoise
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;p&gt;</span>
+<span class="nt">&lt;b&gt;</span>Groupe A :<span class="nt">&lt;/b&gt;</span> Etienne LARROUY - Victor PINQUIER - Antoine RIVALIER - Jean-Sebastien TRILLE -
+<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="c">&lt;!-- <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;footer&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;h4&gt;</span>OPTIweb V<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>ersion <span class="nt">&lt;/span&gt;</span>0.1 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-tasks fa-2x&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- FIN page projets --&gt;</span>
+</pre></div></div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Champ de recherche
+</td></tr>
+<tr><td><img alt="2" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /></td><td>
+Item du premier projet
+</td></tr>
+<tr><td><img alt="3" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /></td><td>
+Les autres projets sont placés ici
+</td></tr>
+</table></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optiweb_page_sujets">8. OPTIweb : Page Sujets</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>La Page Sujets présente par défaut l&#8217;ensemble des Sujets
+de l&#8217;année en indiquant leur nom, leur titre et le ou les groupe(s) d'étudiants qui le réalise(nt).</p></div>
+<div class="sect2">
+<h3 id="_contenu_de_la_page_sujets">8.1. Contenu de la page Sujets</h3>
+<div class="paragraph"><p>Le programme <em>MakeOPTIweb.java</em> produit pour la page <tt>#sujets</tt> le code <tt>html/jquery/mobile</tt> suivant :</p></div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="c">&lt;!-- DEBUT page sujets --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">id=</span><span class="s">&quot;sujets&quot;</span> <span class="na">data-title=</span><span class="s">&quot;OPTIweb - V0.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span> <span class="na">data-add-back-btn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Sujets 2014-2015<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;ui-filterable&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;autocomplete-input-sujet&quot;</span> <span class="na">name=</span><span class="s">&quot;sujet&quot;</span> <span class="na">data-type=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Vous cherchez ?&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;ol</span> <span class="na">id=</span><span class="s">&quot;listesujets&quot;</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span> <span class="na">data-filter=</span><span class="s">&quot;true&quot;</span> <span class="na">data-filter-reveal=</span><span class="s">&quot;false&quot;</span> <span class="na">data-input=</span><span class="s">&quot;#autocomplete-input-sujet&quot;</span> <span class="na">data-divider-theme=</span><span class="s">&quot;b&quot;</span> <span class="na">data-count-theme=</span><span class="s">&quot;a&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">data-role=</span><span class="s">&quot;list-divider&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /> --&gt;</span>
+Sujet<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ui-li-count&quot;</span> <span class="na">title=</span><span class="s">&quot;Groupe&quot;</span> <span class="na">style=</span><span class="s">&quot;right: 40px !important;&quot;</span><span class="nt">&gt;</span>Groupe<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">data-find=</span><span class="s">&quot;[ApexEComm]&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABzSURBVHja
+HY0hEoUwEEMjkZVYZGVlr1CJxCKRXKPyy28reyVsZeXKsCFi573ZzAQk+x5jaQ6gFQAxIA8XceEN
+ZEN3DkOCH/TobUoSVuAYwSSLyzbvaHWVFJxUmmp+PF+twrLkuXzLwPmZ8+OjtH8KS6pGvuoGNo5b
+6rzDAAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5
+QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADlmODJmY2FjOWUwMzlj
+YmRiNzIzODBhNDU5MTMyNGY1gLv4dgAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSu
+QmCC" /> --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#projets&quot;</span><span class="nt">&gt;</span>[ApexEComm] <span class="nt">&lt;br/&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;white-space:normal;&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;span&gt;&lt;b&gt;</span>Application et tutoriel Oracle Apex pour un site d&#39;e-commerce<span class="nt">&lt;/b&gt;</span>
+<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;ui-li-count&quot;</span><span class="nt">&gt;</span>I<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="c">&lt;!-- <img alt="5" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB2SURBVHja
+FY6hEcQwDAQPChqGGhoaqgWX8PUYBhqGBn4rX0JooKDh/UlsZ3b2BJKXH8XPTYLh1lpt1h+BwxkR
+A23jhsCQd2IkfH9T3HEkzPFegCXUKSUSpJUPsN7UFOgc9VkZUBoz9l0yrVHZarUcJZeb9XznDyNb
+Ny9CX3/7AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jp
+c3R5QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5
+ZWIyNWU1NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElF
+TkSuQmCC" /> --&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;footer&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;h4&gt;</span>OPTIweb V<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>ersion <span class="nt">&lt;/span&gt;</span>0.1 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-copy fa-2x&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- FIN page sujets --&gt;</span>
+</pre></div></div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Bouton de retour à la page d&#8217;accueil
+</td></tr>
+<tr><td><img alt="2" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /></td><td>
+Champ de recherche
+</td></tr>
+<tr><td><img alt="3" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /></td><td>
+Item d&#8217;entête de liste
+</td></tr>
+<tr><td><img alt="4" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABzSURBVHja
+HY0hEoUwEEMjkZVYZGVlr1CJxCKRXKPyy28reyVsZeXKsCFi573ZzAQk+x5jaQ6gFQAxIA8XceEN
+ZEN3DkOCH/TobUoSVuAYwSSLyzbvaHWVFJxUmmp+PF+twrLkuXzLwPmZ8+OjtH8KS6pGvuoGNo5b
+6rzDAAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5
+QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADlmODJmY2FjOWUwMzlj
+YmRiNzIzODBhNDU5MTMyNGY1gLv4dgAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSu
+QmCC" /></td><td>
+Item du premier sujet et chaine de sélection dans les projets (cf <a href="#Handler-de-Selection">Handler de sélection des projets correspondants</a>)
+</td></tr>
+<tr><td><img alt="5" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB2SURBVHja
+FY6hEcQwDAQPChqGGhoaqgWX8PUYBhqGBn4rX0JooKDh/UlsZ3b2BJKXH8XPTYLh1lpt1h+BwxkR
+A23jhsCQd2IkfH9T3HEkzPFegCXUKSUSpJUPsN7UFOgc9VkZUBoz9l0yrVHZarUcJZeb9XznDyNb
+Ny9CX3/7AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jp
+c3R5QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5
+ZWIyNWU1NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElF
+TkSuQmCC" /></td><td>
+Les autres sujets sont placés ici
+</td></tr>
+</table></div>
+</div>
+<div class="sect2">
+<h3 id="_optiweb_sélectionner_un_sujet">8.2. OPTIweb : Sélectionner un sujet</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Dans la liste des sujets, Cliquer sur la ligne correspondant au sujet choisi
+</p>
+</li>
+<li>
+<p>
+L&#8217;ensemble des projets réalisant le sujet sélectionné est alors fourni
+</p>
+</li>
+</ol></div>
+<div class="sect3">
+<h4 id="Handler-de-Selection">8.2.1. Handler de Sélection des projets correspondants</h4>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<img alt="Astuce" src="data:image/png;base64,
+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" />
+</td>
+<td class="content">
+<div class="title">Principe</div>
+<div class="paragraph"><p>La sélection d&#8217;un item provoque la saisie d&#8217;une chaine de recherche
+dans le champ de recherche des projets.</p></div>
+</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>La sélection des projets correspondants à l&#8217;item choisi des pages <em>#sujets</em>, <em>#etudiants</em> ou <em>#intervenants</em> s&#8217;effectue ainsi :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+L&#8217;action <tt>click</tt> sur les items (<tt>li</tt>) comportant 1 attribut <tt>data-find</tt>
+</p>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span> <span class="s1">&#39;li[data-find]&#39;</span> <span class="p">).</span><span class="nx">on</span><span class="p">(</span> <span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="kd">function</span>
+</pre></div></div></div>
+</li>
+<li>
+<p>
+exécute le code (l&#8217;handler) suivant :
+</p>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#autocomplete-input-projet&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-find&#39;</span><span class="p">)).</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;change&#39;</span><span class="p">);</span>
+</pre></div></div></div>
+<div class="openblock">
+<div class="content">
+<div class="paragraph"><p>qui place le contenu actuel de l&#8217;attribut <tt>data-find</tt> dans le champs <tt>input</tt> de recherche des projets d&#8217;id <tt>autocomplete-input-projet</tt>, puis valide la modification.</p></div>
+</div></div>
+</li>
+<li>
+<p>
+L&#8217;affichage de la page <em>#projets</em> qui résulte de l&#8217;action standard sur l&#8217;item, n&#8217;affichera que les projets sélectionnés.
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optiweb_page_etudiants">9. OPTIweb : Page Etudiants</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>La Page Etudiants présente par défaut l&#8217;ensemble des Etudiants
+de l&#8217;année dans une liste numérotée en indiquant leur nom, leur prénom et leur groupe.</p></div>
+<div class="sect2">
+<h3 id="_contenu_de_la_page_etudiants">9.1. Contenu de la page Etudiants</h3>
+<div class="paragraph"><p>Le programme <em>MakeOPTIweb.java</em> produit pour la page <tt>#etudiants</tt> le code <tt>html/jquery/mobile</tt> suivant :</p></div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="c">&lt;!-- DEBUT page etudiants --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">id=</span><span class="s">&quot;etudiants&quot;</span> <span class="na">data-title=</span><span class="s">&quot;OPTIweb - V0.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span> <span class="na">data-add-back-btn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Etudiants 2014-2015<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;ui-filterable&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;autocomplete-input-etudiant&quot;</span> <span class="na">name=</span><span class="s">&quot;etudiant&quot;</span> <span class="na">data-type=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Etudiant ou Groupe X&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;ol</span> <span class="na">id=</span><span class="s">&quot;listeetudiants&quot;</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span> <span class="na">data-filter=</span><span class="s">&quot;true&quot;</span> <span class="na">data-filter-reveal=</span><span class="s">&quot;false&quot;</span> <span class="na">data-input=</span><span class="s">&quot;#autocomplete-input-etudiant&quot;</span> <span class="na">data-divider-theme=</span><span class="s">&quot;b&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">data-role=</span><span class="s">&quot;list-divider&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /> --&gt;</span>
+Etudiant<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ui-li-count&quot;</span> <span class="na">title=</span><span class="s">&quot;Groupe&quot;</span> <span class="na">style=</span><span class="s">&quot;right: 40px !important;&quot;</span><span class="nt">&gt;</span>Groupe<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">data-find=</span><span class="s">&quot;Arnauld ALEX&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABzSURBVHja
+HY0hEoUwEEMjkZVYZGVlr1CJxCKRXKPyy28reyVsZeXKsCFi573ZzAQk+x5jaQ6gFQAxIA8XceEN
+ZEN3DkOCH/TobUoSVuAYwSSLyzbvaHWVFJxUmmp+PF+twrLkuXzLwPmZ8+OjtH8KS6pGvuoGNo5b
+6rzDAAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5
+QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADlmODJmY2FjOWUwMzlj
+YmRiNzIzODBhNDU5MTMyNGY1gLv4dgAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSu
+QmCC" /> --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#projets&quot;</span><span class="nt">&gt;</span>ALEX Arnauld<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ui-li-count&quot;</span> <span class="na">title=</span><span class="s">&quot;Groupe&quot;</span><span class="nt">&gt;</span>Groupe F<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="c">&lt;!-- <img alt="5" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB2SURBVHja
+FY6hEcQwDAQPChqGGhoaqgWX8PUYBhqGBn4rX0JooKDh/UlsZ3b2BJKXH8XPTYLh1lpt1h+BwxkR
+A23jhsCQd2IkfH9T3HEkzPFegCXUKSUSpJUPsN7UFOgc9VkZUBoz9l0yrVHZarUcJZeb9XznDyNb
+Ny9CX3/7AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jp
+c3R5QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5
+ZWIyNWU1NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElF
+TkSuQmCC" /> --&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;footer&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;h4&gt;</span>OPTIweb V<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>ersion <span class="nt">&lt;/span&gt;</span>0.1 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-group fa-2x&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- FIN page etudiants --&gt;</span>
+</pre></div></div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Bouton de retour à la page d&#8217;accueil
+</td></tr>
+<tr><td><img alt="2" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /></td><td>
+Champ de recherche
+</td></tr>
+<tr><td><img alt="3" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /></td><td>
+Item d&#8217;entête de liste
+</td></tr>
+<tr><td><img alt="4" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABzSURBVHja
+HY0hEoUwEEMjkZVYZGVlr1CJxCKRXKPyy28reyVsZeXKsCFi573ZzAQk+x5jaQ6gFQAxIA8XceEN
+ZEN3DkOCH/TobUoSVuAYwSSLyzbvaHWVFJxUmmp+PF+twrLkuXzLwPmZ8+OjtH8KS6pGvuoGNo5b
+6rzDAAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5
+QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADlmODJmY2FjOWUwMzlj
+YmRiNzIzODBhNDU5MTMyNGY1gLv4dgAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSu
+QmCC" /></td><td>
+Item du premier étudiant et chaine de sélection dans les projets
+</td></tr>
+<tr><td><img alt="5" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB2SURBVHja
+FY6hEcQwDAQPChqGGhoaqgWX8PUYBhqGBn4rX0JooKDh/UlsZ3b2BJKXH8XPTYLh1lpt1h+BwxkR
+A23jhsCQd2IkfH9T3HEkzPFegCXUKSUSpJUPsN7UFOgc9VkZUBoz9l0yrVHZarUcJZeb9XznDyNb
+Ny9CX3/7AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jp
+c3R5QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5
+ZWIyNWU1NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElF
+TkSuQmCC" /></td><td>
+Les autres étudiants sont placés ici
+</td></tr>
+</table></div>
+</div>
+<div class="sect2">
+<h3 id="_optiweb_sélectionner_un_étudiant">9.2. OPTIweb : Sélectionner un étudiant</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Dans la liste des étudiants, Cliquer sur la ligne correspondant à l'étudiant choisi
+</p>
+</li>
+<li>
+<p>
+Le projet réalisé par l'étudiant sélectionné est alors fourni
+</p>
+<div class="paragraph"><p>Voir : <a href="#Handler-de-Selection">Handler de sélection des projets correspondants</a></p></div>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optiweb_page_intervenants">10. OPTIweb : Page Intervenants</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>La Page Intervenants présente par défaut l&#8217;ensemble des Intervenants
+de l&#8217;année en indiquant leur nom, leur prénom et le nombre de fois où ils sont Client ou Superviseur.</p></div>
+<div class="sect2">
+<h3 id="_contenu_de_la_page_intervenants">10.1. Contenu de la page Intervenants</h3>
+<div class="paragraph"><p>Le programme <em>MakeOPTIweb.java</em> produit pour la page <tt>#intervenants</tt> le code <tt>html/jquery/mobile</tt> suivant :</p></div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="c">&lt;!-- DEBUT page intervenants --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">id=</span><span class="s">&quot;intervenants&quot;</span> <span class="na">data-title=</span><span class="s">&quot;OPTIweb - V0.1&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span> <span class="na">data-add-back-btn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Intervenants 2014-2015<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;ui-filterable&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;autocomplete-input-intervenant&quot;</span> <span class="na">name=</span><span class="s">&quot;intervenant&quot;</span> <span class="na">data-type=</span><span class="s">&quot;search&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Intervenant&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="2" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">id=</span><span class="s">&quot;listeintervenants&quot;</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span> <span class="na">data-filter=</span><span class="s">&quot;true&quot;</span> <span class="na">data-filter-reveal=</span><span class="s">&quot;false&quot;</span> <span class="na">data-input=</span><span class="s">&quot;#autocomplete-input-intervenant&quot;</span> <span class="na">data-divider-theme=</span><span class="s">&quot;b&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">data-role=</span><span class="s">&quot;list-divider&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="3" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /> --&gt;</span>
+Intervenant<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ui-li-count&quot;</span> <span class="na">style=</span><span class="s">&quot;right: 110px !important;&quot;</span> <span class="na">title=</span><span class="s">&quot;Client&quot;</span><span class="nt">&gt;</span>Client<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;ui-li-count&quot;</span> <span class="na">title=</span><span class="s">&quot;Superviseur&quot;</span><span class="nt">&gt;</span>Superviseur<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">data-find=</span><span class="s">&quot;BRUEL Jean-Michel&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="4" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABzSURBVHja
+HY0hEoUwEEMjkZVYZGVlr1CJxCKRXKPyy28reyVsZeXKsCFi573ZzAQk+x5jaQ6gFQAxIA8XceEN
+ZEN3DkOCH/TobUoSVuAYwSSLyzbvaHWVFJxUmmp+PF+twrLkuXzLwPmZ8+OjtH8KS6pGvuoGNo5b
+6rzDAAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5
+QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADlmODJmY2FjOWUwMzlj
+YmRiNzIzODBhNDU5MTMyNGY1gLv4dgAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSu
+QmCC" /> --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#projets&quot;</span><span class="nt">&gt;</span>
+BRUEL Jean-Michel
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ui-li-count&quot;</span> <span class="na">style=</span><span class="s">&quot;right: 120px !important;&quot;</span> <span class="na">title=</span><span class="s">&quot;Client&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;ui-li-count&quot;</span> <span class="na">title=</span><span class="s">&quot;Superviseur&quot;</span><span class="nt">&gt;</span>0<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/li&gt;</span>
+<span class="c">&lt;!-- <img alt="5" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB2SURBVHja
+FY6hEcQwDAQPChqGGhoaqgWX8PUYBhqGBn4rX0JooKDh/UlsZ3b2BJKXH8XPTYLh1lpt1h+BwxkR
+A23jhsCQd2IkfH9T3HEkzPFegCXUKSUSpJUPsN7UFOgc9VkZUBoz9l0yrVHZarUcJZeb9XznDyNb
+Ny9CX3/7AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jp
+c3R5QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5
+ZWIyNWU1NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElF
+TkSuQmCC" /> --&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;footer&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;h4&gt;</span>OPTIweb V<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>ersion <span class="nt">&lt;/span&gt;</span>0.1 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa-group fa-2x&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- FIN page intervenants --&gt;</span>
+</pre></div></div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Bouton de retour à la page d&#8217;accueil
+</td></tr>
+<tr><td><img alt="2" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB7SURBVHja
+HY6hFcMwDEQ/NDQsNSwU9Apdo7Cw0CsIBoZmhKzQEQJLDQsFVclHpHu693W429Zr7bu541Pg3kCm
+Y0K75u9TEUPhuGgWU4mQDvieEaSQEnsT6zKPeZY0EUNtrHMCXvYUuSUg0PsMjUSvpysUT6OOSil9
+izp/VNk1YJ8vf6MAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8w
+MSBjcmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBlYWU1
+MjljOTRhN2Y0N2RlY2NmYWRhMjhhY2I5ZGblb7ENAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30A
+AAAASUVORK5CYII=" /></td><td>
+Champ de recherche
+</td></tr>
+<tr><td><img alt="3" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB4SURBVHja
+JU6rFcNADBM09BqBhl6ltDCwKxQeDOwKB7tGYGCoYaChK6cmlt7TD1W5uap/sgoVBnEXWBTSoOdx
+7gpLDOAVorWC0ABdcBPqwZtx8Muf+DPXJpQ96Nu/LSMYl/n17oCOnplTOrpiwW3sUs4ZJmob5/wA
+Ubg1Y/zrjUwAAABDdEVYdFNvZnR3YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBj
+cmlzdHlAbXlzdGljLmVzLmR1cG9udC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUAODBiYmRhMjcy
+NmRkYWNlOGFiOGEwMWY1OWRlMmViZGII/Q51AAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAA
+SUVORK5CYII=" /></td><td>
+Item d&#8217;entête de liste
+</td></tr>
+<tr><td><img alt="4" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABzSURBVHja
+HY0hEoUwEEMjkZVYZGVlr1CJxCKRXKPyy28reyVsZeXKsCFi573ZzAQk+x5jaQ6gFQAxIA8XceEN
+ZEN3DkOCH/TobUoSVuAYwSSLyzbvaHWVFJxUmmp+PF+twrLkuXzLwPmZ8+OjtH8KS6pGvuoGNo5b
+6rzDAAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jpc3R5
+QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlADlmODJmY2FjOWUwMzlj
+YmRiNzIzODBhNDU5MTMyNGY1gLv4dgAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElFTkSu
+QmCC" /></td><td>
+Item du premier intervenant et chaine de sélection dans les projets
+</td></tr>
+<tr><td><img alt="5" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAAB2SURBVHja
+FY6hEcQwDAQPChqGGhoaqgWX8PUYBhqGBn4rX0JooKDh/UlsZ3b2BJKXH8XPTYLh1lpt1h+BwxkR
+A23jhsCQd2IkfH9T3HEkzPFegCXUKSUSpJUPsN7UFOgc9VkZUBoz9l0yrVHZarUcJZeb9XznDyNb
+Ny9CX3/7AAAAQ3RFWHRTb2Z0d2FyZQBAKCMpSW1hZ2VNYWdpY2sgNC4yLjggOTkvMDgvMDEgY3Jp
+c3R5QG15c3RpYy5lcy5kdXBvbnQuY29tkbohuAAAACp0RVh0U2lnbmF0dXJlAGZlNjkwNDYzMzc5
+ZWIyNWU1NjJmY2M4Y2M5YjNjN2Uw37I5ngAAAA50RVh0UGFnZQAxMngxMiswKzCEbbt9AAAAAElF
+TkSuQmCC" /></td><td>
+Les autres intervenants sont placés ici
+</td></tr>
+</table></div>
+</div>
+<div class="sect2">
+<h3 id="_optiweb_sélectionner_un_intervenant">10.2. OPTIweb : Sélectionner un Intervenant</h3>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Dans la liste des intervenants, Cliquer sur la ligne correspondant à l&#8217;intervenant choisi
+</p>
+</li>
+<li>
+<p>
+La liste des projets où l&#8217;intervenant sélectionné participe est alors fournie
+</p>
+<div class="paragraph"><p>Voir : <a href="#Handler-de-Selection">Handler de sélection des projets correspondants</a></p></div>
+</li>
+</ol></div>
+</div>
+<div class="sect2">
+<h3 id="_optiweb_rechercher_un_intervenant">10.3. OPTIweb : Rechercher un Intervenant</h3>
+<div class="paragraph"><p>Pour rechercher un intervenant particulier :</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+Saisir une chaine dans le champ de recherche
+</p>
+</li>
+<li>
+<p>
+L&#8217;ensemble des intervenants contenant la chaine saisie est alors fourni
+</p>
+</li>
+</ol></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optiweb_page_crédits">11. OPTIweb : Page Crédits</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>La Page Crédits permet d&#8217;accéder de consluter le nom du Product Owner, le nom des développeurs de l’application ainsi que les technologies utilisées.</p></div>
+<div class="sect2">
+<h3 id="_contenu_de_la_page_crédits">11.1. Contenu de la page Crédits</h3>
+<div class="paragraph"><p>Le programme <em>MakeOPTIweb.java</em> produit pour la page <em>#credits</em> le code <tt>html/jquery/mobile</tt> suivant :</p></div>
+<div class="listingblock">
+<div class="content"><div class="highlight"><pre><span class="c">&lt;!-- DEBUT page credits --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;page&quot;</span> <span class="na">id=</span><span class="s">&quot;credits&quot;</span> <span class="na">data-title=</span><span class="s">&quot;OPTIweb - V0.1 - Crédits&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;header&quot;</span> <span class="na">data-add-back-btn=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>    <span class="c">&lt;!-- <img alt="1" src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /> --&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Crédits<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;p&gt;</span>Cette application a été réalisée dans le cadre du module M3301/MPA du DUT Informatique à l&#39;IUT de Blagnac.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;contacts&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span> <span class="na">data-divider-theme=</span><span class="s">&quot;b&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">data-role=</span><span class="s">&quot;list-divider&quot;</span><span class="nt">&gt;</span>Product Owner<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>André PÉNINOU<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Université Toulouse 2 - IUT de Blagnac
+    <span class="nt">&lt;br/&gt;</span>Département INFORMATIQUE<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;listecredits&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span> <span class="na">data-divider-theme=</span><span class="s">&quot;b&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">data-role=</span><span class="s">&quot;list-divider&quot;</span><span class="nt">&gt;</span>Membres de l&#39;équipe enseignante<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;</span>Jean-Michel BRUEL<span class="nt">&lt;/li&gt;&lt;li&gt;</span>Jean-Michel INGLEBERT<span class="nt">&lt;/li&gt;&lt;li&gt;</span>André PÉNINOU<span class="nt">&lt;/li&gt;&lt;li&gt;</span>Olivier ROQUES<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">data-role=</span><span class="s">&quot;listview&quot;</span> <span class="na">data-inset=</span><span class="s">&quot;true&quot;</span> <span class="na">id=</span><span class="s">&quot;listepowered&quot;</span> <span class="na">data-theme=</span><span class="s">&quot;a&quot;</span> <span class="na">data-divider-theme=</span><span class="s">&quot;b&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li</span> <span class="na">data-role=</span><span class="s">&quot;list-divider&quot;</span><span class="nt">&gt;</span>Propulsé par<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://jquerymobile.com/&quot;</span> <span class="na">target=</span><span class="s">&quot;autrePage&quot;</span><span class="nt">&gt;</span>http://jquerymobile.com/<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://fortawesome.github.io/Font-Awesome/&quot;</span> <span class="na">target=</span><span class="s">&quot;autrePage&quot;</span><span class="nt">&gt;</span>http://fortawesome.github.io/Font-Awesome/<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">&quot;footer&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h4&gt;</span>OPTIweb V<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;landscape&quot;</span><span class="nt">&gt;</span>ersion <span class="nt">&lt;/span&gt;</span>0.1 <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">&quot;fa fa- fa-2x&quot;</span><span class="nt">&gt;&lt;/i&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- FIN page credits --&gt;</span>
+</pre></div></div></div>
+<div class="colist arabic"><table>
+<tr><td><img alt="1" src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAAAAABzHgM7AAAAAmJLR0QAAKqNIzIAAABjSURBVHja
+VY6xDcAwCAS/pPQaLim9QmajdOk2I2SNrMEIlARIoigU8Cek/4e7zdHaWOYOVwaoA6wOCw05Y7FB
+gE0tIWQ+sBcwKM8qoD/wB5wGL8hjfdzWrh01GRp1hInGjDoXwHgsFuzBVLQAAABDdEVYdFNvZnR3
+YXJlAEAoIylJbWFnZU1hZ2ljayA0LjIuOCA5OS8wOC8wMSBjcmlzdHlAbXlzdGljLmVzLmR1cG9u
+dC5jb22RuiG4AAAAKnRFWHRTaWduYXR1cmUANThhMDcyZTA3MGRhMjJmNjEzNWNiZDNlNDE0NTQ2
+ZjloaiHtAAAADnRFWHRQYWdlADEyeDEyKzArMIRtu30AAAAASUVORK5CYII=" /></td><td>
+Bouton de retour à la page d&#8217;accueil
+</td></tr>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Version 0.1<br />
+Dernière mise à jour 2014-10-19 19:36:54 Paris, Madrid (heure d’été)
+</div>
+<div id="footer-badges">
+<a href="http://validator.w3.org/check?uri=referer">
+  <img style="border:0;width:88px;height:31px"
+    src="http://www.w3.org/Icons/valid-xhtml11-blue"
+    alt="Valid XHTML 1.1" height="31" width="88" />
+</a>
+<a href="http://jigsaw.w3.org/css-validator/">
+  <img style="border:0;width:88px;height:31px"
+    src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+    alt="Valid CSS!" />
+</a>
+</div>
+</div>
+</body>
+</html>

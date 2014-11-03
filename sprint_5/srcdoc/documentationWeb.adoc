@@ -1,0 +1,91 @@
+﻿= OPTIweb : Documentation 
+:Author:  Groupe projet 1B1 
+
+:doctitle: Documentation Technique du Projet OPTI MPA-M3301-G1B12
+
+:slideshowlocation: Your computer
+
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
+:revnumber: 0
+
+:lang: fr
+include::docConf.txt[]
+*********************
+*OPTIweb.java* est une application java permettant de créer un fichier html à partir des fichiers csv.
+
+*********************
+
+== Fiche projet - SPRINT 4
+
+[TIP]
+====
+Membres de l'équipe étudiante:: Serge Molina, Florian Garibal, Bilal El-Yassem, Julien Cordeau, Abdellah Zarioh et Pierre Jeanjean
+
+*Université Toulouse 2 - IUT de Blagnac*
+
+Formation:: DUT INFO S3/Module MPA
+Projet:: OPTI/OPTIweb
+====
+
+== Fonctionnalités disponibles - SPRINT 4
+
+.Application
+--
+- En tant qu'internaute, je veux accéder à l'application OPTIweb depuis tout support fixe ou mobile
+- En tant qu'internaute, je veux pouvoir consulter les projets, les sujets, les étudiants et les intervenants dans des pages séparées
+- En tant qu'internaute, je veux pouvoir consulter le nom des développeurs de l'application, le nom du Product Owner ainsi que les technologies utilisées
+--
+
+.Page Projets
+--
+- En tant qu'internaute, je veux pour chaque projet en voir le nom, le titre, le client, le superviseur, le groupe et les étudiants réalisant le projet
+- En tant qu'internaute, je veux pouvoir rechercher un projet dans la liste des projets en fournissant une chaine de caractère quelconque
+--
+
+.Page Sujets
+--
+- En tant qu'internaute, je veux pour chaque sujet en voir le nom, le titre et le ou les noms des groupes d'étudiants réalisant le sujet
+- En tant qu'internaute, je veux pouvoir rechercher un sujet dans la liste des sujets en fournissant une chaine de caractère quelconque
+- En tant qu'internaute, je veux pouvoir sélectionner un sujet et voir les projets réalisant le sujet
+--
+
+.Page Etudiants
+--
+- En tant qu'internaute, je veux pour chaque étudiant en voir le nom, le prénom ainsi que son groupe
+- En tant qu'internaute, je veux pouvoir rechercher un étudiant dans la liste des étudiants en fournissant une chaine de caractère quelconque
+- En tant qu'internaute, je veux pouvoir sélectionner un étudiant et voir le projet qu'il réalise
+--
+
+.Page Intervenants
+--
+- En tant qu'internaute, je veux pour chaque intervenant en voir le nom, le prénom ainsi que le nombre de ses interventions en tant que Client ou Superviseur
+- En tant qu'internaute, je veux pouvoir rechercher un intervenant dans la liste des intervenants en fournissant une chaine de caractère quelconque
+- En tant qu'internaute, je veux pouvoir sélectionner un intervenant et voir le(s) projet(s) où il intervient
+--
+
+== Comment lancer l'application OPTIweb
+
+Il suffit de lancer le programme OPTIweb.java pour générer la page *OPTIweb.html*.
+
+[NOTE]
+====
+Une fois la page html est chargée dans un navigateur, aucune communication réseau
+n'est éffectuée : vous pouvez alors travailler hors connexion.
+====
+
+== Comment lancer le programme de test
+
+Lancer le fichier *make.bat* qui va déclencher le programme ainsi que le test, de plus la documentation est aussi générée avec ce fichier. 
+
+NOTE: Le programme de test 'MakeOPTIwebTest.java' vérifie que la page html a été bien créée. 
+
+== Génération du fichier 'OPTIweb.html'
+
+L'application de consultation 'OPTIweb.html' est intégralement générée
+par le programme 'MakeOPTIweb.java' qui à partir des fichiers csv (Sujets, Etudiants, Intervenants, Projets ...) fabrique le fichier 'OPTIweb.html'.
+
+NOTE: Le programme 'MakeOPTIweb.java' utilise la librairie de gestion des fichiers csv disponible dans le projet 'OPTI' tels que etudiants2014_2015.csv entre d'autres.
+
+====
+
+====

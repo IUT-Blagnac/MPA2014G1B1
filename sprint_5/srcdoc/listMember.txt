@@ -1,0 +1,10 @@
+﻿De gauche à droite :
+
+- Serge Molina
+- Florian Garibal
+- Bilal El-Yassem
+- Julien Cordeau
+- Abdellah Zarioh
+- Pierre Jeanjean
+
+image::equipe.jpg[width=300, link="..\srcdoc\images\equipe_grand.jpg"]
