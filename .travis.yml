@@ -3,6 +3,10 @@ before_install:
   - "sudo apt-get install graphviz 2>&1 | tail -n 2"
   - wget http://algec.iut-blagnac.fr/~jmi/MPA/src/plantuml.jar
   - hg clone -r 8.6.7 https://asciidoc.googlecode.com/hg/ asciidoc-8.6.7
+before_script:
+  - wget https://github.com/n1k0/casperjs/archive/1.0.3.tar.gz -O /tmp/casper.tar.gz
+  - tar -xvf /tmp/casper.tar.gz
+  - export PATH=$PATH:$PWD/casperjs-1.0.3/bin/
 language: java
 script:
   - java -version
@@ -21,6 +25,6 @@ script:
   #- java -jar ../plantuml.jar -Tpng -o srcdoc/images srcdoc/diag0.puml
   #- python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
   - ls -alF srcdoc
-  - cd ../OPTIweb/test
+  - cd OPTIweb/test
   - cp OPTIwebprof.html /tmp/OPTIweb.html
   - casperjs test casperAccueil.js
