@@ -7,4 +7,4 @@ script:
   - echo Hello from DUT INFO Blagnac
   - ls -alF
   - cd sprint_5
-  - javac -cp .:./bin -d ./bin ./src/fr.iut_blagnac.gui.Application.java
+  - javac -cp .:./src -d ./bin ./src/fr/iut_blagnac/gui/Application.java
