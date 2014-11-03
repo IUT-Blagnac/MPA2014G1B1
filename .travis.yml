@@ -18,10 +18,11 @@ script:
   
   - echo Hello from DUT INFO Blagnac
   - ls -alF
-  - cd sprint_5
   
+  - cd sprint_5
   - javac -cp ./src -d ./bin ./src/fr/iut_blagnac/gui/Application.java
-  #- javac -cp .:./bin:../junit.jar -d ./bin ./src/HelloMondeTest.java
+  - jar cfm ./build/OPTI.jar ./manifest.txt -C ./bin .
+
   #- java -jar ../plantuml.jar -Tpng -o srcdoc/images srcdoc/diag0.puml
   #- python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o srcdoc/presentationFinale.html srcdoc/presentationFinale.txt
   - ls -alF srcdoc
