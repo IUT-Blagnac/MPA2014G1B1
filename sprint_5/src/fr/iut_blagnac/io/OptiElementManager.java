@@ -56,15 +56,15 @@ public class OptiElementManager {
 		ArrayList<OptiElement> result = new ArrayList<OptiElement>();
 		
 		String type = "";
-		if(CSVManagerTest.arraysEqual(data[0], Etudiant.getCSVHeader())){
+		if(arraysEqual(data[0], Etudiant.getCSVHeader())){
 			type = "Etudiant";
-		} else if(CSVManagerTest.arraysEqual(data[0], Groupe.getCSVHeader())){
+		} else if(arraysEqual(data[0], Groupe.getCSVHeader())){
 			type = "Groupe";
-		} else if(CSVManagerTest.arraysEqual(data[0], Sujet.getCSVHeader())){
+		} else if(arraysEqual(data[0], Sujet.getCSVHeader())){
 			type = "Sujet";
-		} else if(CSVManagerTest.arraysEqual(data[0], Intervenant.getCSVHeader())){
+		} else if(arraysEqual(data[0], Intervenant.getCSVHeader())){
 			type = "Intervenant";
-		} else if(CSVManagerTest.arraysEqual(data[0], Projet.getCSVHeader())){
+		} else if(arraysEqual(data[0], Projet.getCSVHeader())){
 			type = "Projet";
 		}
 		
@@ -96,5 +96,24 @@ public class OptiElementManager {
 		}
 		return result.toArray(new OptiElement[result.size()]);
 		
+	}
+	
+	/**
+	 * Function to check if to arrays of the String are equals
+	 * @param array1 : first array of String
+	 * @param array2 : first array of String
+	 * @return true if the arrays are equal, false if they aren't
+	 */
+	public static boolean arraysEqual(String[] array1, String[] array2){
+
+		if(array1 == null || array2 == null || array1.length!= array2.length)
+			return false;
+		
+		for (int i = 0; i < array1.length; i++) {
+			if(!array1[i].equals(array2[i])){
+				return false;
+			}
+		}
+		return true;
 	}
 }
