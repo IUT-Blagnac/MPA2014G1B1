@@ -24,12 +24,13 @@ script:
   - javac -cp ./src -d ./bin ./src/fr/iut_blagnac/gui/Application.java
   - jar cfm ./build/OPTI.jar ./manifest.txt -C ./bin .
 
-  - cd OPTIWeb
-  - echo Creation of OPTIweb.jar
+  - cd OPTIweb
+  - echo Creation of MakeOPTIweb.jar
   - javac -cp ./src - d ./bin ./src/MakeOptiWeb.java
-  - jar cfm ../build/MakeOptiWeb.jar./manifest.txt -C ./bin .
+  - jar cfm ../build/MakeOPTIweb.jar./manifest.txt -C ./bin .
   
   - echo Generation of the documentation
+  - cd ..
   - java -jar ../plantuml.jar -Tpng -o ./srcdoc/images ./srcdoc/diag0.puml
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o ./doc/presentationFinale.html ./srcdoc/presentationFinale.txt
   - python ../asciidoc-8.6.7/asciidoc.py -b slidy -o ./doc/Presentation Finale.html ./srcdoc/presentationFinale.txt
@@ -37,6 +38,24 @@ script:
   - python ../asciidoc-8.6.7/asciidoc.py -o ./doc/Documentation Technique.html ./srcdoc/Documentation Technique.adoc
   - python ../asciidoc-8.6.7/asciidoc.py -o ./doc/Documentation Utilisateur.html ./srcdoc/Documentation Utilisateur.adoc
   
+  - echo Compilation of the tests for OPTI
+  - javac -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/CSVManagerTest.java
+  - javac -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/OptiElementManagerTest.java
+  
+  - echo Compilation of the tests for OPTIweb
+  - cd OPTIweb
+  - javac -cp ./bin;./build/lib/junit.jar -d ./bin ./src/MakeOptiWebTest.java
+  
+  - echo Execution of the tests for OPTI
+  - cd ..
+  - java -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/CSVManagerTest.java
+  - java -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/OptiElementManagerTest.java
+  
+  - echo Execution of the tests for OPTIweb
+  - cd OPTIweb
+  - java -cp ./bin;./build/lib/junit.jar -d ./bin ./src/MakeOptiWebTest.java
+
+  - echo Execution of the casperJS tests
   - ls -alF srcdoc
   - cd OPTIweb/test
   - cp OPTIwebprof.html /tmp/OPTIweb.html
