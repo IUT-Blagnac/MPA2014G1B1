@@ -1,0 +1,133 @@
+Présentation Finale
+===================
+:author:  Groupe 1B1 
+:doctitle: Présentation Finale du Projet OPTI MPA-M3301-G1B1
+:copyright: Groupe 1B1 Inc.
+:backend: slidy
+:max-width: 45em
+
+include::docConf.txt[]
+
+Projet OPTI
+-----------
+
+*_Bienvenue dans cette présentation finale d'OPTI !_*
+
+- Université Toulouse II
+
+- IUT de Blagnac
+
+- DUT INFO S3/Module MPA
+
+
+Liste des membres de l'équipe
+-----------------------------
+
+include::listMember.txt[]
+
+Dans les grandes lignes OPTI c'est un outil pour...
+---------------------------------------------------
+
+[role="incremental"]
+- Gérer les différents acteurs des PTUTs
+- Assigner et gérer les différents projets et sujets
+- Gérer les informations destinées aux intervenants et étudiants
+- Gérer les erreurs de saisie
+- Gérer les voeux
+
+Bilan Fonctionnel
+-----------------
+
+[role="outline"]
+- Données
+* Récupérer des données (Etudiant, intervenant, projet, sujet) depuis des fichiers .csv
+* Modifier les différents champs de chaque objet (Etudiant, intervenant, projet, sujet)
+* Affecter un etudiant à un groupe
+* Sauvegarder les nouvelles modifications effectuées dans l'application dans des fichiers .csv.
+
+- Voeux
+* Définir les vœux d'un groupe
+
+- Affectation des projets aux groupes d'étudiants
+* Définir (affectation) un sujet pour un groupe
+
+- Affectation des intervenants sur chaque projet tutoré
+* Définir les intervenants d’un projet tutoré
+* Lister les projets par intervenant
+* Lister les intervenants par projet
+
+- Affichage 
+* Affichage des données sous forme de page web(.html)
+
+Lancement
+---------
+image:clichere.png[]
+
+Bilan Financier
+----------------
+
+[role="incremental"]
+- 4 séances/semaines
+- 36 heures/personnes
+- 216 heures totales
+- 54 demi-journées
+
+Bilan Technique
+---------------
+
+[role="outline"]
+- Redmine
+* Outil de gestion de projet
+
+- Subversion
+* Logiciel de gestion de versions
+
+- GitHub
+* Site d'interface de Git
+
+- Travis.ci
+* Système d'intégration continue
+
+- CasperJS
+* Test d'intégration
+
+- JUnit
+* Test unitaire
+
+- Eclipse
+* Environnement de développement
+
+- Swing
+* Librairie Java pour les interfaces
+
+- Asciidoc
+* Langage de balisage léger qui permet de générer des documents publiables.
+
+Bilan Humain
+------------
+
+[role="incremental"]
+- Première expérience de méthode AGILE
+- Répartition des tâches en début de sprint
+- Renforcement des compétences de travail en équipe
+- Quelques erreurs (Membres en dehors du code, ...)
+
+Bilan Global
+------------
+
+[role="outline"]
+- Bon déroulement du projet
+
+- Backlog produit
+* Les exigences avec les plus hautes priorités sont fonctionnelles.
+
+- Contrainte de temps
+* Ce fut la majeure difficulté du projet
+* Travail supplémentaire 10heures/semaine en dehors des heures de cours
+
+- Erreurs rencontrées
+* Dérive rapide face aux attentes du client
+* Spécialisation de certains membres donc :
+** Difficilité de s'intégrer au code en milieu de projet
+** Membres irremplaçables
+* Savoir faire face et apprendre de celles-ci, ce qui permettra de ne plus les reproduire à l’avenir. 
