@@ -26,11 +26,11 @@ script:
   
   - echo Generation of the documentation
   - java -jar ../plantuml.jar -Tpng -o ./srcdoc/images ./srcdoc/diag0.puml
-  - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o ./doc/presentationFinale.html ./srcdoc/presentationFinale.txt
-  - python ../asciidoc-8.6.7/asciidoc.py -b slidy -o "./doc/Presentation Finale.html" ./srcdoc/presentationFinale.txt
-  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Web.html" ./srcdoc/documentationWeb.adoc
-  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Technique.html" "./srcdoc/Documentation Technique.adoc"
-  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Utilisateur.html" "./srcdoc/Documentation Utilisateur.adoc"
+  - sudo python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o ./doc/presentationFinale.html ./srcdoc/presentationFinale.txt
+  - sudo python ../asciidoc-8.6.7/asciidoc.py -b slidy -o "./doc/Presentation Finale.html" ./srcdoc/presentationFinale.txt
+  - sudo python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Web.html" ./srcdoc/documentationWeb.adoc
+  - sudo python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Technique.html" "./srcdoc/Documentation Technique.adoc"
+  - sudo python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Utilisateur.html" "./srcdoc/Documentation Utilisateur.adoc"
   
   - echo Compilation of the tests
   - javac -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/CSVManagerTest.java
@@ -38,7 +38,6 @@ script:
   - javac -cp ./bin;./build/lib/junit.jar -d ./bin ./src/MakeOptiWebTest.java
  
   - echo Execution of the tests
-  - cd ..
   - java -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/CSVManagerTest.java
   - java -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/OptiElementManagerTest.java
   - java -cp ./bin;./build/lib/junit.jar -d ./bin ./src/MakeOptiWebTest.java
