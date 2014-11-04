@@ -27,7 +27,7 @@ script:
   - cd OPTIweb
   - echo Creation of MakeOPTIweb.jar
   - javac -cp ./src - d ./bin ./src/MakeOptiWeb.java
-  - jar cfm ../build/MakeOPTIweb.jar./manifest.txt -C ./bin .
+  - jar cfm ../build/MakeOPTIweb.jar ./manifest.txt -C ./bin .
   
   - echo Generation of the documentation
   - cd ..
