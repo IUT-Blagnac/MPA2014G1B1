@@ -21,6 +21,14 @@ subjectname:Subject name
 # End of data types definition #
 
 
+# Begin of filter related words #
+
+filter:Filter: 
+supervisor:Supervisor
+
+# End of filter related words #
+
+
 # Begin of data field definition #
 
 id:Id

@@ -21,12 +21,19 @@ subjectname:Nom du sujet
 # End of data types definition #
 
 
+# Begin of filter related words #
+
+filter:Filtrer : 
+supervisor:Superviseur
+
+# End of filter related words #
+
+
 # Begin of data field definition #
 
 id:Id
 firstname:Prénom 
 lastname:Nom
-subject:Sujet
 name:Nom
 title:Titre
 

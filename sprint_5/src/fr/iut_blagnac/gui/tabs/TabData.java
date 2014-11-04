@@ -151,10 +151,10 @@ public class TabData extends JPanel implements ItemListener{
 			panelSouth.removeAll();
 			repaint();
 			
-			JLabel filter = new JLabel("Filtrer : ");
-			JLabel group = new JLabel("Groupe");
-			JLabel firstName = new JLabel("Prénom");
-			JLabel lastName = new JLabel("Nom");
+			JLabel filter = new JLabel(Application.langString.get("filter"));
+			JLabel group = new JLabel(Application.langString.get("group"));
+			JLabel firstName = new JLabel(Application.langString.get("firstname"));
+			JLabel lastName = new JLabel(Application.langString.get("lastname"));
 			
 			final JTextField txtLastName = new JTextField();
 			final JTextField txtGroupe = new JTextField();
@@ -207,10 +207,10 @@ public class TabData extends JPanel implements ItemListener{
 			panelSouth.removeAll();
 			repaint();
 			
-			JLabel filter = new JLabel("Filtrer : ");
-			JLabel id = new JLabel("Id");
-			JLabel firstName = new JLabel("Prénom");
-			JLabel lastName = new JLabel("Nom");
+			JLabel filter = new JLabel(Application.langString.get("filter"));
+			JLabel id = new JLabel(Application.langString.get("id"));
+			JLabel firstName = new JLabel(Application.langString.get("firstname"));
+			JLabel lastName = new JLabel(Application.langString.get("lastname"));
 
 			final JTextField txtId = new JTextField();
 			final JTextField txtLastName = new JTextField();
@@ -261,10 +261,10 @@ public class TabData extends JPanel implements ItemListener{
 			panelSouth.removeAll();
 			repaint();
 			
-			JLabel filter = new JLabel("Filtrer : ");
-			JLabel group = new JLabel("Groupe");
-			JLabel subject = new JLabel("Sujet");
-			JLabel superviseur = new JLabel("Superviseur");
+			JLabel filter = new JLabel(Application.langString.get("filter"));
+			JLabel group = new JLabel(Application.langString.get("group"));
+			JLabel subject = new JLabel(Application.langString.get("subject"));
+			JLabel superviseur = new JLabel(Application.langString.get("supervisor"));
 			
 			final JTextField txtGroupe= new JTextField();
 			final JTextField txtSubject = new JTextField();
@@ -316,10 +316,10 @@ public class TabData extends JPanel implements ItemListener{
 			repaint();
 			
 			
-			JLabel filter = new JLabel("Filtrer : ");
-			JLabel id = new JLabel("Id");
-			JLabel name = new JLabel("Nom");
-			JLabel title = new JLabel("Titre");
+			JLabel filter = new JLabel(Application.langString.get("filter"));
+			JLabel id = new JLabel(Application.langString.get("id"));
+			JLabel name = new JLabel(Application.langString.get("name"));
+			JLabel title = new JLabel(Application.langString.get("title"));
 			
 			final JTextField txtId = new JTextField();
 			final JTextField txtName = new JTextField();
