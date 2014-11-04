@@ -5,6 +5,8 @@ import javax.swing.JFrame;
 
 import fr.iut_blagnac.data.encadrer.Encadrer;
 import fr.iut_blagnac.data.groupe.Groupe;
+import fr.iut_blagnac.data.intervenant.Intervenant;
+import fr.iut_blagnac.data.intervenant.role.Roles;
 import fr.iut_blagnac.data.projet.view.ProjetRepresentation;
 import fr.iut_blagnac.data.sujet.Sujet;
 import fr.iut_blagnac.data.util.DataManager;
@@ -17,6 +19,7 @@ import fr.iut_blagnac.data.util.OptiElementRepresentation;
  * @version 2.0
  */
 public class Projet extends OptiElement{
+	private static int currentID;
 
 	// The group this project is assigned to.
 	private String id;
@@ -39,16 +42,6 @@ public class Projet extends OptiElement{
 	
 
 	
-	/**
-	 * Creates a new project with the data specified.
-	 * @param sujet : the subject of this project.
-	 * @param groupe : the group this subject is assigned to.
-	 * @param tabEncadrer : list of object Encadrer
-	 */
-	public Projet(Sujet sujet, Groupe groupe, Encadrer[] tabEncadrer) {
-		this(sujet,groupe);
-		this.setEncadrer(tabEncadrer);
-	}
 	
 	/**
 	 * Creates a new project with the data specified.
@@ -56,9 +49,23 @@ public class Projet extends OptiElement{
 	 * @param groupe : the group this subject is assigned to.
 	 */
 	public Projet(Sujet sujet, Groupe groupe) {
-		super();
+		this(sujet, groupe, null);
+	}
+	
+
+	/**
+	 * Creates a new project with the data specified.
+	 * @param sujet : the subject of this project.
+	 * @param groupe : the group this subject is assigned to.
+	 * @param tabEncadrer : list of object Encadrer
+	 */
+	public Projet(Sujet sujet, Groupe groupe, Encadrer[] tabEncadrer) {
+		
+		this.id=String.valueOf(Projet.currentID);
+		Projet.currentID++;
 		this.setSujet(sujet);
 		this.setGroupe(groupe);
+		this.setEncadrer(tabEncadrer);
 	}
 	
 	/**
@@ -291,23 +298,39 @@ public class Projet extends OptiElement{
 		tabS[0] = this.id;
 		tabS[1] = this.groupe.getLibelle();
 		tabS[2] = this.sujet.getId();
+		tabS[3] = "";
+		tabS[4] = "";
+		tabS[5] = "";
 		for(Encadrer encadrement : tabEncadrer){
-			switch(encadrement.getRole()){
-			case client: tabS[3] = encadrement.getIntervenant().getId(); break; 
-			case superv: tabS[4] = encadrement.getIntervenant().getId(); break; 
-			case techass: tabS[5] = encadrement.getIntervenant().getId(); break; 
+			if(encadrement!=null){
+				switch(encadrement.getRole()){
+				case client: tabS[3] = encadrement.getIntervenant().getId(); break; 
+				case superv: tabS[4] = encadrement.getIntervenant().getId(); break; 
+				case techass: tabS[5] = encadrement.getIntervenant().getId(); break; 
+				}
 			}
 		}
-		
 		return tabS;
 	}
 	
 	@Override
 	public void loadFromArray(String[] csvRow) {
-		this.setGroupe(new Groupe (csvRow[0]));
+		this.id=csvRow[0];
+		
+		
+		
+		this.setGroupe(new Groupe (csvRow[1]));
 		Sujet sujet = new Sujet();
-		sujet.setId(csvRow[1]);
+		sujet.setId(csvRow[2]);
 		this.setSujet(sujet);
+		tabEncadrer[0] = new Encadrer(new Intervenant(), this, Roles.client);
+		tabEncadrer[0].getIntervenant().setId(csvRow[3]);
+		tabEncadrer[1] = new Encadrer(new Intervenant(), this, Roles.client);
+		tabEncadrer[1].getIntervenant().setId(csvRow[4]);
+		tabEncadrer[2] = new Encadrer(new Intervenant(), this, Roles.client);
+		if(csvRow.length == 6){
+			tabEncadrer[2].getIntervenant().setId(csvRow[5]);
+		}
 	}
 	
 
@@ -332,7 +355,7 @@ public class Projet extends OptiElement{
 	public OptiElement clone(){
 		Encadrer[] newtabEncadrer = tabEncadrer.clone();
 		
-		return new Projet(new Sujet(this.sujet.getId(), this.sujet.getNom(), this.sujet.getTitre()), new Groupe(this.groupe.getLibelle()), newtabEncadrer );
+		return new Projet(new Sujet(this.sujet.getId(), this.sujet.getNom(), this.sujet.getTitre()), this.groupe, newtabEncadrer );
 	}
 	
 	public OptiElementRepresentation buildOptiElementRepresentation(){

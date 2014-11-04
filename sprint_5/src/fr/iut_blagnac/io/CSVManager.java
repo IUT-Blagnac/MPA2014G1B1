@@ -35,6 +35,9 @@ public class CSVManager {
 			currentLine = fileReader.nextLine();
 			// Retrieval of the row data
 			lineData = currentLine.split("" + separator);
+			for(int i = 0; i < lineData.length; i++){
+				lineData[i] = lineData[i].trim();
+			}
 			// Storage of the row data
 			result.add(lineData);
 		}
@@ -77,13 +80,21 @@ public class CSVManager {
 		for (int i = 0; i < data.length; i++) {
 			// Write of the first cell of the row
 			if(data[i].length !=0){
-				csvFileStream.write(data[i][0]);
+				if(data[i][0].length()!=0){
+					csvFileStream.write(data[i][0]);
+				} else {
+					csvFileStream.write(" ");
+				}
 			}
 			
 			// Write of the other cells with a seperator at the beginning
 			for (int j = 1; j < data[i].length; j++) {
 				csvFileStream.write(separator);
-				csvFileStream.write(data[i][j]);
+				if(data[i][j].length()!=0){
+					csvFileStream.write(data[i][j]);
+				} else {
+					csvFileStream.write(" ");
+				}
 			}
 			
 			// Write of the carriage return

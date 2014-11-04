@@ -297,15 +297,15 @@ public class Sujet extends OptiElement{
 	public boolean isValid() {
 		boolean valid = true;
 
-		if (isIdValid()) {
+		if (!isIdValid()) {
 			valid = false;
 		}
 
-		if (isNomValid()) {
+		if (!isNomValid()) {
 			valid = false;
 		}	
 		
-		if (isTitreValid()) {
+		if (!isTitreValid()) {
 			valid = false;
 		}		
 		
@@ -342,7 +342,9 @@ public class Sujet extends OptiElement{
 
 		setId(csvRow[0]);
 		setNom(csvRow[1]);
-		setTitre(csvRow[2]);
+		if(csvRow.length == 3){
+			setTitre(csvRow[2]);
+		}
 	}
 	
 

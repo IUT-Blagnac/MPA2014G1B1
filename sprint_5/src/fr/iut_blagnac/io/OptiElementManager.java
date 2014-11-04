@@ -15,39 +15,61 @@ import fr.iut_blagnac.data.intervenant.Intervenant;
 import fr.iut_blagnac.data.projet.Projet;
 import fr.iut_blagnac.data.sujet.Sujet;
 import fr.iut_blagnac.data.util.OptiElement;
+import fr.iut_blagnac.util.Str;
 
 public class OptiElementManager {
 	
 	public static void save (Component parent, File fileName, String[] header, OptiElement[] elements) throws FileNotFoundException, IOException {
-		String[][] data = new String[elements.length][3];
-		
-		for (int i = 0; i < elements.length; i++){
-			if(elements[i].isValid()){
-				data[i] = elements[i].toArray();
-			} else {
-				JOptionPane.showMessageDialog(parent, "Data invalid for :\n" + elements[i].toString(), "Error", JOptionPane.ERROR_MESSAGE);
-				return;
+		if(elements.length != 0){
+			String[][] data = new String[elements.length][3];
+			
+			for (int i = 0; i < elements.length; i++){
+				if(elements[i].isValid()){
+					data[i] = elements[i].toArray();
+				} else {
+					JOptionPane.showMessageDialog(parent, "Data invalid for :\n" + elements[i].toString(), "Error", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 			}
+			
+			CSVManager.saveCSV(fileName, ';', header, data);		
+		} else {
+			JOptionPane.showMessageDialog(parent, "No elements to save", "Error", JOptionPane.ERROR_MESSAGE);
 		}
-		
-		CSVManager.saveCSV(fileName, ';', header, data);		
 	}
 
-	public static void save(JComponent parent, File selectedFile, OptiElement[] data) throws FileNotFoundException, IOException {
-		Class<? extends OptiElement> firstClass = data[0].getClass();
-		
-		boolean homogene = true;
-		for(OptiElement element : data){
-			if(!element.getClass().equals(firstClass)){
-				homogene = false;
-				break;
+	public static void save(JComponent parent, File selectedFile, OptiElement[] elements) throws FileNotFoundException, IOException {
+		if(elements.length != 0){
+				
+			Class<? extends OptiElement> firstClass = elements[0].getClass();
+			
+			boolean homogene = true;
+			for(OptiElement element : elements){
+				if(!element.getClass().equals(firstClass)){
+					homogene = false;
+					break;
+				}
 			}
-		}
-		
-		if(homogene){
-			 save(parent, selectedFile, data[0].getCSVHeader(), data);
+			
+			
+			
+			if(homogene){
+				if(elements[0] instanceof Etudiant){
+					save(parent, selectedFile, Etudiant.getCSVHeader(), elements);
+				} else if(elements[0] instanceof Groupe){
+					save(parent, selectedFile, Groupe.getCSVHeader(), elements);
+				} else if(elements[0] instanceof Intervenant){
+					save(parent, selectedFile, Intervenant.getCSVHeader(), elements);
+				} else if(elements[0] instanceof Projet){
+					save(parent, selectedFile, Projet.getCSVHeader(), elements);
+				} else if(elements[0] instanceof Sujet){
+					save(parent, selectedFile, Sujet.getCSVHeader(), elements);
+				}
+			} else {
+				JOptionPane.showMessageDialog(parent, "Data not homogeneous, impossible to save", "Error", JOptionPane.ERROR_MESSAGE);
+			}
 		} else {
-			JOptionPane.showMessageDialog(parent, "Data not homogeneous, impossible to save", "Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(parent, "No elements to save", "Error", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	
@@ -55,65 +77,49 @@ public class OptiElementManager {
 		String[][] data = CSVManager.openCSV(fileName, ';');
 		ArrayList<OptiElement> result = new ArrayList<OptiElement>();
 		
-		String type = "";
-		if(arraysEqual(data[0], Etudiant.getCSVHeader())){
-			type = "Etudiant";
-		} else if(arraysEqual(data[0], Groupe.getCSVHeader())){
-			type = "Groupe";
-		} else if(arraysEqual(data[0], Sujet.getCSVHeader())){
-			type = "Sujet";
-		} else if(arraysEqual(data[0], Intervenant.getCSVHeader())){
-			type = "Intervenant";
-		} else if(arraysEqual(data[0], Projet.getCSVHeader())){
-			type = "Projet";
+		if(data.length!=0){
+			String type = "";
+			if(Str.arraysEqual(data[0], Etudiant.getCSVHeader())){
+				type = "Etudiant";
+			} else if(Str.arraysEqual(data[0], Groupe.getCSVHeader())){
+				type = "Groupe";
+			} else if(Str.arraysEqual(data[0], Sujet.getCSVHeader())){
+				type = "Sujet";
+			} else if(Str.arraysEqual(data[0], Intervenant.getCSVHeader())){
+				type = "Intervenant";
+			} else if(Str.arraysEqual(data[0], Projet.getCSVHeader())){
+				type = "Projet";
+			}
+			
+			switch(type){
+			case "Etudiant" : 
+				for(int n = 1; n < data.length; n++){
+					result.add(new Etudiant(data[n]));
+				}
+				break;
+			case "Sujet" : 
+				for(int n = 1; n < data.length; n++){
+					result.add(new Sujet(data[n]));
+				}
+				break;
+			case "Intervenant" : 
+				for(int n = 1; n < data.length; n++){
+					result.add(new Intervenant(data[n]));
+				}
+				break;
+			case "Projet" : 
+				for(int n = 1; n < data.length; n++){
+					result.add(new Projet(data[n]));
+				}
+				break;
+			default :
+				JOptionPane.showMessageDialog(parent, "File invalid", "Error", JOptionPane.ERROR_MESSAGE);
+			
+				break;
+			}
+			return result.toArray(new OptiElement[result.size()]);
+		} else {
+			return new OptiElement[0];
 		}
-		
-		switch(type){
-		case "Etudiant" : 
-			for(int n = 1; n < data.length; n++){
-				result.add(new Etudiant(data[n]));
-			}
-			break;
-		case "Sujet" : 
-			for(int n = 1; n < data.length; n++){
-				result.add(new Sujet(data[n]));
-			}
-			break;
-		case "Intervenant" : 
-			for(int n = 1; n < data.length; n++){
-				result.add(new Intervenant(data[n]));
-			}
-			break;
-		case "Projet" : 
-			for(int n = 1; n < data.length; n++){
-				result.add(new Projet(data[n]));
-			}
-			break;
-		default :
-			JOptionPane.showMessageDialog(parent, "File invalid", "Error", JOptionPane.ERROR_MESSAGE);
-		
-			break;
-		}
-		return result.toArray(new OptiElement[result.size()]);
-		
-	}
-	
-	/**
-	 * Function to check if to arrays of the String are equals
-	 * @param array1 : first array of String
-	 * @param array2 : first array of String
-	 * @return true if the arrays are equal, false if they aren't
-	 */
-	public static boolean arraysEqual(String[] array1, String[] array2){
-
-		if(array1 == null || array2 == null || array1.length!= array2.length)
-			return false;
-		
-		for (int i = 0; i < array1.length; i++) {
-			if(!array1[i].equals(array2[i])){
-				return false;
-			}
-		}
-		return true;
 	}
 }

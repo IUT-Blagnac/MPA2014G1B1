@@ -63,7 +63,7 @@ public class TabAssociation extends JPanel implements ChangeListener,
 	 * @param parent
 	 * @param currentDataManager
 	 */
-	public TabAssociation(JFrame parent, DataManager currentDataManager) {
+	public TabAssociation(JFrame parent, final DataManager currentDataManager) {
 
 		// Declaration
 		this.currentDataManager = currentDataManager;
@@ -85,9 +85,7 @@ public class TabAssociation extends JPanel implements ChangeListener,
 		this.add(center, BorderLayout.CENTER);
 		this.add(north, BorderLayout.NORTH);
 
-		// Creation of a data manager to store the data used
-		currentDataManager = new DataManager();
-
+		
 		// Initialization of the JLists
 		listeProjets = new JList<Projet>(new DefaultListModel<Projet>());
 		listeSujets = new JList<Sujet>(new DefaultListModel<Sujet>());
@@ -196,8 +194,7 @@ public class TabAssociation extends JPanel implements ChangeListener,
 	public void updateData() {
 		updatingData = true;
 
-		DefaultListModel<Projet> listeProjetsModel = (DefaultListModel<Projet>) listeProjets
-				.getModel();
+		DefaultListModel<Projet> listeProjetsModel = (DefaultListModel<Projet>) listeProjets.getModel();
 		listeProjetsModel.removeAllElements();
 		for (OptiElement projet : currentDataManager.getProjets()) {
 			projet.isValid();
@@ -282,8 +279,7 @@ public class TabAssociation extends JPanel implements ChangeListener,
 	private void association() {
 		boolean error = false;
 
-		if (listeGroupes.getSelectedIndex() != -1
-				&& listeSujets.getSelectedIndex() != -1) {
+		if (listeGroupes.getSelectedIndex() != -1 && listeSujets.getSelectedIndex() != -1) {
 
 			// Recuperation of the group
 			Groupe selectedGroupe = listeGroupes.getSelectedValue();
@@ -291,23 +287,17 @@ public class TabAssociation extends JPanel implements ChangeListener,
 			// Recuperation of the subject
 			Sujet selectedSujet = listeSujets.getSelectedValue();
 
-			// Création of a project
-			Projet project = new Projet(selectedSujet, selectedGroupe);
-
 			// Test if the project doesn't exist yet
 			for (OptiElement p : currentDataManager.getProjets()) {
-				if (project.getSujet().equals(((Projet) p).getSujet())
-						&& project.getGroupe().equals(((Projet) p).getGroupe())) {
-					JOptionPane.showMessageDialog(parent,
-							Application.langString.get("erroralreadyexist"),
-							Application.langString.get("error"),
-							JOptionPane.ERROR_MESSAGE);
+				Projet aProjet = (Projet) p;
+				if (aProjet.getSujet().equals(selectedSujet) && aProjet.getGroupe().equals(selectedGroupe)) {
+					JOptionPane.showMessageDialog(parent, Application.langString.get("erroralreadyexist"), Application.langString.get("error"), JOptionPane.ERROR_MESSAGE);
 					error = true;
 					break;
 				}
 			}
-
-			if (selectedGroupe.getProjet() != null && !error) {
+			
+			if ((selectedGroupe.getProjet() != null && !error) && selectedGroupe.getProjet().isValid()) {
 				error = true;
 				JOptionPane.showMessageDialog(parent,
 						Application.langString.get("errorgroupalreadyhave"),
@@ -315,30 +305,27 @@ public class TabAssociation extends JPanel implements ChangeListener,
 						JOptionPane.ERROR_MESSAGE);
 			}
 			
-			if (selectedSujet.getProjet() != null && !error) {
+			if (!error && selectedSujet.getProjet() != null && selectedSujet.getProjet().isValid()) {
 				error = true;
 				JOptionPane.showMessageDialog(parent,
 						Application.langString.get("errorsubjectalreadyhave"),
 						Application.langString.get("error"),
 						JOptionPane.ERROR_MESSAGE);
+				
 			}
 
 			if (!error){
-				selectedGroupe.setProjet(project);
-				project.setSujet(selectedSujet);
-				project.setGroupe(selectedGroupe);
-				selectedSujet.setProjet(project);
-				currentDataManager.getProjets().add(project);
+				currentDataManager.getProjets().add(new Projet(selectedSujet, selectedGroupe));
 				dataChange();
 				JOptionPane.showMessageDialog(
 						parent,
 						Application.langString.get("validassociatep1")
 								+ " "
-								+ project.getGroupe()
+								+ selectedGroupe
 								+ " "
 								+ Application.langString
 										.get("validassociatep2") + " "
-								+ project.getSujet(), Application.langString
+								+ selectedSujet, Application.langString
 								.get("congrat"),
 						JOptionPane.INFORMATION_MESSAGE);
 			}

@@ -108,17 +108,22 @@ public class Str {
 		}
 		return valid;	
 	}
-	
-	public static void main (String[] args){
-		/*String s ="1,2,3";
-		String s1 ="1,2,3,4,5,6,7";
-		String s2 = "1,2,2";
-		String s3 = "1,2,3,5";
+	/**
+	 * Function to check if to arrays of the String are equals
+	 * @param array1 : first array of String
+	 * @param array2 : first array of String
+	 * @return true if the arrays are equal, false if they aren't
+	 */
+	public static boolean arraysEqual(String[] array1, String[] array2){
+
+		if(array1 == null || array2 == null || array1.length!= array2.length)
+			return false;
 		
-		//System.out.println(Str.isOrderValid(s,3));
-		//System.out.println(Str.isOrderValid(s1, 7));
-		//System.out.println(Str.isOrderValid(s2,3));
-		System.out.println(Str.isOrderValid(s3,4));
-		*/
+		for (int i = 0; i < array1.length; i++) {
+			if(!array1[i].equals(array2[i])){
+				return false;
+			}
+		}
+		return true;
 	}
 }

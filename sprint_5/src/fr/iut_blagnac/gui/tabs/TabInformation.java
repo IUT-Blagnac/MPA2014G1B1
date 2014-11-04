@@ -48,7 +48,7 @@ public class TabInformation extends JPanel implements ChangeListener {
 		nbObj.setEditable(false);
 		nbObj.setFocusable(false);
 		
-		JLabel sprint = new JLabel(Application.langString.get("absprint"));
+		JLabel sprint = new JLabel(Application.langString.get("absprint")+" 5");
 		sprint.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		// Ajout des différents blocs de texte (JLabel) aux JPanel

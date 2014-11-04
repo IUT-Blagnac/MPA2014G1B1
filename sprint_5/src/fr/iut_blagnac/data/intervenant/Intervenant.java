@@ -297,7 +297,9 @@ public class Intervenant extends OptiElement{
 	public void loadFromArray(String[] csvRow) {
 		setId(csvRow[0]);
 		setFirstName(csvRow[1]);
-		setLastName(csvRow[2]);
+		if(csvRow.length == 3){
+			setLastName(csvRow[2]);
+		}
 	}
 	
 

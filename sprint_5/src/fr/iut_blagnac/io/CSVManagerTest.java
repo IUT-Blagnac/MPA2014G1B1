@@ -18,7 +18,7 @@ public class CSVManagerTest extends TestCase {
 	 * @param array2 : first array of String
 	 * @return true if the arrays are equal, false if they aren't
 	 */
-	public static boolean arraysEqual(String[][] array1, String[][] array2){
+	private static boolean arraysEqual(String[][] array1, String[][] array2){
 
 		if(array1 == null || array2 == null || array1.length!= array2.length)
 			return false;
@@ -35,24 +35,7 @@ public class CSVManagerTest extends TestCase {
 	}
 
 	
-	/**
-	 * Function to check if to arrays of the String are equals
-	 * @param array1 : first array of String
-	 * @param array2 : first array of String
-	 * @return true if the arrays are equal, false if they aren't
-	 */
-	public static boolean arraysEqual(String[] array1, String[] array2){
 
-		if(array1 == null || array2 == null || array1.length!= array2.length)
-			return false;
-		
-		for (int i = 0; i < array1.length; i++) {
-			if(!array1[i].equals(array2[i])){
-				return false;
-			}
-		}
-		return true;
-	}
 	
 	/**
 	 * Function to generate a random array of a random size

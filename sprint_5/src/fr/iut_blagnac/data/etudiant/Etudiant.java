@@ -299,7 +299,9 @@ import fr.iut_blagnac.util.Str;
 		setGroup(csvRow[0]);
 		setId(csvRow[1]);
 		setLastName(csvRow[2]);
-		setFirstName(csvRow[3]);
+		if(csvRow.length == 4){
+			setFirstName(csvRow[3]);
+		}
 	}
 	
 	/**

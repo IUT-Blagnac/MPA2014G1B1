@@ -241,7 +241,6 @@ public class Groupe extends OptiElement implements Comparable<Groupe>{
 		if(projet != null && projet.getGroupe()!=this){
 			projet.setGroupe(this);
 		}
-		
 		this.projetChanged = true;
 	}
 
