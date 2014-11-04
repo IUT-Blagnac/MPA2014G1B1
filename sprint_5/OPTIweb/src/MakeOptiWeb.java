@@ -130,7 +130,7 @@ public class MakeOptiWeb {
 	}
 
 	public static String pageEtudiants() {
-		String fileName = "test/etudiants2014_2015.csv";
+		String fileName = "etudiants2014_2015.csv";
 
 		String chaineFinale = "<!-- DEBUT page etudiants -->\n"
 				+ "<div data-role=\"page\" id=\"etudiants\" data-title=\"OPTIweb - V"
@@ -192,7 +192,7 @@ public class MakeOptiWeb {
 
 	public static String pageSujets() {
 
-		String fileNameSujet = "test/sujets2014_2015.csv", fileNameProjet = "test/projets2014_2015.csv";
+		String fileNameSujet = "sujets2014_2015.csv", fileNameProjet = "projets2014_2015.csv";
 
 		String chaineFinale = "<!-- DEBUT page sujets -->\n"
 				+ "<div data-role=\"page\" id=\"sujets\" data-title=\"OPTIweb - V" + version + "\">\n"
@@ -282,8 +282,8 @@ public class MakeOptiWeb {
 	
 	
 	public static String pageIntervenants () {
-		String fileNameInterv = "test/intervenants2014_2015.csv";
-		String fileNameProject = "test/projets2014_2015.csv";
+		String fileNameInterv = "intervenants2014_2015.csv";
+		String fileNameProject = "projets2014_2015.csv";
 
 		String chaineFinale = "<!-- DEBUT page intervenants -->\n"
 				+ "<div data-role=\"page\" id=\"intervenants\" data-title=\"OPTIweb - V" + version + "\">\n"
@@ -357,10 +357,10 @@ public class MakeOptiWeb {
 	}
 	
 	public static String pageProjets () {
-		String fileNameEtu = "test/etudiants2014_2015.csv";
-		String fileNamePro = "test/projets2014_2015.csv";
-		String fileNameInt = "test/intervenants2014_2015.csv";
-		String fileNameSuj = "test/sujets2014_2015.csv";
+		String fileNameEtu = "etudiants2014_2015.csv";
+		String fileNamePro = "projets2014_2015.csv";
+		String fileNameInt = "intervenants2014_2015.csv";
+		String fileNameSuj = "sujets2014_2015.csv";
 		
 		String chaineFinale = "<!-- DEBUT page projets -->\n"
 		+ "<div data-role=\"page\" id=\"projets\" data-title=\"OPTIweb - V" + version + "\">\n"
