@@ -23,12 +23,12 @@ script:
   - javac -cp ./src -d ./bin ./src/fr/iut_blagnac/gui/Application.java
   - jar cfm ./build/OPTI.jar ./manifest.txt -C ./bin .
 
-  - java -jar plantuml.jar -Tpng -o ./srcdoc/images ./srcdoc/diag0.puml
-  - python asciidoc.py -a data-uri -o ./srcdoc/presentationFinale.html ./srcdoc/presentationFinale.txt
-  - python asciidoc.py -b slidy -o "./doc/Presentation Finale.html" "./doc/presentationFinale.txt"
-  - python asciidoc.py -o "./doc/Documentation Web.html" "./doc/documentationWeb.adoc"
-  - python asciidoc.py -o "./doc/Documentation Technique.html" "./doc/Documentation Technique.adoc"
-  - python asciidoc.py -o "./doc/Documentation Utilisateur.html" "./doc/Documentation Utilisateur.adoc"
+  - java -jar ../plantuml.jar -Tpng -o ./srcdoc/images ./srcdoc/diag0.puml
+  - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o ./srcdoc/presentationFinale.html ./srcdoc/presentationFinale.txt
+  - python ../asciidoc-8.6.7/asciidoc.py -b slidy -o "./doc/Presentation Finale.html" "./doc/presentationFinale.txt"
+  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Web.html" "./doc/documentationWeb.adoc"
+  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Technique.html" "./doc/Documentation Technique.adoc"
+  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Utilisateur.html" "./doc/Documentation Utilisateur.adoc"
 
   
   - ls -alF srcdoc
