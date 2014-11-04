@@ -32,10 +32,10 @@ script:
   - echo Generation of the documentation
   - java -jar ../plantuml.jar -Tpng -o ./srcdoc/images ./srcdoc/diag0.puml
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o ./doc/presentationFinale.html ./srcdoc/presentationFinale.txt
-  - python ../asciidoc-8.6.7/asciidoc.py -b slidy -o "./doc/Presentation Finale.html" "./srcdoc/presentationFinale.txt"
-  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Web.html" "./srcdoc/documentationWeb.adoc"
-  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Technique.html" "./srcdoc/Documentation Technique.adoc"
-  - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Utilisateur.html" "./srcdoc/Documentation Utilisateur.adoc"
+  - python ../asciidoc-8.6.7/asciidoc.py -b slidy -o ./doc/Presentation Finale.html ./srcdoc/presentationFinale.txt
+  - python ../asciidoc-8.6.7/asciidoc.py -o ./doc/Documentation Web.html ./srcdoc/documentationWeb.adoc
+  - python ../asciidoc-8.6.7/asciidoc.py -o ./doc/Documentation Technique.html ./srcdoc/Documentation Technique.adoc
+  - python ../asciidoc-8.6.7/asciidoc.py -o ./doc/Documentation Utilisateur.html ./srcdoc/Documentation Utilisateur.adoc
   
   - ls -alF srcdoc
   - cd OPTIweb/test
