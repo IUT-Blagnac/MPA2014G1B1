@@ -8,6 +8,10 @@ Présentation Finale
 
 include::docConf.txt[]
 
+-----------
+image:Univ.png[]
+
+
 Projet OPTI
 -----------
 
