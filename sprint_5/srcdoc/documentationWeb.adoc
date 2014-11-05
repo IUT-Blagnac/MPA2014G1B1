@@ -6,7 +6,7 @@
 :slideshowlocation: Your computer
 
 :copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
-:revnumber: 0
+:revnumber: Finale
 
 :lang: fr
 include::docConf.txt[]
@@ -27,7 +27,7 @@ Formation:: DUT INFO S3/Module MPA
 Projet:: OPTI/OPTIweb
 ====
 
-== Fonctionnalités disponibles - SPRINT 4
+== Fonctionnalités disponibles
 
 .Application
 --
@@ -65,7 +65,11 @@ Projet:: OPTI/OPTIweb
 
 == Comment lancer l'application OPTIweb
 
-Il suffit de lancer le programme OPTIweb.java pour générer la page *OPTIweb.html*.
+Il suffit de : 
+--
+- soit lancer le programme OPTIweb.java pour générer la page *OPTIweb.html*.
+- soit utiliser le bouton "Exporter format web" du menu "Fichier" de l'application *OPTI.jar*
+--
 
 [NOTE]
 ====
@@ -84,7 +88,9 @@ NOTE: Le programme de test 'MakeOPTIwebTest.java' vérifie que la page html a é
 L'application de consultation 'OPTIweb.html' est intégralement générée
 par le programme 'MakeOPTIweb.java' qui à partir des fichiers csv (Sujets, Etudiants, Intervenants, Projets ...) fabrique le fichier 'OPTIweb.html'.
 
-NOTE: Le programme 'MakeOPTIweb.java' utilise la librairie de gestion des fichiers csv disponible dans le projet 'OPTI' tels que etudiants2014_2015.csv entre d'autres.
+NOTE: Lors de la génération de l'application de consultation depuis le bouton "*Exporter format web*" du fichier *OPTI.jar*, les données utilisées sont celles *manipulées actuellement*.
+	  Si la génération est faite en lançant le programme *OPTIweb.java*, il utilisera d'*office les fichiers* .csv "étudiants2014_2015", "intervenants2014_2015", "sujets2014_2015" et "projets2014_2015".
+	  Ces fichiers doivent bien entendu exister pour pouvoir générer une application de consultation correcte.
 
 ====
 

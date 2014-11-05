@@ -8,8 +8,7 @@ Présentation Finale
 
 include::docConf.txt[]
 
------------
-image:Univ.png[]
+
 
 
 Projet OPTI
@@ -23,6 +22,8 @@ Projet OPTI
 
 - DUT INFO S3/Module MPA
 
+image:Univ.png[]
+image:IUT.png[]
 
 Liste des membres de l'équipe
 -----------------------------
@@ -38,6 +39,7 @@ Dans les grandes lignes OPTI c'est un outil pour...
 - Gérer les informations destinées aux intervenants et étudiants
 - Gérer les erreurs de saisie
 - Gérer les voeux
+- Afficher toutes les informations manipulées sur une application web
 
 Bilan Fonctionnel
 -----------------

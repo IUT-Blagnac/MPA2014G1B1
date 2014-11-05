@@ -1,4 +1,4 @@
-﻿= Documentation Technique SPRINT 3
+﻿= Documentation Technique : Projet OPTI 
 
 :Author:  Groupe projet 1B1 
 
@@ -7,12 +7,14 @@
 :slideshowlocation: Your computer
 
 :copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
-:revnumber: 0
+:revnumber: Finale
+
+include::docConf.txt[]
 
 *Bienvenue dans ce manuel d'utilisation d'OPTI !*
 Ce guide présente de façon détaillée le fonctionnement de votre application.
 
-include::docConf.txt[]
+
 
 == Projet OPTI
 
@@ -22,41 +24,35 @@ include::docConf.txt[]
 
 - DUT INFO S3/Module MPA
 
+image:Univ.png[link="..\srcdoc\images\Univ.png"]
+image:IUT.png[height=50, link="..\srcdoc\images\IUT..png"]
 
 == Liste des membres de l'équipe
 
 include::listMember.txt[]
 
-
-
 == Introduction
 
 OPTI es un logiciel permettant de gérer les projets tutorés. +
-Cette documentation vous fournira toutes les informations nécessaires pour bien comprendre le fonctionnement de l'application. Vous pouvez toutefois consulter la *documentation utilisateur* concernant d'autres informations sur le sujet. 
+Cette documentation vous fournira toutes les informations nécessaires pour bien comprendre le fonctionnement de l'application. 
+Vous pouvez toutefois consulter la *documentation utilisateur* pour avoir plus d'informations sur l'utilisation de l'application. 
 
 include::backLog.txt[]
-
-=== Sprint 3
-
-La sujet est abordé en réalisant:
-
-	- L'intégration des fonctions d'affichage et gestion des rôles, voeux et associations. 
-	
-	- Le test des fonctions d'affichage et de gestion des données.
 
 == Fonctionnalités 
 
 - *Make.bat*:
 
-* Pour pouvoir générer la documentation et lancer les tests automatiques il suffit d'éxécuter le fichier make.bat qui se trouve dans la racine du sprint. +
+* Pour pouvoir *générer* la *documentation* et lancer les tests automatiques il suffit d'*éxécuter* le fichier *make.bat* qui se trouve dans la racine du sprint. +
 La documentation sera générée dans le répertoire nommé *"doc"*. +
 
 
-image::make.png[link="../make.bat", ,width="50%"] 
+image::make.png[link="..\srcdoc\images\make.PNG", ,width="50%"] 
 
 - *Gérer les différents acteurs des PTUTs:*
+* Charger un acteur
+* Sauvegarder un acteur
 * Ajouter un acteur
-
 * Modifier un acteur
 * Supprimer un acteur
 * Cloner un projet
@@ -64,89 +60,101 @@ image::make.png[link="../make.bat", ,width="50%"]
 
 - *Assigner et gérer les différents projets:*
 * Créer un projet
-* Assigner un(des) étudiant(s) à un projet
 * Supprimer un projet
 * Assigner un projet à un groupe
+* Affecter un rôle à un intervenant sur un projet
 
+- *Afficher les informations générales liées à un projet, étudiant ou sujet:*
+* Afficher les informations
 
+- *Changer de langue*
 
-- *Gérer les informations destinées aux intervenants:*
-* Afficher les informations liées à un projet, étudiant ou sujet
-* Sauvegarder ou Charger des données
-* Noter et évaluer les projets*
+- *Consulter les données au format web*
 
-
-
-- *Onglet "A propos"*:
-
-* Onglet de l'application qui contient les informations concernant les auteurs. +
+- *Onglet "A propos":*
+* Se renseigner sur l'équipe de développement, l'université et l'état (nombre) des données.
 
 - *Quitter*:
-
 * Permet de quitter l'application. +
 
 == Modèles d'analyse
 
-Modèles permettant la bonne compréhension  de l'interface. 
+Ci dessous vont vous êtes présenté les différents modèles, diagrammes, qui vous permettront de mieux visualiser notre conception de l'application.
 
 === Package 
 
-image::packagediagram.png[link="package diagram.png"]
+* Voici d'abord le diagramme de package global de l'application. 
+
+image::packageDiag_SP5.png[link="..\srcdoc\images\packageDiag_SP5.png"]
 
 * Contenu du package *Data*:
 
-image::packageDATAdiagram.PNG[link="packageDATAdiagram.PNG"]
+image::packageDiag_data_SP5.png[link="..\srcdoc\images\packageDiag_data_SP5.png"]
+
+Dans chaque package des données on a réalisé ce schéma de hiérarchie pour respecter le modèle Model View Controler (MVC)
+
+image::classDiag_Etu_Enc.PNG[link="..\srcdoc\images\classDiag_Etu_Enc.PNG"]
+
+Quant au package "*util*", il contient ceci : 
+
+image::classDiag_util_SP5.PNG[link="..\srcdoc\images\classDiag_util_SP5.PNG"]
 
 * Contenu du package *GUI*:
 
-image::packageGUIdiagram.PNG[link="packageGUIdiagram.PNG"]
-
-image::packageDials.PNG[link="packageDials.PNG"]
+image::packageDiag_gui_SP5.png[link="..\srcdoc\images\packageDiag_gui_SP5.png"]
 
 === Diagramme de Classe
 
-image::ClassDiagSprint3.png[link="ClassDiagSprint3.png"]
+Ci-dessous le diagramme de classe des données de l'application.
+
+image::ClassDiagSprint3.png[link="..\srcdoc\images\ClassDiagSprint3.png"]
 
 Diagramme de hiérarchie des classes :
 
-image::HierachyClassSprint3.png[link="HierachyClassSprint3.png"]
+image::HierachyClassSprint3.png[link="..\srcdoc\images\HierachyClassSprint3.png"]
 
 Vous pouvez avoir accès aux classes ici:
 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Intervenant.java[Intervenant.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Etudiant.java[Etudiant.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Project.java[Project.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Subject.java[Subject.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\OptiElement.java[OptiElement.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\DataManager.java[DataManager.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\DataChangeListener.java[DataChangeListener.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\DataFilter.java[DataFilter.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Encadrer.java[Encadrer.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Roles.java[Roles.java]
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Voeux.java[Voeux.java] 
-	- link:..\V2\OPTI\src\fr\iut_blagnac\data\Groupe.java[Groupe.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\intervenant\Intervenant.java[Intervenant.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\etudiant\Etudiant.java[Etudiant.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\projet\Projet.java[Project.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\sujet\Sujet.java[Subject.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\util\OptiElement.java[OptiElement.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\util\DataManager.java[DataManager.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\util\DataChangeListener.java[DataChangeListener.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\util\DataFilter.java[DataFilter.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\encadrer\Encadrer.java[Encadrer.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\intervenant\role\Roles.java[Roles.java]
+	- link:..\OPTI\src\fr\iut_blagnac\data\voeux\Voeux.java[Voeux.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\data\groupe\Groupe.java[Groupe.java] 
 	
 	
 === Use Case
 
-image::usecasediag.png[height=300,width=60%,link="usecasediag.png"]
+image::usecasediag.png[height=300,width=60%,link="..\srcdoc\images\usecasediag.png"]
 
 === View 
 
-image::ViewDiag.png[link="View Diag.png"]
+image::packageDiag_gui_SP5.png[link="..\srcdoc\images\packageDiag_gui_SP5.png"]
 
 Vous pouvez avoir accès aux classes ici:
 
 	- link:..\OPTI\src\fr\iut_blagnac\gui\Application.java[Application.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\ElementRecorder.java[ElementRecorder.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\ElementCreator.java[ElementCreator.java] 
 	- link:..\OPTI\src\fr\iut_blagnac\gui\RecordListener.java[RecordListener.java] 
 	- link:..\OPTI\src\fr\iut_blagnac\gui\ElementDisplayer.java[ElementDisplayer.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabAssociation.java[TabAssociation.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabData.java[TabData.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabElementDisplay.java[TabElementDisplay.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabInformation.java[TabInformation.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabIntervenant.java[TabIntervenant.java] 
+	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabVoeux.java[TabVoeux.java] 
 
 === Controller
 
-image::controlerdiag.png[link="controler diag.png"]
+image::classDiag_io_SP5.png[link="..\srcdoc\images\classDiag_io_SP5.png"]
 
-Code source: 
+Vous pouvez avoir accès aux classes ici: 
 
 - link:..\OPTI\src\fr\iut_blagnac\io\CSVManager.java[CSVManager.java] 
 - link:..\OPTI\src\fr\iut_blagnac\io\OptiElementManager.java[OptiElementManager.java] 
@@ -161,12 +169,12 @@ Tests:
 Utilisation d'une classe abstraite *OptiElement* dont héritent les sous-classes *Intervenant*, *Etudiant*, *Projet* et *Sujets*. Cette strucuture permet de gérer plus facilement les différents éléments en les traitant comme une même donnée. +
 
 ----
-include::..\OPTI\src\fr\iut_blagnac\data\model\OptiElement.java[OptiElement.java] 
+include::..\OPTI\src\fr\iut_blagnac\data\util\OptiElement.java[OptiElement.java] 
 ----
 
 De plus des contrôles de saisie de texte sont implémentés dans le code source des différentes classes. Comme on peut bien voir avec la méthode isValid() dans l'exemple suivant de la classe *Intervenants*:
 ----
-include::..\OPTI\src\fr\iut_blagnac\data\model\Intervenant.java[Intervenant.java] 
+include::..\OPTI\src\fr\iut_blagnac\data\Intervenant\Intervenant.java[Intervenant.java] 
 ----
 La mise en page est gérée par le package *.gui*, dont plusieurs classes sont décrites pour mettre en place une intérface logique et érgonomique. 
 

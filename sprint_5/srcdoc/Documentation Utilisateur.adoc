@@ -7,7 +7,7 @@
 :slideshowlocation: Your computer
 
 :copyright: {date={localdate}}, {slideshowlocation} *** {author} *** Powered by AsciiDoc and W3C Slidy &#169; 
-:revnumber: 0
+:revnumber: Finale
 
 include::docConf.txt[]
 
@@ -23,19 +23,24 @@ include::docConf.txt[]
 - DUT INFO S3/Module MPA
 
 
+image:Univ.png[link="Univ.png"]
+image:IUT.png[height=50, link="IUT..png"]
+
 == Liste des membres de l'équipe
 
 include::listMember.txt[]
-
-include::backLog.txt[]
 
 == Dans les grandes lignes OPTI c'est un outil pour :
 
 - Gérer les différents acteurs des PTUTs
 - Assigner et gérer les différents projets
 - Gérer les informations destinées aux intervenants
-- Noter et évaluer les projets
 - Gérer les erreurs de saisie 
+- Gérer les voeux
+- Afficher toutes les informations manipulées sur une application web
+
+
+include::backLog.txt[]
 
 == Comment ça marche ?
 
@@ -44,60 +49,138 @@ _cliquez sur les images pour agrandir_
 
 *Pour lancer l'application, exécuter "OPTI.jar"*
 
+- Charger/Sauvegarder des données
+	Charger::
+	Pour charger des données il vous suffit de cliquer sur le *type* que vous voulez charger du menu "*Charger*". + 
+	Attention à ce que les fichiers .csv correspondent bien aux champs du type sélectionné.
+
+	Sauvegarder::
+	Pour sauvegarder des données il vous suffit de cliquer sur le *type* que vous voulez sauvegarder du menu "*Sauvegarder*". + 
+	Attention au nom que vous donnez au fichier, lors de l'ouverture de l'application des fichiers sont chargés d'office il vous faut 
+	donc faire attention à ne pas donner n'importe quel nom. +
+	Vous pouvez aussi sauvegarder tout d'un coup auquel cas quatre boîtes de sauvegarde seront successivement ouvertes (Le libelle de la sauvegarde est dans l'en tête). + 
+
+[NOTE]	
+_Le mieux est d'*écraser* les *précédents fichiers* tout en faisant attention à ne pas enregistrer des sujets sur le fichier nommé "...projet...", etc..._
+
 - Gérer les différents acteurs des PTUTs
-* Ajouter un acteur
+	Ajouter un acteur:: Pour ajouter un acteur (Etudiant, Intervenant, Sujet) il vous suffit de *sélectionner l'acteur* que vous souhaitez ajouter
+						dans la liste déroulante puis passer en *Mode Edition* et enfin cliquer sur le bouton *Ajouter*. Ceci vous créera un nouvel 
+						acteur dont tous les champs sont vides.
 
-image::ScreensSP3\Ajouter.png[height=200, link="..\srcdoc\images\ScreensSP3\Ajouter.png"]
+image::ScreensSP5\Ajouter.png[height=300, link="..\srcdoc\images\ScreensSP5\Ajouter.png"]
 
-* Modifier un acteur / Supprimer un acteur
+[NOTE] 
+_Si les informations que vous rentrez ne sont pas valides, la case deviendra rouge et l'information ne sera pas enregistrée. (cf Partie erreur)_
 
-image::ScreensSP3\Modifier.png[height=200, link="..\srcdoc\images\ScreensSP3\Modifier.png"]
+	Modifier/Supprimer un acteur:: Pour modifier un acteur (Etudiant, Intervenant, Sujet) il vous suffit de passer en *Mode édition* ce qui rend les 
+									champs de chaque acteur modifiable.
 
-- Assigner et gérer les différents projets
-* Créer un projet
-* Assigner un groupe à un projet
-* Supprimer un projet
+image::ScreensSP5\Modifier.png[height=300, link="..\srcdoc\images\ScreensSP5\Modifier.png"]
 
-Associer un sujet à un groupe.
+[NOTE]
+_De même que pour ajouter un acteur._
 
-image::ScreensSP3\Associer.png[height=200, link="..\srcdoc\images\ScreensSP3\Associer.png"]
+- Gérer les projets 
+	Créer un projet:: 
+		Pour *associer* un sujet à un groupe et donc créer un projet composé de chacun d'eux il vous suffit
+		de sélectionner un groupe dans la liste en haut à droite et un sujet dans la liste en bas à droite 
+		et de cliquer sur *associer*. De ce fait un nouveau projet apparaît dans la liste des projets à gauche
+		composé du sujet et du groupe sélectionnés.
 
-Associer un rôle/projet à un intervenant.
+image::ScreensSP5\Associer.png[height=300, link="..\srcdoc\images\ScreensSP5\Associer.png"]
 
-image::ScreensSP3\Roles.png[height=200, link="..\srcdoc\images\ScreensSP3\Roles.png"]
+[NOTE]
+_Un groupe *ne peut* être associé qu'à *un seul sujet* et inversement._
+[NOTE]
+_Lorsque le projet est créé on peut alors le sélectionner et voir quel groupe et quel sujet le compose (image ci-dessus)._
 
-- Gérer les informations destinées aux intervenants
-* Afficher les informations liées à un projet, étudiant ou sujet
+	Supprimer un projet:: 
+		Pour Supprimer un projet vous devez aller dans l'onglet *Données*, sélectionner les projets dans la liste déroulante, 
+		puis faire un *clic droit* sur le projet que vous souhaitez supprimer et cliquer sur *Supprimer*.
 
-image::ScreensSP3\Detail.png[height=200, link="..\srcdoc\images\ScreensSP3\Detail.png"]
+image::ScreensSP5\Cloner.png[height=300, link="..\srcdoc\images\ScreensSP5\Cloner.png"]
 
-Clic droit pour cloner un projet.
+	Cloner un projet:: 
+		Lorsqu'un projet est crée, vous pouvez le cloner c'est à dire dupliquer le projet sélectionner à l'aide du clic droit.
 
-image::ScreensSP3\Cloner.png[height=200, link="..\srcdoc\images\ScreensSP3\Cloner.png"]
+image::ScreensSP5\Cloner.png[height=300, link="..\srcdoc\images\ScreensSP5\Cloner.png"]
 
-- Noter et évaluer les projets
-* Noter un projet
+	Associer un rôle/projet à un intervenant:: 
+		Pour *associer* un rôle à un intervenant sur un projet il vous suffit
+		de *sélectionner* un *projet* dans la liste en haut à droite et un *role* dans la liste en bas à droite 
+		et de cliquer sur *affecter*.
 
-- Gérer les voeux des groupes
+image::ScreensSP5\Roles.png[height=300, link="..\srcdoc\images\ScreensSP5\Roles.png"]
 
-image::ScreensSP3\Voeux.png[height=200, link="..\srcdoc\images\ScreensSP3\Voeux.png"]
 
-- Gérer les erreurs de saisie 
+- Afficher les informations générales liées à un projet, étudiant ou sujet
+	::
+		Vous pouvez à tout moment accéder au *détail* de chacun des acteurs et des sujets grâce au *bouton détail* situé à droite.
 
-image::ScreensSP3\Erreur.png[height=200, link="..\srcdoc\images\ScreensSP3\Erreur.png"]
+image::ScreensSP5\Detail.png[height=300, link="..\srcdoc\images\ScreensSP5\Detail.png"]
 
+
+- Définir les voeux des groupes
+	::
+		Pour définir les voeux d'un groupe il vous faut aller dans l'onglet "*Voeux*" puis *sélectionner* un groupe dans la liste
+		en haut à droite. + 
+		Il vous faut ensuite *écrire* dans la zone de texte en bas à droite *l'ordre des voeux du groupe*. +
+		Pour cela il faut les écrire de sorte à ce que ça coincide avec la liste de sujet à gauche c'est à dire que le premier 
+		nombre écrit correspond à l'ordre du sujet 1, le deuxième celui du sujet 2, ...
+		Exemple:: _"9,4,2,5,pass:[<s>18</s>],6,3,8,7"_ +
+					_Le sujet 1 est classé 9ème._ +
+					_Le sujet 2 est classé 4ème._ +
+					_Le sujet 3 est classé 2ème._ +
+					_Le sujet 4 est classé 5ème._ +
+					_pass:[<s>Le sujet 5 est classé 18ème.</s>]_ +
+					_..._
+
+
+image::ScreensSP5\Voeux.png[height=300, link="..\srcdoc\images\ScreensSP5\Voeux.png"]
+
+[NOTE]
+Le nombre de chiffres écrit doit correspondre au nombre de sujets présents dans la liste à gauche.
+[NOTE]
+Vous ne pouvez pas écrire deux virgules d'affilé. + 
+Chaque chiffre ne doit pas dépasser le nombre de sujet
+
+- Gérer les erreurs de saisie
+	:: 
+	Certains champs comportent des *vérifications* sur leur *contenu*. +
+	En effet certains champs ont certaines "obligations" concernant leur valeur de ce fait si ces obligations ne sont pas respectées la case devient rouge.
+	Exemple:: _Les identifiants ne peuvent pas être nuls._ +
+			  _Les noms et prénoms ne peuvent pas contenir de chiffres._
+
+image::ScreensSP5\Erreur.png[height=300, link="..\srcdoc\images\ScreensSP5\Erreur.png"]
+
+- Consulter les données sur l'application web
+	::
+	Une application web *OPTIweb.java* est disponible (voir Documentation OPTIweb) et permet de *consulter les informations* fournies par les fichiers .csv. + 
+	Il vous est possible de générer l'application web *spécifique* aux données que vous avez créé/modifié/supprimé et de ce fait les consulter sur le *format web*. + 
+	Pour cela il vous suffir de cliquer sur le bouton "*Exporter format web*" du menu "*Fichier*". +
+
+image::ScreensSP5\Exporter.png[height=300, link="..\srcdoc\images\ScreensSP5\Exporter.png"]
+
+	Ci dessous, la page d'accueil de l'application web générée.
+
+image::ScreensSP5\Web.PNG[height=300, link="..\srcdoc\images\ScreensSP5\Web.PNG"]
 
 === En savoir plus
-Si vous voulez vous renseigner sur l'équipe et l'établissement de production d'OPTI, ou la version que vous utilisez vous pourrez trouver ces informations dans l'onglet "A propos" de l'application.
+Si vous voulez vous renseigner sur l'équipe et l'établissement de production d'OPTI, ou la version que vous utilisez vous pourrez trouver ces informations dans l'onglet "A propos" de l'application. +
+Vous pouvez aussi trouver le nombre d'acteurs, de sujets, de projets, etc...
 
-image::ScreensSP3\APropos.png[height=200, link="..\srcdoc\images\ScreensSP3\APropos.png"]
+image::ScreensSP5\APropos.png[height=300, link="..\srcdoc\images\ScreensSP5\APropos.png"]
 
 
 === Changer de langue
 
 Vous avez aussi le choix entre 4 langues pour utiliser votre application!
 
-image::ScreensSP3\Langues.png[height=200, link="..\srcdoc\images\ScreensSP3\Langues.png"]
+image::ScreensSP5\Langues.png[height=300, link="..\srcdoc\images\ScreensSP5\Langues.png"]
+
+[NOTE]
+Il vous faudra tout de même redémarrer l'application lors du changement de la langue.
 
 == Quitter ?
-Pour quitter l'application cliquez simplement sur l'onglet "Quitter" de la barre de menus.
+Pour quitter l'application cliquez simplement sur le bouton "Quitter" de la barre de menus ou appuyer sur la croix rouge.

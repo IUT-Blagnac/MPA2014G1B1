@@ -1,0 +1,86 @@
+
+@startuml
+
+
+package fr.iut_blagnac {
+package data{
+package encadrer{}
+package etudiant{}
+package groupe{}
+package intervenant{}
+package projet{}
+package sujet{}
+package util{}
+package voeux{}
+}
+package io {
+class CSVManager
+class CSVManagerTest
+class OptiElementManager
+class OptiElementManagerTest
+}
+package gui {
+package tabs{
+class TabAssociation
+class TabData
+class TabElementDisplay
+class TabInformation
+class TabIntervenant
+class TabVoeux
+}
+class Application
+class ElementCreator
+class ElementDisplayer
+class Recordlistener
+}
+package util1 {
+class ConfigFileManager
+class MakeOptiWeb
+class MakeOptiWebTest
+class Str
+}
+}
+
+
+package Encadrer {
+	class Encadrer
+}
+
+package Etudiant{
+	package Controler {
+		class EtudiantGroupeControler
+		class EtudiantIdControler
+		class EtudiantNomControler
+		class EtudiantPrenomControler
+	}
+	package View {
+		class EtudiantDetail
+		class EtudiantRepresentation
+		
+	}
+	class Etudiant {
+		-firstName
+		-lastName
+		-groupe
+		- getFirstName()
+		- setFirstName()
+		- getlastName()
+		- setlastName()
+		- getGroup()
+		- setGroup(char)
+		- void initRepresentation()
+	}
+}
+
+
+package util {
+	class DataChangeListener
+	class DataFilter
+	class DataManager
+	class DetailedOptiElementRepresentation
+	class OptiElement
+	class OptiElementFieldControleur
+	class OptiElementRepresentation
+}
+
+@enduml

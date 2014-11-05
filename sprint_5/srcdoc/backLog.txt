@@ -11,7 +11,7 @@
     - gérer l'évaluation de chaque projet +
 
 	
-*Pour ce qui concerne ce sprint plusieurs méthodes sont mises en place permettant de:* +
+*Les fonctionnalités en détail:* +
 
 
 - En tant qu’administrateur, je veux pouvoir afficher la liste des étudiants du fichier etudiants2014_2015.csv dans l’IHM
@@ -34,17 +34,7 @@
 
 - En tant qu’administrateur, je veux pouvoir afficher la liste des projets puis cloner n’importe quel projet, l'éditer et sauvegarder la liste des projets dans un fichier .csv de mon choix
 
-- En tant qu’administrateur, je veux pouvoir afficher la liste des groupes indiquant le projet, le sujet, les étudiants et l’ensemble des intervenants du projet dans l’IHM
-
-- En tant qu’administrateur, je veux pouvoir afficher la liste des étudiants indiquant le groupe, le sujet, le projet et l’ensemble des intervenants du projet dans l’IHM
-
-- En tant qu’administrateur, je veux pouvoir afficher dans l’IHM la liste des intervenants indiquant pour chaque projet, le sujet, le rôle, le groupe et le projet
-
 - En tant qu’administrateur, je veux pouvoir saisir les voeux de chaque groupe d'étudiants (rappel: chaque groupe classe tous les sujets de 1 à nombreDeSujets).
-
-- En tant qu’administrateur, je veux pouvoir sélectionner un numéro de voeux X et afficher tous les sujets sélectionnés en voeux numéro X.
-
-- En tant qu’administrateur, je veux pouvoir afficher la liste des groupes avec pour chaque groupe le sujet qui leur est affecté (s’il existe) et le numéro de voeux correspondant, ainsi que les intervenants affectés s’il y en a (superviseur, support technique ou rapporteur).
 
 - En tant qu’administrateur, je veux pouvoir sélectionner un sujet et un groupe pour créer un nouveau projet.
 
@@ -52,4 +42,8 @@
 
 - En tant qu’administrateur, une fois la liste des étudiants ou des intervenants ou des sujets ou des projets affichée dans l’IHM, je veux pouvoir sélectionner (filtrer) les éléments affichés sur chacun des champs du fichier .csv correspondant.
 
-- Une fois la liste des étudiants ou des intervenants ou des sujets ou des projets affichée dans l’IHM, pouvoir sélectionner (filtrer) les éléments affichés sur chacun des champs du fichier .csv +
+- Une fois la liste des étudiants ou des intervenants ou des sujets ou des projets affichée dans l’IHM, pouvoir sélectionner (filtrer) les éléments affichés sur chacun des champs du fichier .csv +.
+
+- En tant qu'utilisateur je peux changer la langue de l'application (Allemand, Anglais, Espagnol, Français).
+
+- En tant qu'utilisateur je peux générer la page HTML puis visualiser les données que je manipule sur l'application de consultation web OPTIweb.java
