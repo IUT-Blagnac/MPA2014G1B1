@@ -58,7 +58,7 @@ _cliquez sur les images pour agrandir_
 	Pour sauvegarder des données il vous suffit de cliquer sur le *type* que vous voulez sauvegarder du menu "*Sauvegarder*". + 
 	Attention au nom que vous donnez au fichier, lors de l'ouverture de l'application des fichiers sont chargés d'office il vous faut 
 	donc faire attention à ne pas donner n'importe quel nom. +
-	Vous pouvez aussi sauvegarder tout d'un coup auquel cas quatre boîtes de sauvegarde seront successivement ouvertes (Le libelle de la sauvegarde est dans l'en tête). + 
+	Vous pouvez aussi sauvegarder tout d'un coup auquel cas quatre boîtes de sauvegarde seront successivement ouvertes (Le libellé de la sauvegarde est dans l'en tête). + 
 
 [NOTE]	
 _Le mieux est d'*écraser* les *précédents fichiers* tout en faisant attention à ne pas enregistrer des sujets sur le fichier nommé "...projet...", etc..._

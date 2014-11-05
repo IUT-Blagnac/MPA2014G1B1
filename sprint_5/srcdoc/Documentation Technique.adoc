@@ -80,6 +80,7 @@ image::make.png[link="..\srcdoc\images\make.PNG", ,width="50%"]
 == Modèles d'analyse
 
 Ci dessous vont vous êtes présenté les différents modèles, diagrammes, qui vous permettront de mieux visualiser notre conception de l'application.
+Nous avons choisi de suivre le model Model View Controler (MVC).
 
 === Package 
 
@@ -95,15 +96,18 @@ Dans chaque package des données on a réalisé ce schéma de hiérarchie pour r
 
 image::classDiag_Etu_Enc.PNG[link="..\srcdoc\images\classDiag_Etu_Enc.PNG"]
 
-Quant au package "*util*", il contient ceci : 
+Quant au package "*util*", il contient ceci : + 
+Le *DataManager stocke* toutes les *données* de l'application (acteurs,sujets,projets,...).
+
 
 image::classDiag_util_SP5.PNG[link="..\srcdoc\images\classDiag_util_SP5.PNG"]
 
 * Contenu du package *GUI*:
 
+
 image::packageDiag_gui_SP5.png[link="..\srcdoc\images\packageDiag_gui_SP5.png"]
 
-=== Diagramme de Classe
+=== Model
 
 Ci-dessous le diagramme de classe des données de l'application.
 
@@ -115,18 +119,18 @@ image::HierachyClassSprint3.png[link="..\srcdoc\images\HierachyClassSprint3.png"
 
 Vous pouvez avoir accès aux classes ici:
 
-	- link:..\OPTI\src\fr\iut_blagnac\data\intervenant\Intervenant.java[Intervenant.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\etudiant\Etudiant.java[Etudiant.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\projet\Projet.java[Project.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\sujet\Sujet.java[Subject.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\util\OptiElement.java[OptiElement.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\util\DataManager.java[DataManager.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\util\DataChangeListener.java[DataChangeListener.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\util\DataFilter.java[DataFilter.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\encadrer\Encadrer.java[Encadrer.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\intervenant\role\Roles.java[Roles.java]
-	- link:..\OPTI\src\fr\iut_blagnac\data\voeux\Voeux.java[Voeux.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\data\groupe\Groupe.java[Groupe.java] 
+	- link:..\src\fr\iut_blagnac\data\intervenant\Intervenant.java[Intervenant.java] 
+	- link:..\src\fr\iut_blagnac\data\etudiant\Etudiant.java[Etudiant.java] 
+	- link:..\src\fr\iut_blagnac\data\projet\Projet.java[Project.java] 
+	- link:..\src\fr\iut_blagnac\data\sujet\Sujet.java[Subject.java] 
+	- link:..\src\fr\iut_blagnac\data\util\OptiElement.java[OptiElement.java] 
+	- link:..\src\fr\iut_blagnac\data\util\DataManager.java[DataManager.java] 
+	- link:..\src\fr\iut_blagnac\data\util\DataChangeListener.java[DataChangeListener.java] 
+	- link:..\src\fr\iut_blagnac\data\util\DataFilter.java[DataFilter.java] 
+	- link:..\src\fr\iut_blagnac\data\encadrer\Encadrer.java[Encadrer.java] 
+	- link:..\src\fr\iut_blagnac\data\intervenant\role\Roles.java[Roles.java]
+	- link:..\src\fr\iut_blagnac\data\voeux\Voeux.java[Voeux.java] 
+	- link:..\src\fr\iut_blagnac\data\groupe\Groupe.java[Groupe.java] 
 	
 	
 === Use Case
@@ -135,59 +139,66 @@ image::usecasediag.png[height=300,width=60%,link="..\srcdoc\images\usecasediag.p
 
 === View 
 
+Application:: Le fichier *Application* comporte le *main* de *lancement* de l'application.
+
+Package tabs:: Le package *tabs* sert à représenter les onglets. Il se compose donc 
+				d'autant de classe qu'il y a d'onglet dans l'application.
+
 image::packageDiag_gui_SP5.png[link="..\srcdoc\images\packageDiag_gui_SP5.png"]
 
 Vous pouvez avoir accès aux classes ici:
 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\Application.java[Application.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\ElementCreator.java[ElementCreator.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\RecordListener.java[RecordListener.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\ElementDisplayer.java[ElementDisplayer.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabAssociation.java[TabAssociation.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabData.java[TabData.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabElementDisplay.java[TabElementDisplay.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabInformation.java[TabInformation.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabIntervenant.java[TabIntervenant.java] 
-	- link:..\OPTI\src\fr\iut_blagnac\gui\tabs\TabVoeux.java[TabVoeux.java] 
+	- link:..\src\fr\iut_blagnac\gui\Application.java[Application.java] 
+	- link:..\src\fr\iut_blagnac\gui\ElementCreator.java[ElementCreator.java] 
+	- link:..\src\fr\iut_blagnac\gui\RecordListener.java[RecordListener.java] 
+	- link:..\src\fr\iut_blagnac\gui\ElementDisplayer.java[ElementDisplayer.java] 
+	- link:..\src\fr\iut_blagnac\gui\tabs\TabAssociation.java[TabAssociation.java] 
+	- link:..\src\fr\iut_blagnac\gui\tabs\TabData.java[TabData.java] 
+	- link:..\src\fr\iut_blagnac\gui\tabs\TabElementDisplay.java[TabElementDisplay.java] 
+	- link:..\src\fr\iut_blagnac\gui\tabs\TabInformation.java[TabInformation.java] 
+	- link:..\src\fr\iut_blagnac\gui\tabs\TabIntervenant.java[TabIntervenant.java] 
+	- link:..\src\fr\iut_blagnac\gui\tabs\TabVoeux.java[TabVoeux.java] 
 
 === Controller
+La classe *CSVManager* gère tous les *ouverture* et *écriture* de fichier *.csv*. +
+Quant à la classe *OptiElementManager* elle s'occupe des *différents* cas d'*ouverture/fermeture* des *fichiers .csv* selon le *type* (acteurs, sujet, projets).
 
 image::classDiag_io_SP5.png[link="..\srcdoc\images\classDiag_io_SP5.png"]
 
 Vous pouvez avoir accès aux classes ici: 
 
-- link:..\OPTI\src\fr\iut_blagnac\io\CSVManager.java[CSVManager.java] 
-- link:..\OPTI\src\fr\iut_blagnac\io\OptiElementManager.java[OptiElementManager.java] 
+- link:..\src\fr\iut_blagnac\io\CSVManager.java[CSVManager.java] 
+- link:..\src\fr\iut_blagnac\io\OptiElementManager.java[OptiElementManager.java] 
 
 Tests:
 
-- link:..\OPTI\src\fr\iut_blagnac\io\CSVManagerTest.java[CSVManagerTes.java] 
-- link:..\OPTI\src\fr\iut_blagnac\io\OptiElementManagerTest.java[OptiElementManagerTest.java] 
+- link:..\src\fr\iut_blagnac\io\CSVManagerTest.java[CSVManagerTes.java] 
+- link:..\src\fr\iut_blagnac\io\OptiElementManagerTest.java[OptiElementManagerTest.java] 
 
 === Choix techniques
 
 Utilisation d'une classe abstraite *OptiElement* dont héritent les sous-classes *Intervenant*, *Etudiant*, *Projet* et *Sujets*. Cette strucuture permet de gérer plus facilement les différents éléments en les traitant comme une même donnée. +
 
 ----
-include::..\OPTI\src\fr\iut_blagnac\data\util\OptiElement.java[OptiElement.java] 
+include::..\src\fr\iut_blagnac\data\util\OptiElement.java[OptiElement.java] 
 ----
 
 De plus des contrôles de saisie de texte sont implémentés dans le code source des différentes classes. Comme on peut bien voir avec la méthode isValid() dans l'exemple suivant de la classe *Intervenants*:
 ----
-include::..\OPTI\src\fr\iut_blagnac\data\Intervenant\Intervenant.java[Intervenant.java] 
+include::..\src\fr\iut_blagnac\data\Intervenant\Intervenant.java[Intervenant.java] 
 ----
 La mise en page est gérée par le package *.gui*, dont plusieurs classes sont décrites pour mettre en place une intérface logique et érgonomique. 
 
 Enfin, les données seront traités dans le .csv, pour cela on utilise la classe CSVManager: 
 ----
-include::..\OPTI\src\fr\iut_blagnac\io\CSVManager.java[CSVManager.java] 
+include::..\src\fr\iut_blagnac\io\CSVManager.java[CSVManager.java] 
 ----
 
 === Javadoc	
 
 Ce lien vous donne accès a la Javadoc du projet:
 
-link:..\V2\OPTI\doc\allclasses-frame.html[Doc.html] 
+image::javadoc.PNG[link="..\doc\html\allclasses-frame.html"]
 
 ====
 
