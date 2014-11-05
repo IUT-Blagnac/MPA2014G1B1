@@ -61,8 +61,8 @@ public class TabVoeux extends JPanel implements ChangeListener,
 
 	/**
 	 * Create a new TabVoeux with a DataManager and a parent Window
-	 * @param parent
-	 * @param currentDataManager
+	 * @param parent : The parent window
+	 * @param currentDataManager : The DataManager
 	 */
 	public TabVoeux(JFrame parent, DataManager currentDataManager) {
 

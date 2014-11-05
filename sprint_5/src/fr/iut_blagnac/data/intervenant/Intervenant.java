@@ -46,7 +46,7 @@ public class Intervenant extends OptiElement{
 	
 	/**
 	 * Constructor
-	 * @param csvRow
+	 * @param csvRow : Array containing a line of a CSV file
 	 */
 	public Intervenant(String[] csvRow) {
 		loadFromArray(csvRow);
@@ -54,7 +54,7 @@ public class Intervenant extends OptiElement{
 	
 	/**
 	 * Constructor 
-	 * @param id TODO
+	 * @param id : Identifiant de l'intervenant
 	 * @param firstName : Prénom de l'intervenant
 	 * @param lastName : Nom de l'intervenant
 	 */
@@ -67,7 +67,7 @@ public class Intervenant extends OptiElement{
 	
 	/**
 	 * Constructor 
-	 * @param id TODO
+	 * @param id : Identifiant de l'intervenant
 	 * @param firstName : Prénom de l'intervenant
 	 * @param lastName : Nom de l'intervenant
 	 * @param listeEncadrer : the list of Encadrer
@@ -97,7 +97,7 @@ public class Intervenant extends OptiElement{
 	
 	/**
 	 * Set the id of the Intervenant
-	 * @param id
+	 * @param id : Id
 	 */
 	public void setId(String id) {
 		if(id == null){
@@ -126,7 +126,7 @@ public class Intervenant extends OptiElement{
 	
 	/**
 	 * Set the first name of the Intervenant
-	 * @param firstName
+	 * @param firstName : First name
 	 */
 	public void setFirstName(String firstName) {
 		if(firstName == null){
@@ -148,6 +148,7 @@ public class Intervenant extends OptiElement{
 		
 	/**
 	 * Get the last name of the teacher
+	 * @return lastName
 	 */
 	public String getLastName() {
 		return lastName;
@@ -184,7 +185,7 @@ public class Intervenant extends OptiElement{
 	
 	/**
 	 * Set the list of Encadrer
-	 * @param listEncadrer
+	 * @param listEncadrer : list of Encadrer
 	 */
 	public void setListeEncadrer(List<Encadrer> listEncadrer) {
 		this.listeEncadrer = listEncadrer;
@@ -276,10 +277,10 @@ public class Intervenant extends OptiElement{
 	}
 
 	/**
-	 * Return the object as a table </br>
-	 * [0] is the teacher's id </br>
-	 * [1] is the teacher's first name </br>
-	 * [2] is the teacher's last name </br>
+	 * Return the object as a table <br>
+	 * [0] is the teacher's id <br>
+	 * [1] is the teacher's first name <br>
+	 * [2] is the teacher's last name <br>
 	 * @return : table composed of each argument in different cell 
 	 */
 	@Override

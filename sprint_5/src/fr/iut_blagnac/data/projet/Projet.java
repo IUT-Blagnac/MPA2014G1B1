@@ -70,7 +70,7 @@ public class Projet extends OptiElement{
 	
 	/**
 	 * Creates a new project from csv file
-	 * @param csvRow 
+	 * @param csvRow : Array containing a line of a CSV file
 	 */
 	public Projet(String[] csvRow) {
 		loadFromArray(csvRow);
@@ -216,7 +216,7 @@ public class Projet extends OptiElement{
 
 	/**
 	 * Set the size of tabEncadrer
-	 * @param sizeTabEncadrer
+	 * @param sizeTabEncadrer : The size of tabEncadrer
 	 */
 	public void setSizeTabEncadrer(int sizeTabEncadrer) {
 		this.sizeTabEncadrer = sizeTabEncadrer;
@@ -230,7 +230,7 @@ public class Projet extends OptiElement{
 	}
 
 	/**
-	 * @param champ
+	 * @param champ : Champ
 	 */
 	public  String getValueFor(String champ){
 		switch(champ){
@@ -256,8 +256,8 @@ public class Projet extends OptiElement{
 	
 
 	/**
-	 * Test if the content of each arguments is correct. </br>
-	 * The subject must be only composed of letters. </br>
+	 * Test if the content of each arguments is correct. <br>
+	 * The subject must be only composed of letters. <br>
 	 * The group must be a single capital letter.
 	 * @return True if it's valid, false if not
 	 */
@@ -287,9 +287,9 @@ public class Projet extends OptiElement{
 	}
 
 	/**
-	 * Return the object as a table </br>
-	 * [0] is the project's group </br>
-	 * [1] is the project's subject </br>
+	 * Return the object as a table <br>
+	 * [0] is the project's group <br>
+	 * [1] is the project's subject <br>
 	 * @return a table composed of each argument in different cell 
 	 */
 	@Override

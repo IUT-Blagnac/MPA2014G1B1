@@ -112,7 +112,7 @@ public class ElementCreator extends JPanel {
 	/**
 	 * Setter of RecordListener
 	 * 
-	 * @param listener
+	 * @param listener : The RecordListener
 	 */
 	public void setRecordListener(RecordListener listener) {
 		this.listener = listener;
@@ -124,6 +124,7 @@ public class ElementCreator extends JPanel {
 	 * JButton Ajouter is visible, JButton Supprimer is visible If not,
 	 * JTextField aren't editable, JButton Ajouter and JButton Supprimer aren't
 	 * visible
+	 * @param value : True or False
 	 */
 	public void enableEditMode(boolean value) {
 		// Saving of the button state (Selected or not)

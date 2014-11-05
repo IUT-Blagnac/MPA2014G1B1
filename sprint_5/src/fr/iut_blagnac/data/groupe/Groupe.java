@@ -54,7 +54,7 @@ public class Groupe extends OptiElement implements Comparable<Groupe>{
 	/**
 	 * Creates a new group with the data specified.
 	 * @param libelle : the label of the group
-	 * @param listEtu : the list of students
+	 * @param listeEtudiants : the list of students
 	 */
 	public Groupe (String libelle, ArrayList<Etudiant> listeEtudiants) {
 		this.setLibelle(libelle);
@@ -63,7 +63,7 @@ public class Groupe extends OptiElement implements Comparable<Groupe>{
 	
 	/**
 	 * Creates a new group with data load from CSV row
-	 * @param csvRow
+	 * @param csvRow : Array containing a line of a CSV file
 	 */
 	public Groupe(String[] csvRow) {
 		// Init all information from CSV Row
@@ -154,7 +154,7 @@ public class Groupe extends OptiElement implements Comparable<Groupe>{
 	
 	/**
 	 * Set students list
-	 * @param listeEtudiant
+	 * @param listeEtudiant : List of students
 	 */
 	public void setEtudiants(List<Etudiant> listeEtudiant) {
 		if(listeEtudiant == null){
@@ -233,7 +233,7 @@ public class Groupe extends OptiElement implements Comparable<Groupe>{
 
 	/**
 	 * Set the project
-	 * @param projet 
+	 * @param projet : Project
 	 */
 	public void setProjet(Projet projet) {
 		this.projet = projet;
@@ -262,7 +262,7 @@ public class Groupe extends OptiElement implements Comparable<Groupe>{
 
 	/**
 	 * Set the list of wishes
-	 * @param listVoeux
+	 * @param listVoeux : List of wishes
 	 */
 	public void setListVoeux(List<Voeux> listVoeux) {
 		if(listeVoeux != null){
@@ -309,10 +309,10 @@ public class Groupe extends OptiElement implements Comparable<Groupe>{
 	
 	
 	/**
-	 * Test if the content of each arguments is correct. </br>
-	 * The id must be longer than one character </br>
-	 * If it's not valid, Field's background will be errorColor (red)</br>
-	 * if it's valid, Field's background will be white.</br>
+	 * Test if the content of each arguments is correct. <br>
+	 * The id must be longer than one character <br>
+	 * If it's not valid, Field's background will be errorColor (red)<br>
+	 * if it's valid, Field's background will be white.<br>
 	 * @return True if it's valid, false if not
 	 */
 	@Override

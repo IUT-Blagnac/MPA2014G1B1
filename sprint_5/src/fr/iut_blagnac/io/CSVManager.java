@@ -16,7 +16,7 @@ public class CSVManager {
 	 * @param csvFile : File to load
 	 * @param separator : Cell separator
 	 * @return The CSV content in an array
-	 * @throws FileNotFoundException
+	 * @throws FileNotFoundException If the file couldn't be opened
 	 */
 	public static String[][] openCSV(File csvFile, char separator) throws FileNotFoundException {
 		// List used to store the CSV file content
@@ -55,8 +55,8 @@ public class CSVManager {
 	 * @param separator : Cell separator
 	 * @param header : Columns names
 	 * @param data : Array to write in the CSV file
-	 * @throws FileNotFoundException
-	 * @throws IOException
+	 * @throws FileNotFoundException If the file couldn't be created
+	 * @throws IOException If the file couldn't be saved
 	 */
 	public static void saveCSV (File csvFile, char separator, String[] header, String[][] data) throws FileNotFoundException, IOException {
 		// Writer used to write the data to the CSV file

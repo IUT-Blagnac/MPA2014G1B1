@@ -198,7 +198,7 @@ include::..\src\fr\iut_blagnac\io\CSVManager.java[CSVManager.java]
 
 Ce lien vous donne accès a la Javadoc du projet:
 
-image::javadoc.PNG[link="..\doc\html\allclasses-frame.html"]
+image::javadoc.PNG[link="..\doc\html\index.html"]
 
 ====
 

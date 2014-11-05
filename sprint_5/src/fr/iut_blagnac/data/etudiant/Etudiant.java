@@ -43,6 +43,10 @@ import fr.iut_blagnac.util.Str;
 		this(null, "", "", "");
 	}
 	
+	/**
+	 * Constructor
+	 * @param csvRow : Array containing a line of a CSV file
+	 */
 	public Etudiant(String[] csvRow) {
 		loadFromArray(csvRow);
 	}
@@ -99,6 +103,7 @@ import fr.iut_blagnac.util.Str;
 	
 	/**
 	 * Get the group of the student
+	 * @return The group
 	 */
 	public Groupe getGroupe() {
 		return groupe;
@@ -106,7 +111,7 @@ import fr.iut_blagnac.util.Str;
 	
 	/**
 	 * Set the group from a String
-	 * @param gpe : Student's group
+	 * @param groupe : Student's group
 	 */
 	public void detachFromGroup(Groupe groupe) {
 		if(this.groupe != null && this.groupe.equals(groupe)){
@@ -184,6 +189,7 @@ import fr.iut_blagnac.util.Str;
 
 	/**
 	 * Get the last name of the student
+	 * @return The last name
 	 */
 	public String getLastName() {
 		return lastName;

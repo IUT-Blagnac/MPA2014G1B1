@@ -59,8 +59,8 @@ public class TabIntervenant extends JPanel implements ChangeListener,
 
 	/**
 	 * Create a new TabAssociation with a DataManager and a parent Window
-	 * @param parent
-	 * @param currentDataManager
+	 * @param parent : The parent window
+	 * @param currentDataManager : The DataManager
 	 */
 	public TabIntervenant(JFrame parent, DataManager currentDataManager) {
 

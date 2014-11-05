@@ -49,6 +49,17 @@ if "%MAKETEST%"=="1" (
 @echo.
 @echo.
 @echo ///////////////////////////////////////////////////////
+@echo // GÉNÉRATION de la Javadoc
+@echo ///////////////////////////////////////////////////////
+javadoc -quiet -cp ./build/lib/junit.jar -d ./doc/html -sourcepath ./src -subpackages fr
+
+
+@echo.
+@echo.
+@echo.
+@echo.
+@echo.
+@echo ///////////////////////////////////////////////////////
 @echo // COMPILATION des documentations
 @echo ///////////////////////////////////////////////////////
 python %ASCIIDOCDIR%asciidoc.py -b slidy -o"%DOCDIR%Presentation Finale.html" "%SRCDOCDIR%presentationFinale.txt"

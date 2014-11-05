@@ -42,6 +42,7 @@ public abstract class OptiElement {
 	
 	/** 
 	 *  the data ready to be put in a csv file
+	 * @param csvRow : Array containing a line of a CSV file
 	 */
 	public abstract void loadFromArray(String[] csvRow);
 	

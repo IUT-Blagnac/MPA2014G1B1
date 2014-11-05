@@ -22,9 +22,9 @@ public class Voeux {
 	
 	/**
 	 * Create a wishes with special number, special group and subject
-	 * @param numV
-	 * @param gpe
-	 * @param sujet
+	 * @param numV : The number of the wish
+	 * @param gpe : The group
+	 * @param sujet : The subject
 	 */
 	public Voeux (int numV, Groupe gpe, Sujet sujet){
 		this.numVoeux = numV;
@@ -66,7 +66,7 @@ public class Voeux {
 
 	/**
 	 * Set the group
-	 * @param groupe
+	 * @param groupe : The group
 	 */
 	public void setGroupe(Groupe groupe) {
 		this.groupe = groupe;
@@ -82,7 +82,7 @@ public class Voeux {
 
 	/** 
 	 * Set the subject 
-	 * @param sujet
+	 * @param sujet : The subject
 	 */
 	public void setSujet(Sujet sujet) {
 		this.sujet = sujet;

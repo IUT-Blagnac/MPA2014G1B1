@@ -10,7 +10,7 @@ public class Str {
 	/**
 	 * This method return true if the given string is only composed of letters or char like  ' ' , '-' , ''' , ',' , '(' , ')' , '"', ':'
 	 * False, if not
-	 * @param s
+	 * @param s : The String to test
 	 * @return boolean
 	 */
 	public static boolean isLetter(String s){
@@ -29,7 +29,7 @@ public class Str {
 	/**
 	 * This method return true if the given string is only composed of digit
 	 * False if not
-	 * @param s
+	 * @param s : The String to test
 	 * @return boolean
 	 */
 	public static boolean isDigit(String s){
@@ -49,7 +49,7 @@ public class Str {
 	 * True if the given string is only composed of upperCase letter
 	 * False if not
 	 * Never used
-	 * @param s
+	 * @param s : The String to test
 	 * @return boolean
 	 */
 	public static boolean isGroupValid(char s){
@@ -65,8 +65,8 @@ public class Str {
 	 * Return true if the given string is composed of x (x=numberOfObject) values and each oh them must be separated by ',' 
 	 * and each of number is unique and not over x (x=numberOfObject)
 	 * False if some values are missing or not separated by ',' or there's extra character 
-	 * @param s
-	 * @param numberOfObject
+	 * @param s : The String to test
+	 * @param numberOfObject : The number of objects in the String
 	 * @return boolean
 	 */
 	public static boolean isOrderValid (String s, int numberOfObject) {

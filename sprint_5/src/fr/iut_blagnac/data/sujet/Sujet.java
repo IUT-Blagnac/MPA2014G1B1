@@ -84,6 +84,7 @@ public class Sujet extends OptiElement{
 	 * @param nom : the name of this subject.
 	 * @param titre : the title of this subject.
 	 * @param projet : the project of the subject.
+	 * @param listeVoeux : the list of wishes
 	 */
 	public Sujet (String id, String nom, String titre, Projet projet, List<Voeux> listeVoeux) {
 		this(id,nom,titre,projet);
@@ -203,7 +204,7 @@ public class Sujet extends OptiElement{
 
 	/**
 	 * Set the project
-	 * @param projet
+	 * @param projet : Project
 	 */
 	public void setProjet(Projet projet) {
 		this.projet = projet;
@@ -232,7 +233,7 @@ public class Sujet extends OptiElement{
 
 	/**
 	 * Set the number of subject
-	 * @param nbSubject
+	 * @param nbSubject : Number of subjects
 	 */
 	public void setNbSubject(int nbSubject) {
 		this.nbSubject = nbSubject;
@@ -248,7 +249,7 @@ public class Sujet extends OptiElement{
 
 	/**
 	 * Set the list wishes
-	 * @param listeVoeux
+	 * @param listeVoeux : List of wishes
 	 */
 	public void setListeVoeux(List<Voeux> listeVoeux) {
 		this.listeVoeux = listeVoeux;
@@ -289,7 +290,7 @@ public class Sujet extends OptiElement{
 	
 	
 	/**
-	 * Tests if the content of each arguments is correct. </br>
+	 * Tests if the content of each arguments is correct. <br>
 	 * the name and the title must be only composed of letters.
 	 * @return  True if it's valid, false if not
 	 */
@@ -319,10 +320,10 @@ public class Sujet extends OptiElement{
 	}
 
 	/**
-	 * Return the object as a table. </br>
-	 * [0] is the subject's id. </br>
-	 * [1] is the subject's name. </br>
-	 * [2] is the subject's title. </br>
+	 * Return the object as a table. <br>
+	 * [0] is the subject's id. <br>
+	 * [1] is the subject's name. <br>
+	 * [2] is the subject's title. <br>
 	 * @return a table composed of each argument in different cell 
 	 */
 	@Override

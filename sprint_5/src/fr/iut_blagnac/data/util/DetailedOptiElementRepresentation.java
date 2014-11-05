@@ -18,6 +18,9 @@ import fr.iut_blagnac.gui.Application;
 import fr.iut_blagnac.gui.RecordListener;
 
 @SuppressWarnings("serial")
+/**
+ * A DetailedOptiElementRepresentation is the GUI of the object, with a JButton to remove it from a RecordListener
+ */
 public class DetailedOptiElementRepresentation extends OptiElementRepresentation{
 
 	private OptiElement currentElement;
@@ -26,7 +29,9 @@ public class DetailedOptiElementRepresentation extends OptiElementRepresentation
 	JButton detailsButton;
 
 	/** 
-	 * @return : the GUI of the object with JButton to remove it from a RecordListener
+	 * @param representation : The current representation
+	 * @param details : The JDialog to show the details
+	 * @param listener : The RecordListener
 	 */
 	public DetailedOptiElementRepresentation(final OptiElementRepresentation representation, final JDialog details,  final RecordListener listener) {
 		this.setLayout(new BorderLayout());

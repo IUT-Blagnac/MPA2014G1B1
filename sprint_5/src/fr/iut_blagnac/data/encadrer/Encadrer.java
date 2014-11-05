@@ -22,9 +22,9 @@ public class Encadrer {
 
 	/**
 	 * Create a relation between a specified project, intervenant with specified roles on the project
-	 * @param intervenant
-	 * @param projet
-	 * @param role
+	 * @param intervenant : The operator
+	 * @param projet : The project
+	 * @param role : The role
 	 */
 	public Encadrer(Intervenant intervenant, Projet projet, Roles role) {
 		this.intervenant = intervenant;
@@ -42,7 +42,7 @@ public class Encadrer {
 	
 	/**
 	 * Set the advisor
-	 * @param intervenant
+	 * @param intervenant : The operator
 	 */
 	public void setIntervenant(Intervenant intervenant) {
 		this.intervenant = intervenant;
@@ -61,7 +61,7 @@ public class Encadrer {
 
 	/**
 	 * Set the project
-	 * @param projet
+	 * @param projet : The project
 	 */
 	public void setProjet(Projet projet) {
 		this.projet = projet;		
@@ -77,7 +77,7 @@ public class Encadrer {
 
 	/**
 	 * Set the role of the intervenant on the project
-	 * @param role
+	 * @param role : The role
 	 */
 	public void setRole(Roles role) {
 		this.role = role;
