@@ -48,10 +48,10 @@ script:
   - java -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/OptiElementManagerTest.java
   - java -cp ./bin;./build/lib/junit.jar -d ./bin ./src/MakeOptiWebTest.java
 
-  - echo Execution of the casperJS tests
-  - ls -alF srcdoc
-  - cd OPTIweb/test
-  - cp OPTIwebprof.html /tmp/OPTIweb.html
+  #- echo Execution of the casperJS tests
+  #- ls -alF srcdoc
+  #- cd OPTIweb/test
+  #- cp OPTIwebprof.html /tmp/OPTIweb.html
   #- casperjs test casperAccueil.js
   #- casperjs test casperCredits.js
   #- casperjs test casperEtudiants.js
