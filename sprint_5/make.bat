@@ -49,9 +49,9 @@ if "%MAKETEST%"=="1" (
 @echo.
 @echo.
 @echo ///////////////////////////////////////////////////////
-@echo // GÉNÉRATION de la Javadoc
+@echo // GENERATION de la Javadoc
 @echo ///////////////////////////////////////////////////////
-javadoc -quiet -cp ./build/lib/junit.jar -d ./doc/html -sourcepath ./src -subpackages fr
+javadoc -quiet -classpath ./build/lib/junit.jar -d ./doc/html -sourcepath ./src -subpackages fr
 
 
 @echo.
