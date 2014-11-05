@@ -22,16 +22,17 @@ script:
   - echo Creation of OPTI.jar
   - cd sprint_5
   - javac -cp ./src -d ./bin ./src/fr/iut_blagnac/gui/Application.java
+  - rm -f ./bin/vide.txt
   - jar cfm ./build/OPTI.jar ./manifest.txt -C ./bin .
   
   - echo Generation of the documentation
-  - chmod 777 ./doc
   - java -jar ../plantuml.jar -Tpng -o ./srcdoc/images ./srcdoc/diag0.puml
   - python ../asciidoc-8.6.7/asciidoc.py -a data-uri -o ./doc/presentationFinale.html ./srcdoc/presentationFinale.txt
   - python ../asciidoc-8.6.7/asciidoc.py -b slidy -o "./doc/Presentation Finale.html" ./srcdoc/presentationFinale.txt
   - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Web.html" ./srcdoc/documentationWeb.adoc
   - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Technique.html" "./srcdoc/Documentation Technique.adoc"
   - python ../asciidoc-8.6.7/asciidoc.py -o "./doc/Documentation Utilisateur.html" "./srcdoc/Documentation Utilisateur.adoc"
+  - rm -f ./doc/vide.txt
   
   - echo Compilation of the tests
   - javac -cp ./bin;./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/io/CSVManagerTest.java
