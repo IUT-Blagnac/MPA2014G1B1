@@ -25,7 +25,7 @@ script:
   - rm -f ./bin/vide.txt
   - jar cfm ./build/OPTI.jar ./manifest.txt -C ./bin .
   
-  -echo Generation of the Javadoc
+  - echo Generation of the Javadoc
   - javadoc -quiet -cp ./build/lib/junit.jar -d ./doc/html -sourcepath ./src -subpackages fr
   - rm -f ./doc/html/vide.txt
 
