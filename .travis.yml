@@ -44,9 +44,11 @@ script:
   - javac -cp ./bin:./build/lib/junit.jar -d ./bin ./src/fr/iut_blagnac/util/MakeOptiWebTest.java
  
   - echo Execution of the tests
-  - java -cp ./bin:./build/lib/junit.jar ./bin/fr/iut_blagnac/io/CSVManagerTest
-  - java -cp ./bin:./build/lib/junit.jar ./bin/fr/iut_blagnac/io/OptiElementManagerTest
-  - java -cp ./bin:./build/lib/junit.jar ./bin/MakeOptiWebTest
+  - cp ./build/*.csv ./bin
+  - cd ./bin
+  - java -cp .:../build/lib/junit.jar fr.iut_blagnac.io.CSVManagerTest
+  - java -cp .:../build/lib/junit.jar fr.iut_blagnac.io.OptiElementManagerTest
+  - java -cp .:../build/lib/junit.jar fr.iut_blagnac.util.MakeOptiWebTest
 
   #- echo Execution of the casperJS tests
   #- ls -alF srcdoc

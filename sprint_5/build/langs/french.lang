@@ -49,10 +49,12 @@ all:Tout
 
 # Begin of gui words #
 
+file:Fichier
 details:Détails
 load:Charger
 save:Sauvegarder
 quit:Quitter
+exportWeb: Exporter format web
 
 nbetu:Nombre d'étudiants
 
@@ -85,7 +87,7 @@ abgroup:CORDEAU Julien <br>GARIBAL Florian <br>EL YASSEM Bilal <br>JEANJEAN Pier
 abiuttitle:Université Toulouse 2
 abiut:IUT Blagnac<br>DUT INFO S3/Module MPA<br>Projet OPTI
 abdatatitle:Informations données
-absprint:Sprint 3
+absprint:Sprint
 
 abnbstudents:Nombre d'étudiants
 abnbadvisors:Nombre d'intervenants

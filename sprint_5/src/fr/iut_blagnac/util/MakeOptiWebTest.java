@@ -12,7 +12,7 @@ public class MakeOptiWebTest extends TestCase {
 
 	MakeOptiWeb maker = new MakeOptiWeb();
 	Process executionProgrammeATester ; 
-	static String programeATester = "MakeOptiWeb";
+	static String programeATester = "fr.iut_blagnac.util.MakeOptiWeb";
 	
 
 	
@@ -24,12 +24,12 @@ public class MakeOptiWebTest extends TestCase {
 			programeATester = args[0] ; 
 		}
 		System.out.println("Tests du programme : MakeOptiWeb.java");
-		junit.textui.TestRunner.run(new TestSuite(MakeOptiWeb.class));
+		junit.textui.TestRunner.run(new TestSuite(MakeOptiWebTest.class));
 
 	}
 	
-	protected void setUp() throws IOException, InterruptedException {	
-		executionProgrammeATester = Runtime.getRuntime().exec("java.exe -cp .;bin "+programeATester); 
+	protected void setUp() throws IOException, InterruptedException {
+		executionProgrammeATester = Runtime.getRuntime().exec("java.exe -cp . "+programeATester); 
 		executionProgrammeATester.waitFor();
 	}
 	
