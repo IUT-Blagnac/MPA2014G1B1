@@ -66,7 +66,7 @@ script:
   - git config user.email ${GIT_EMAIL}
   - git config user.name ${GIT_NAME}
   - git remote rm origin
-  - git remote add origin https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git
+  - git remote add origin https://${GH_TOKEN}@github.com/IUT-Blagnac/MPA2014G1B1.git
   - git add doc
   - git add build
   - git commit -m "[skip ci] Commit from Travis-CI"
