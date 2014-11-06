@@ -49,6 +49,7 @@ script:
   - java -cp .:../build/lib/junit.jar fr.iut_blagnac.io.CSVManagerTest
   - java -cp .:../build/lib/junit.jar fr.iut_blagnac.io.OptiElementManagerTest
   - java -cp .:../build/lib/junit.jar fr.iut_blagnac.util.MakeOptiWebTest
+  - cd ..
 
   #- echo Execution of the casperJS tests
   #- ls -alF srcdoc
@@ -60,3 +61,10 @@ script:
   #- casperjs test casperIntervenants.js
   #- casperjs test casperProjets.js
   #- casperjs test casperSujets.js
+
+  - echo Commit to GitHub
+  - cd ..
+  - git add doc
+  - git add build
+  - git commit -m "[skip ci] Commit from Travis-CI"
+  - git push origin master
