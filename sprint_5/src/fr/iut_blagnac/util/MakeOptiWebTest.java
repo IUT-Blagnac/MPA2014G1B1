@@ -29,7 +29,7 @@ public class MakeOptiWebTest extends TestCase {
 	}
 	
 	protected void setUp() throws IOException, InterruptedException {
-		executionProgrammeATester = Runtime.getRuntime().exec("java.exe -cp . "+programeATester); 
+		executionProgrammeATester = Runtime.getRuntime().exec("java -cp . "+programeATester); 
 		executionProgrammeATester.waitFor();
 	}
 	
