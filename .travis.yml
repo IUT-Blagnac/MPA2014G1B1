@@ -51,7 +51,6 @@ script:
   - java -cp .:../build/lib/junit.jar fr.iut_blagnac.util.MakeOptiWebTest
   - cd ..
 
-  
   #- echo Execution of the casperJS tests
   #- ls -alF srcdoc
   #- cd OPTIweb/test
