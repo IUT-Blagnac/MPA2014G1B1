@@ -63,6 +63,8 @@ script:
   #- casperjs test casperSujets.js
 
   - echo Commit to GitHub
+  - git config user.email "dark.phoenix.62@gmail.com"
+  - git config user.name "RhiobeT"
   - git add doc
   - git add build
   - git commit -m "[skip ci] Commit from Travis-CI"
