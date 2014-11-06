@@ -10,7 +10,7 @@ before_script:
 language: java
 env:
   global:
-    - secure: "Z1EhpD6/xR0rFbTnZ/VGabcqxcC01aYNkPZgFjHI2Op/aUICny/eZEhSXSexf6FezZDYUBf3o/C4rWWIjo7msIVnwEh3O4k57tbdhb5ArHKciAF4EDTa5s/0C9hvFB9+ls21UbYKtHaAz97lAtJIUAtV/oo7B16zQnKdr8Wv/kk="
+    - secure: "Xyichg6KhhC456oBvQ10c1D/QoR4ANEnkzWlemq6KlvQ7mVPq5YUMRPIXcouQZvXb/JEDtdun0NCLA8OBh9OhfoW9vwnVGYNCALlf7xHYk8OzRHdCkJ3sibpPsJNrJfEMhokgn3/k70elJ3j6DdWE779nwoVqFD8Uo3W2zLDfEM="
 script:
   - java -version
   - javac -version
