@@ -10,7 +10,7 @@ before_script:
 language: java
 env:
   global:
-    - secure: "SatInPeqdaSgcbSDLw3dJoQLwSTaMu+2LhDGzFz3BYIhCYz4Nw3XFDjY3DdjobJku0+E39DMGLfxrZWAm3YlAr5cGG+vWRl6AZuoVmTG7mequHC5ZMdWINI7dcWpIJ8P3jsx2RprOnC0SSRMbmBubKzyvOLCL1azo9yB5puWHsI="
+    - secure: "Z1EhpD6/xR0rFbTnZ/VGabcqxcC01aYNkPZgFjHI2Op/aUICny/eZEhSXSexf6FezZDYUBf3o/C4rWWIjo7msIVnwEh3O4k57tbdhb5ArHKciAF4EDTa5s/0C9hvFB9+ls21UbYKtHaAz97lAtJIUAtV/oo7B16zQnKdr8Wv/kk="
 script:
   - java -version
   - javac -version
@@ -63,8 +63,7 @@ script:
   #- casperjs test casperSujets.js
 
   - echo Commit to GitHub
-  - cd ..
   - git add doc
   - git add build
   - git commit -m "[skip ci] Commit from Travis-CI"
-  - git push origin master
+  - git push https://github.com/IUT-Blagnac/MPA2014G1B1.git master
