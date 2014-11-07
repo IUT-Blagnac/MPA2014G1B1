@@ -4,9 +4,9 @@ before_install:
   - wget http://algec.iut-blagnac.fr/~jmi/MPA/src/plantuml.jar
   - hg clone -r 8.6.7 https://asciidoc.googlecode.com/hg/ asciidoc-8.6.7
 before_script:
-  - wget https://github.com/n1k0/casperjs/archive/1.0.3.tar.gz -O /tmp/casper.tar.gz
+  - wget https://github.com/n1k0/casperjs/archive/1.0.2.tar.gz -O /tmp/casper.tar.gz
   - tar -xvf /tmp/casper.tar.gz
-  - export PATH=$PATH:$PWD/casperjs-1.0.3/bin/
+  - export PATH=$PATH:$PWD/casperjs-1.0.2/bin/
 language: java
 env:
   global:
