@@ -64,8 +64,8 @@ script:
 
   - echo Commit to GitHub
   - git clone https://${GIT_NAME}:${GH_TOKEN}@github.com/IUT-Blagnac/MPA2014G1B1.git release
-  - git config user.email ${GIT_EMAIL}
-  - git config user.name ${GIT_NAME}
+  - git config --global user.email ${GIT_EMAIL}
+  - git config --global user.name ${GIT_NAME}
   #- git remote rm origin
   #- git remote add origin https://${GIT_NAME}:${GH_TOKEN}@github.com/IUT-Blagnac/MPA2014G1B1.git
   - cp -R --target-directory=release build
