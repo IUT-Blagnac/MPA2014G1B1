@@ -50,7 +50,9 @@ script:
   - java -cp .:../build/lib/junit.jar fr.iut_blagnac.io.OptiElementManagerTest
   - java -cp .:../build/lib/junit.jar fr.iut_blagnac.util.MakeOptiWebTest
   - cd ..
-
+  
+  - cat bin/OPTIweb.html
+  
   - echo Execution of the casperJS tests
   - cd test
   - casperjs test casperCredits.js

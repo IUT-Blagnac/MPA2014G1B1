@@ -11,8 +11,6 @@ var APP_VERSION = '0.1' ;
 
 // Test data ////////////////////////////////////
 var GROUPES=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q"];
-//var ETUDIANTS = require('./etudiants2014_2015.json');
-//ETUDIANTS.sort(function(a,b){return ((a.nom > b.nom) ? 1 : ((a.nom < b.nom) ? -1 : 0))});
 
 // Casper ////////////////////////////////////
 var utils = require('utils');
