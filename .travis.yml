@@ -65,9 +65,13 @@ script:
   - echo Commit to GitHub
   - git config user.email ${GIT_EMAIL}
   - git config user.name ${GIT_NAME}
-  - git remote rm origin
-  - git remote add origin https://${GIT_NAME}:${GH_TOKEN}@github.com/IUT-Blagnac/MPA2014G1B1.git
-  - git add doc
+  - git clone https://${GIT_NAME}:${GH_TOKEN}@github.com/IUT-Blagnac/MPA2014G1B1.git release
+  #- git remote rm origin
+  #- git remote add origin https://${GIT_NAME}:${GH_TOKEN}@github.com/IUT-Blagnac/MPA2014G1B1.git
+  - cp -R --target-directory=../release build
+  - cp -R --target-directory=../release doc
+  - cd release
   - git add build
+  - git add doc
   - git commit -m "[skip ci] Commit from Travis-CI"
   - git push origin master
