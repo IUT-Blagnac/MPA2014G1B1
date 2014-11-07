@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,15 +42,15 @@ public class MakeOptiWeb {
 		//*/
 	}
 	
-	public static String pageAccueil() {
+	public static String pageAccueil() throws UnsupportedEncodingException {
 
 		// Attributes
 		String htmlCode;
 		htmlCode = "<!-- DEBUT page accueil -->\n"
 				+ "<div data-role=\"page\" id=\"accueil\" data-title=\"OPTIweb - V" + version + "\">\n"
 				+ "<div data-role=\"header\" data-add-back-btn=\"true\">\n"
-				+ "<h1>P<span class=\"landscape\">rojets </span>tut<span class=\"landscape\">or�s</span> 2014-2015<br/>D�partement INFO<span class=\"landscape\">RMATIQUE</span><br/>IUT de Blagnac</h1>\n"
-				+ "<a href=\"#credits\" data-theme=\"b\" class=\"ui-btn-right\">Cr�dits</a>\n"
+				+ "<h1>P<span class=\"landscape\">rojets </span>tut<span class=\"landscape\">orés</span> 2014-2015<br/>Département INFO<span class=\"landscape\">RMATIQUE</span><br/>IUT de Blagnac</h1>\n"
+				+ "<a href=\"#credits\" data-theme=\"b\" class=\"ui-btn-right\">Crédits</a>\n"
 				+ "</div>\n"
 				+ "<div data-role=\"content\">\n"
 				+ "<ul data-role=\"listview\" data-inset=\"true\" id=\"listeSources\">\n"
@@ -68,29 +69,29 @@ public class MakeOptiWeb {
 				+ "\n";
 
 		// Returning the full html page code
-		return htmlCode;
+		return new String(htmlCode.getBytes(), "UTF-8");
 	}
 
-	public static String pageAPropos() {
+	public static String pageAPropos() throws UnsupportedEncodingException {
 		// Attributes
 		String htmlCode;
 
 		htmlCode = "<!-- DEBUT page credits -->\n"
-				+ "<div data-role=\"page\" id=\"credits\" data-title=\"OPTIweb - V" + version + " - Cr�dits\">\n"
+				+ "<div data-role=\"page\" id=\"credits\" data-title=\"OPTIweb - V" + version + " - Crédits\">\n"
 				+ "<div data-role=\"header\" data-add-back-btn=\"true\">\n"
-				+ "<h1>Cr�dits</h1>\n"
+				+ "<h1>Crédits</h1>\n"
 				+ "</div>\n"
 				+ "<div data-role=\"content\">\n"
 				+ "    <p>Cette application a été réalisée dans le cadre du module M3301/MPA du DUT Informatique à l'IUT de Blagnac.</p>\n"
 				+ "<ul data-role=\"listview\" data-inset=\"true\" id=\"contacts\" data-theme=\"a\" data-divider-theme=\"b\">\n"
 				+ "    <li data-role=\"list-divider\">Product Owner</li>\n"
-				+ "    <li>André PENINOU</li>\n"
+				+ "    <li>André PÉNINOU</li>\n"
 				+ "    <li>Université Toulouse 2 - IUT de Blagnac\n"
 				+ "    <br/>Département INFORMATIQUE</li>\n"
 				+ "</ul>\n"
 				+ "<ul data-role=\"listview\" data-inset=\"true\" id=\"listecredits\" data-theme=\"a\" data-divider-theme=\"b\">\n"
 				+ "    <li data-role=\"list-divider\">Membres de l'équipe enseignante</li>\n"
-				+ "<li>Jean-Michel BRUEL</li><li>Jean-Michel INGLEBERT</li><li>André PENINOU</li><li>Olivier ROQUES</li>\n"
+				+ "<li>Jean-Michel BRUEL</li><li>Jean-Michel INGLEBERT</li><li>André PÉNINOU</li><li>Olivier ROQUES</li>\n"
 				+ "</ul>\n"
 				+ "<ul data-role=\"listview\" data-inset=\"true\" id=\"listepowered\" data-theme=\"a\" data-divider-theme=\"b\">\n"
 				+ "    <li data-role=\"list-divider\">Propulsé par</li>\n"
@@ -106,10 +107,10 @@ public class MakeOptiWeb {
 				+ "\n";
 
 		// Returning the full html page code
-		return htmlCode;
+		return new String(htmlCode.getBytes(), "UTF-8");
 	}
 
-	public static String htmlHead() {
+	public static String htmlHead() throws UnsupportedEncodingException {
 		// Attributes
 		String htmlCode;
 
@@ -132,10 +133,10 @@ public class MakeOptiWeb {
 				+ "\n";
 
 		// Returning the full html page code
-		return htmlCode;
+		return new String(htmlCode.getBytes());
 	}
 
-	public static String pageEtudiants() {
+	public static String pageEtudiants() throws UnsupportedEncodingException {
 		String fileName = "./etudiants2014_2015.csv";
 
 		String chaineFinale = "<!-- DEBUT page etudiants -->\n"
@@ -193,10 +194,10 @@ public class MakeOptiWeb {
 				+ "<!-- FIN page etudiants -->\n"
 				+ "\n";
 
-		return chaineFinale;
+		return new String(chaineFinale.getBytes());
 	}
 
-	public static String pageSujets() {
+	public static String pageSujets() throws UnsupportedEncodingException {
 
 		String fileNameSujet = "./sujets2014_2015.csv", fileNameProjet = "./projets2014_2015.csv";
 
@@ -283,10 +284,10 @@ public class MakeOptiWeb {
 						+ "</div>\n"
 						+ "<!-- FIN page sujets -->\n"
 						+ "\n";		
-		return chaineFinale;
+		return new String(chaineFinale.getBytes());
 	}
 	
-	public static String pageIntervenants () {
+	public static String pageIntervenants () throws UnsupportedEncodingException {
 		String fileNameInterv = "./intervenants2014_2015.csv";
 		String fileNameProject = "./projets2014_2015.csv";
 
@@ -358,10 +359,10 @@ public class MakeOptiWeb {
 				+ "<!-- FIN page intervenants -->\n"
 				+ "\n";
 		
-		return chaineFinale;
+		return new String(chaineFinale.getBytes());
 	}
 	
-	public static String pageProjets () {
+	public static String pageProjets () throws UnsupportedEncodingException {
 		String fileNameEtu = "./etudiants2014_2015.csv";
 		String fileNamePro = "./projets2014_2015.csv";
 		String fileNameInt = "./intervenants2014_2015.csv";
@@ -454,11 +455,11 @@ public class MakeOptiWeb {
 			+ "<!-- FIN page projets -->\n"
 			+ "\n";
 
-		return chaineFinale;
+		return new String(chaineFinale.getBytes());
 	}
 	
-	public static String finDePage () {
-		return "<script>\n"
+	public static String finDePage () throws UnsupportedEncodingException {
+		return new String(("<script>\n"
 				+ " // li click handler which fills the projects search bar \n"
 				+ " // with the value of the current data-find attribute\n"
 				+ " $( 'li[data-find]' ).on( 'click',function(event){\n"
@@ -466,7 +467,7 @@ public class MakeOptiWeb {
 				+ " });\n"
 				+ "</script>\n"
 				+ "</body>\n"
-				+ "</html>\n";
+				+ "</html>\n").getBytes());
 	}
 
 	private static void trier(String donnees[][], int indexATrier) {

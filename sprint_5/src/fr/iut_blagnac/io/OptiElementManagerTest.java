@@ -31,7 +31,8 @@ public class OptiElementManagerTest extends TestCase {
 			return false;
 		
 		for (int i = 0; i < array1.length; i++) {
-				if(!array1[i].equals(array2[i])){
+				if(!((OptiElement) array1[i]).equalsElement(array2[i])){
+					System.out.println(i + "\n" + (OptiElement) array1[i] + "\n" + (OptiElement) array2[i]);
 					return false;
 				}
 		}
@@ -43,12 +44,22 @@ public class OptiElementManagerTest extends TestCase {
 	 * @return The random array
 	 */
 	private static OptiElement[] generateRandomArray(int type){
+		String characters = "azertyuiopmlkjhgfdsqwxcvbnNBVCXWQSDFGHJKLMPOIUYTREZA-";
 		OptiElement[] result = new OptiElement[100];
 		
 		switch(type){
 		case 0: 
+			char firstName[], lastName[];
 			for(int n = 0; n < result.length; n++){
-				result[n] = new Etudiant(new Groupe("C"), "", String.valueOf(Math.random()), String.valueOf(Math.random()));
+				firstName = new char[(int) (Math.random()*9+2)];
+				lastName = new char[(int) (Math.random()*9+2)];
+				
+				for (int i = 0; i < firstName.length; i++)
+					firstName[i] = characters.charAt((int) (Math.random() * characters.length()));
+				for (int i = 0; i < lastName.length; i++)
+					lastName[i] = characters.charAt((int) (Math.random() * characters.length()));
+					
+				result[n] = new Etudiant(new Groupe("C"), "0", new String(firstName), new String(lastName));
 			}
 			break;
 		case 1: 

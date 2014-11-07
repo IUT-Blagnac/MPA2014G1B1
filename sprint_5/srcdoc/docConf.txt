@@ -1,7 +1,7 @@
 ﻿//-------- directories -----------
 :icons:
-:iconsdir: ../srcdoc/icons
-:imagesdir: ../srcdoc/images
+:iconsdir: icons
+:imagesdir: images
 :src: ../src/
 :srcdoc: ../srcdoc/
 //--------------------------------

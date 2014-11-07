@@ -320,7 +320,7 @@ import fr.iut_blagnac.util.Str;
 		}
 		
 		Etudiant e = (Etudiant) o;
-		if(this.groupe.getLibelle() != e.getGroupe().getLibelle()
+		if(!this.groupe.getLibelle().equals(e.getGroupe().getLibelle())
 		|| !this.id.equals(e.getId())
 		|| !this.firstName.equals(e.getFirstName()) 
 		|| !this.lastName.equals(e.getLastName()) 

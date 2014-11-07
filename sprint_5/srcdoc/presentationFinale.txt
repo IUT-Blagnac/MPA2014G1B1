@@ -22,7 +22,7 @@ Projet OPTI
 
 - DUT INFO S3/Module MPA
 
-image:Univ.png[]
+image:Univ.PNG[]
 image:IUT.png[]
 
 Liste des membres de l'équipe

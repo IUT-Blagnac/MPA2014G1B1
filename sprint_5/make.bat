@@ -17,7 +17,7 @@ set MAKETEST=1
 @echo // COMPILATION des executables
 @echo ///////////////////////////////////////////////////////
 if not exist %BINDIR% mkdir %BINDIR%
-javac -cp %SRCDIR% -d %BINDIR% %SRCDIR%/fr/iut_blagnac/gui/Application.java
+javac -cp %SRCDIR% -d %BINDIR% %SRCDIR%fr/iut_blagnac/gui/Application.java
 
 
 
@@ -77,7 +77,7 @@ if "%MAKETEST%"=="1" (
 @echo.
 @echo.
 @echo ///////////////////////////////////////////////////////
-@echo // EXECUTION des tests
+@echo // EXECUTION des tests JUnit
 @echo ///////////////////////////////////////////////////////
 if "%MAKETEST%"=="1" (
 	cd %BINDIR%
@@ -86,5 +86,31 @@ if "%MAKETEST%"=="1" (
 	java -cp .;../%BUILDDIR%lib/junit.jar fr.iut_blagnac.io.OptiElementManagerTest
 	java -cp .;../%BUILDDIR%lib/junit.jar fr.iut_blagnac.util.MakeOptiWebTest
 )
+del *.csv
+
+@echo.
+@echo.
+@echo.
+@echo.
+@echo.
+@echo.
+@echo ///////////////////////////////////////////////////////
+@echo // EXECUTION des tests casperJS
+@echo ///////////////////////////////////////////////////////
+if "%MAKETEST%" == "1" (
+	cd ../test
+	start cmd /K casperjs test casperAccueil.js
+	start cmd /K casperjs test casperSujets.js
+	start cmd /K casperjs test casperCredits.js
+	start cmd /K casperjs test casperEtudiants.js
+	start cmd /K casperjs test casperIntervenants.js
+	start cmd /K casperjs test casperProjets.js
+	cd ..
+)
 
 pause
+
+if "%MAKETEST%" == "1" (
+	cd bin
+	del *.html
+)

@@ -185,7 +185,7 @@ include::..\src\fr\iut_blagnac\data\util\OptiElement.java[OptiElement.java]
 
 De plus des contrôles de saisie de texte sont implémentés dans le code source des différentes classes. Comme on peut bien voir avec la méthode isValid() dans l'exemple suivant de la classe *Intervenants*:
 ----
-include::..\src\fr\iut_blagnac\data\Intervenant\Intervenant.java[Intervenant.java] 
+include::..\src\fr\iut_blagnac\data\intervenant\Intervenant.java[Intervenant.java] 
 ----
 La mise en page est gérée par le package *.gui*, dont plusieurs classes sont décrites pour mettre en place une intérface logique et érgonomique. 
 
