@@ -53,8 +53,8 @@ script:
 
   - echo Execution of the casperJS tests
   - cd test
-  - casperjs test casperAccueil.js
   - casperjs test casperCredits.js
+  - casperjs test casperAccueil.js
   - casperjs test casperEtudiants.js
   - casperjs test casperIntervenants.js
   - casperjs test casperProjets.js
