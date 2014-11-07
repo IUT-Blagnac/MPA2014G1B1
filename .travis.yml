@@ -4,7 +4,6 @@ before_install:
   - wget http://algec.iut-blagnac.fr/~jmi/MPA/src/plantuml.jar
   - hg clone -r 8.6.7 https://asciidoc.googlecode.com/hg/ asciidoc-8.6.7
 before_script:
-  - ./sprint_5/test/installPhantomJS.sh
   - wget https://github.com/n1k0/casperjs/archive/1.0.2.tar.gz -O /tmp/casper.tar.gz
   - tar -xvf /tmp/casper.tar.gz
   - export PATH=$PATH:$PWD/casperjs-1.0.2/bin/
@@ -13,6 +12,9 @@ env:
   global:
     - secure: "Xyichg6KhhC456oBvQ10c1D/QoR4ANEnkzWlemq6KlvQ7mVPq5YUMRPIXcouQZvXb/JEDtdun0NCLA8OBh9OhfoW9vwnVGYNCALlf7xHYk8OzRHdCkJ3sibpPsJNrJfEMhokgn3/k70elJ3j6DdWE779nwoVqFD8Uo3W2zLDfEM="
 script:
+  - echo Change of the PhantomJS version
+  - ./sprint_5/test/installPhantomJS.sh
+
   - java -version
   - javac -version
   - python -V
